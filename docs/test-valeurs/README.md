@@ -31,7 +31,7 @@ Précisions :
 - `valence` : ce que le texte dit, en lisant l'ironie. « Super, encore un lundi » est négatif. L'absence d'une personne aimée est négative, même si le geste est tendre. Une blague sans jugement vaut 0.
 - `energie` : la force exprimée par le texte (cris, ponctuation, action), pas la gravité du sujet.
 - `tension` : un conflit, une menace ou une inquiétude. La tristesse seule vaut 0. Un ordre adressé à l'IA vaut 0.
-- `absurdite` : l'impossible ou l'insensé dans ce qui est raconté. Un simple symbole ou un texte illisible vaut 0.
+- `absurdite` : l'impossible ou l'insensé dans ce qui est raconté, même après « et si » ou dans une blague. Un simple symbole ou un texte illisible vaut 0.
 
 `emotion` (une seule, la dominante) : `joie`, `tristesse`, `colere`, `peur`, `surprise`, `degout`, `neutre`
 
@@ -44,8 +44,8 @@ C'est l'émotion **exprimée par le texte**, pas celle qu'il vous fait ressentir
 | `quotidien` | Vie courante, objets, travail, repas |
 | `nature` | Animaux, plantes, météo, paysages |
 | `relation` | Lien entre des personnes |
-| `imaginaire` | Fiction, rêve, invention |
-| `societe` | Vie collective, monde, politique, technologie |
+| `imaginaire` | Rêve ou monde inventé qui est lui-même le sujet |
+| `societe` | Vie collective, monde, argent, politique, technologie, y compris une invention sur ces sujets |
 | `autre` | Aucun des choix précédents |
 
 Prenez le **sujet principal**, pas un mot isolé : des pigeons qui paient un loyer parlent de `societe`. En cas d'égalité, prenez le premier dans cet ordre : `relation`, `societe`, `nature`, `imaginaire`, `quotidien`, `autre`.

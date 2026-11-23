@@ -9,7 +9,7 @@ Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Nœud | noeud-b (producteur d'un créneau de 20 s sur trois, ordre a, b, c) |
 | Spec commune | version 1.0 du 23/11/2026 |
-| Version du dossier | 0.3, brouillon corrigé |
+| Version du dossier | 0.4, brouillon corrigé |
 | Langage | TypeScript, pour le nœud et pour l'application |
 
 ## 1. Le projet en bref
@@ -113,7 +113,7 @@ Les noms suivent les champs de la spec (anglais, snake\_case, tables au pluriel)
 
 **Quand.** L'IA lit un message seulement quand son bloc est dans notre chaîne (spec 9). Un worker en tâche de fond parcourt les messages de la chaîne qui n'ont pas encore de ligne dans ai\_results. Il n'y a aucun appel à l'IA à l'écriture : une panne d'IA ne bloque ni l'écriture ni la production de blocs.
 
-**Quel modèle.** Modèles gratuits uniquement, via OpenRouter, avec un compte et une clé par étudiant, la clé étant dans le .env. Modèle demandé : le routeur openrouter/free, accepté par le sujet. Les réponses peuvent être moins régulières, car le modèle change. Écarté : un modèle gratuit fixé, plus régulier mais qui tombe en panne seul. On enregistre model\_requested et model\_used, ce dernier lu dans le champ model de la réponse (sujet, section 2).
+**Quel modèle.** Modèles gratuits uniquement, via OpenRouter, avec un compte et une clé par étudiant, la clé étant dans le .env. Modèle demandé : nvidia/nemotron-3.5-super-vl:free, fixe pour garder une lecture régulière. Si les deux premiers appels échouent, le troisième va à openrouter/free, accepté par le sujet. Écarté : openrouter/free seul, car il change de modèle et les réponses varient. On enregistre model\_requested (celui de l'appel retenu) et model\_used, lu dans le champ model de la réponse (sujet, section 2).
 
 **Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les champs, leurs bornes et le prompt sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
 
@@ -122,13 +122,13 @@ Les noms suivent les champs de la spec (anglais, snake\_case, tables au pluriel)
 | Situation | Ce que fait le nœud | status enregistré |
 | --- | --- | --- |
 | Pas de réponse en 20 s, erreur serveur ou 429 | Nouvel appel après 5 s, puis 15 s, tant que les 3 appels ne sont pas épuisés. Sur 429, pause générale du worker avant l'appel suivant. | timeout si le dernier appel échoue ainsi |
-| Réponse hors format (pas du JSON, champ manquant, valeur hors bornes, champ en trop) | Nouvel appel avec le rappel du format, tant que les 3 appels ne sont pas épuisés. Les valeurs ne sont jamais corrigées en silence. | invalid\_format si le dernier appel échoue ainsi |
+| Réponse hors format (pas du JSON, champ manquant, valeur hors bornes, champ en trop) | Nouvel appel avec le rappel du format, tant que les 3 appels ne sont pas épuisés. Les balises de code autour du JSON sont retirées ; les valeurs ne sont jamais corrigées en silence. | invalid\_format si le dernier appel échoue ainsi |
 | Le modèle refuse de traiter le message | Aucune nouvelle tentative. | refused |
 | Réponse correcte | Valeurs enregistrées telles quelles après validation. | ok |
 
 Un message a droit à **3 appels au plus**, toutes causes confondues, pour économiser le quota gratuit. Ensuite sa ligne reste telle quelle. Pour tout statut différent de ok, l'élément est dessiné avec des valeurs par défaut neutres ; seuls les détails décoratifs viennent de l'id du message. L'œuvre ne reste jamais vide.
 
-**Limites à connaître.** Les modèles gratuits ont un quota par minute et par jour, à vérifier sur OpenRouter avant S50. Le worker traite donc un message à la fois. Les blocs acceptent 150 messages par minute au plus, et les limites par nœud en laissent entrer 120 (spec 8.2) : en cas d'afflux, la file IA prend du retard sans rien casser, mais un quota journalier trop bas peut laisser des éléments neutres longtemps.
+**Limites à connaître.** Nos essais à la main ont atteint la limite gratuite en quelques messages : le chiffre exact reste à relever, et le secours openrouter/free peut être bloqué par la même limite. On garde du quota pour le 10/12 et l'oral, et on code avec un faux serveur d'IA. Les modèles gratuits ont un quota par minute et par jour, à vérifier sur OpenRouter avant S50. Le worker traite donc un message à la fois. Les blocs acceptent 150 messages par minute au plus, et les limites par nœud en laissent entrer 120 (spec 8.2) : en cas d'afflux, la file IA prend du retard sans rien casser, mais un quota journalier trop bas peut laisser des éléments neutres longtemps.
 
 **Contre les injections.** Une réponse est acceptée seulement si elle passe un schéma strict. Un message qui tente de donner des ordres à l'IA ne peut au pire que choisir des valeurs dans les bornes. Aucun texte libre de l'IA n'est affiché : seulement des nombres et des mots choisis dans une liste fermée.
 

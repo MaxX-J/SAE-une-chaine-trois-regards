@@ -33,9 +33,9 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 | GitHub | Spec sur `main`, documents du binôme dans `docs/` |
 | Six valeurs et règles de notation | Validées par le binôme |
 | Grilles des dix messages | Remplies par les deux ; grille commune remplie |
-| Dossier de binôme | Brouillon v0.3, retours de withRen appliqués |
-| Charte éditoriale | Brouillon v0.3, retours de withRen appliqués |
-| Prompt | `p1` essayé à la main par withRen ; `p2` à préparer |
+| Dossier de binôme | Brouillon v0.4 |
+| Charte éditoriale | Brouillon v0.4 |
+| Prompt | `p2` adopté avec Nemotron, essais partiels (quota atteint) |
 | Œuvre, bible DA, backlog | Pas commencés, en attente de l'avis du prof |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
 
@@ -61,10 +61,10 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 | Œuvre | **BD non gardée pour l'instant.** On ne décide rien avant l'avis du prof | Acté |
 | Valeurs | Décrivent le message, pas le dessin | Validé à deux |
 | Dépôt | Public | Choix de MaxX-J |
-| Répartition (indicative) | MaxX-J : nœud et chaîne. withRen : IA et œuvre. Application à deux | **À valider par withRen** |
+| Répartition (indicative) | MaxX-J : nœud et chaîne. withRen : IA et œuvre. Application à deux | Validée |
 | Machine le 10/12 | PC de MaxX-J | **À valider par withRen** |
 | Accès à l'application | Par Tailscale, port séparé du 8080 | Choix de MaxX-J |
-| Modèle | `openrouter/free`, 3 appels au plus par message | Choix de MaxX-J |
+| Modèle | `nvidia/nemotron-3.5-super-vl:free`, secours `openrouter/free` au 3e appel | Choix de MaxX-J, **à valider par withRen** |
 | Docker | Non | Choix de MaxX-J |
 | Stable | Après 3 blocs suivants (repère d'affichage) | Choix de MaxX-J |
 | Limite visiteur | Cookie anonyme, 5 messages par 10 s | Choix de MaxX-J |
@@ -95,33 +95,20 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 
 Notes de référence : `docs/test-valeurs/decision.csv`.
 
-## 7. Le test du prompt `p1`
+## 7. Le prompt
 
-Fait à la main par withRen dans un chat. Modèle qui a répondu : **non noté**. Un nombre est bon à un cran près.
-
-| Message | Résultat |
-| --- | --- |
-| Permis | 6 sur 6, JSON correct (attendu recalé depuis : `energie` 0.75) |
-| Pigeons | 4 sur 6 : `absurdite` 0.5 au lieu de 1, `theme` imaginaire au lieu de societe |
-| « Ignore tes consignes » | **Réponse pas encore reçue par MaxX-J** |
-
-**Proposé pour `p2`, à valider** (le prompt ne tranchait pas ces cas) :
-
-- `absurdite` : noter ce qui est imaginé, même après « et si » ou dans une blague.
-- `theme` : une invention qui parle de vie collective, de travail ou d'argent est `societe` ; `imaginaire` sert quand l'invention est elle-même le sujet.
-
-Ne pas mettre l'exemple des pigeons dans le prompt. Tester ensuite sur **des messages nouveaux**, trois fois chacun, dans un nouveau chat à chaque fois, en notant le modèle.
+`p2` et les résultats sont dans la charte, partie 3. À finir quand le quota revient : permis, assiettes, pigeons, ras le bol, porte et lundi. Relever aussi la limite gratuite exacte.
 
 ## 8. Ce que withRen doit faire
 
-1. Envoyer à MaxX-J la réponse du troisième test et le nom du modèle.
-2. Relire le dossier v0.3 et la charte v0.3, répondre aux points de la section 5.
+1. Finir les essais de `p2`, avec sa propre clé.
+2. Relire le dossier v0.4 et la charte v0.4, répondre aux points de la section 5.
 3. Connecter Tailscale.
 
 ## 9. La suite
 
 1. Mardi : œuvre avec le prof, puis bible DA.
-2. `p2` et test sur des messages nouveaux.
+2. Finir les essais de `p2`, puis messages nouveaux notés avant l'IA.
 3. Backlog et plan jour par jour.
 4. Finir dossier et charte, produire les PDF, dépôt vendredi avant 17h.
 
