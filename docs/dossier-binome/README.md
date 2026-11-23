@@ -6,7 +6,7 @@ Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17
 
 | Champ | Valeur |
 | --- | --- |
-| Binôme | 2 : MaxX-J, withRen |
+| Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Nœud | noeud-b (producteur d'un créneau de 20 s sur trois, ordre a, b, c) |
 | Spec commune | version 1.0 du 23/11/2026 |
 | Version du dossier | 0.4, brouillon corrigé |

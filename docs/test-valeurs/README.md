@@ -1,5 +1,7 @@
 # Test des six valeurs
 
+Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
+
 **Version 2 des règles (23/11), validée par le binôme.** Elle suit la première comparaison. Les grilles déjà remplies suivent la version 1 : ne les modifiez pas.
 
 But : vérifier que deux personnes notent un même message à peu près pareil, avant de demander la même chose à l'IA.

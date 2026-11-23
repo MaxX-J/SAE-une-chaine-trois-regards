@@ -2,7 +2,7 @@
 
 ## 1. Le projet
 
-SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois binômes, un nœud chacun, une seule blockchain de messages. Une IA lit les messages et chaque binôme en tire sa propre œuvre. Binôme 2 : `MaxX-J` et `withRen`, nœud `noeud-b`.
+SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois binômes, un nœud chacun, une seule blockchain de messages. Une IA lit les messages et chaque binôme en tire sa propre œuvre. Binôme 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`), nœud `noeud-b`.
 
 | Échéance | Rendu |
 | --- | --- |
@@ -17,7 +17,7 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 
 ## 2. Règles à respecter
 
-1. Pas de nom réel dans ce dépôt public. Documents nominatifs : Moodle seulement.
+1. Les noms du binôme 2 (Maxens Sevilla, Rahim Tamhaev) figurent dans ce dépôt public, avec l'accord des deux (23/11). Aucun nom des autres binômes : leurs noms restent sur Moodle seulement.
 2. Aucune clé (OpenRouter, Tailscale, clé privée) dans Git ou dans une demande à l'IA. Un compte et une clé OpenRouter par étudiant. Modèles gratuits seulement.
 3. Ne pas publier le sujet.
 4. Rien directement sur `main` : branche, PR, relecture. Ne rien republier qui existe déjà.
