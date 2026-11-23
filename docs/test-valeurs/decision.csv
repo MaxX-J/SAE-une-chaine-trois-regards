@@ -1,0 +1,11 @@
+n;msg;val;ene;ten;abs;emo;the
+1;Pluie;0;0;0;0;neutre;nature
+2;Permis;1;0,75;0;0;joie;quotidien|societe
+3;Deux assiettes;-0,5;0;0;0;tristesse;relation
+4;Pigeons;0;0;0;1;neutre;societe
+5;Ras le bol;-0,5;0,5;1;0;colere;societe
+6;Porte;-0,5;0,5;0,5;0;peur;quotidien|societe
+7;Lundi;-0,5;0;0;0;degout;quotidien|societe
+8;Emojis;0;0;0;0;neutre;imaginaire
+9;asdf;0;0;0;0;neutre;autre
+10;Consignes;0;0;0;0;neutre;autre
