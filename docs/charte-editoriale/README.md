@@ -2,6 +2,7 @@
 
 | Champ | Valeur |
 | --- | --- |
+| Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Version | 0.3, brouillon du 23/11/2026 |
 | Rendu | Vendredi 27/11/2026 à 17h, PDF sur Moodle |
 | S'appuie sur | Spec commune 1.0 (les numéros comme 8.1 y renvoient) |

@@ -48,6 +48,6 @@ Trois binômes partagent une seule chaîne, avec un nœud chacun. Chaque binôme
 
 ## Équipe
 
-[@MaxX-J](https://github.com/MaxX-J) et [@withRen](https://github.com/withRen)
+Binôme 2 : Maxens Sevilla ([@MaxX-J](https://github.com/MaxX-J)) et Rahim Tamhaev ([@withRen](https://github.com/withRen))
 
 Règles de travail : [CONTRIBUTING.md](CONTRIBUTING.md).

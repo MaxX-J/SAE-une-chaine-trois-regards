@@ -1,5 +1,7 @@
 # Backlog et plan S50 / S2
 
+Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
+
 Rendu final en PDF ou en lien.
 
 ## 1. Le backlog

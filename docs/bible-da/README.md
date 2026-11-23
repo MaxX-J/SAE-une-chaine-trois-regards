@@ -1,5 +1,7 @@
 # Bible DA
 
+Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
+
 Chaque choix est justifié. Les visuels vont dans [assets](assets). Rendu final en PDF.
 
 ## 1. Intention
