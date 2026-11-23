@@ -1,0 +1,16 @@
+name: Bug
+description: Un comportement incorrect
+labels: [bug]
+body:
+  - type: textarea
+    id: constat
+    attributes:
+      label: Comportement constaté et attendu
+    validations:
+      required: true
+  - type: textarea
+    id: etapes
+    attributes:
+      label: Étapes pour reproduire
+    validations:
+      required: true

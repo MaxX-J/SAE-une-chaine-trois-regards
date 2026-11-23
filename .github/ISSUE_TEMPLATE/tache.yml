@@ -1,0 +1,30 @@
+name: Tâche
+description: Une tâche du backlog
+body:
+  - type: textarea
+    id: objectif
+    attributes:
+      label: Objectif
+    validations:
+      required: true
+  - type: textarea
+    id: criteres
+    attributes:
+      label: Critères de fin
+      value: "- [ ] "
+    validations:
+      required: true
+  - type: dropdown
+    id: priorite
+    attributes:
+      label: Priorité
+      options:
+        - Indispensable
+        - En plus
+    validations:
+      required: true
+  - type: input
+    id: estimation
+    attributes:
+      label: Estimation
+      placeholder: 2 h
