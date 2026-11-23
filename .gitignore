@@ -29,3 +29,9 @@ desktop.ini
 .idea/
 .vscode/
 .claude/
+
+# Documents avec noms, hors dépôt public
+prive/
+
+# Spec avec les six noms, réservée à Moodle
+spec-commune-v*.pdf
