@@ -1,4 +1,6 @@
-# Point du binôme 2 (noeud-b), 23/11/2026
+# Point du binôme 2 (noeud-b), mis à jour le 24/11/2026
+
+Historique détaillé : `docs/suivi/journal/`. Règles pour Claude : `CLAUDE.md`.
 
 ## 1. Le projet
 
@@ -29,14 +31,15 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 
 | Sujet | État |
 | --- | --- |
-| Spec commune 1.0 | Validée par les six. PDF nominatif prêt. **Dépôt Moodle à vérifier** |
+| Spec commune 1.0 | Validée par les six. Déposée sur Moodle d'après MaxX-J (23/11) |
 | GitHub | Spec sur `main`, documents du binôme dans `docs/` |
-| Six valeurs et règles de notation | Validées par le binôme |
+| Six valeurs et règles de notation | Validées le 23/11. Nouvelle liste proposée pour Béziers, à valider (journal du 24/11) |
 | Grilles des dix messages | Remplies par les deux ; grille commune remplie |
 | Dossier de binôme | Brouillon v0.4 |
 | Charte éditoriale | Brouillon v0.4 |
 | Prompt | `p2` adopté avec Nemotron, essais partiels (quota atteint) |
-| Œuvre, bible DA, backlog | Pas commencés, en attente de l'avis du prof |
+| Œuvre | Piste : balades dans Béziers, à valider par withRen et les enseignants |
+| Bible DA, backlog | Pas commencés |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
 
 
@@ -58,7 +61,7 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 | Sujet | Décision | Statut |
 | --- | --- | --- |
 | Technique | TypeScript, Node.js, Express, Zod, SQLite (`better-sqlite3`, secours `node:sqlite`), React et Vite, SVG, SSE, Vitest, Playwright | Proposé par withRen, dans le dossier |
-| Œuvre | **BD non gardée pour l'instant.** On ne décide rien avant l'avis du prof | Acté |
+| Œuvre | BD non gardée. Piste des **balades dans Béziers** : chaque message est une balade, toutes forment une seule carte | Piste de l'enseignante d'art, **à valider par withRen** |
 | Valeurs | Décrivent le message, pas le dessin | Validé à deux |
 | Dépôt | Public | Choix de MaxX-J |
 | Répartition (indicative) | MaxX-J : nœud et chaîne. withRen : IA et œuvre. Application à deux | Validée |
