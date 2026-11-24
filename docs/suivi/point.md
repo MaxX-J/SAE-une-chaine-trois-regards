@@ -38,7 +38,7 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 | Dossier de binôme | Brouillon v0.4 |
 | Charte éditoriale | Brouillon v0.4 |
 | Prompt | `p2` adopté avec Nemotron, essais partiels (quota atteint) |
-| Œuvre | Piste : balades dans Béziers, à valider par withRen et les enseignants |
+| Œuvre | Piste : balades dans Béziers. Trois esquisses (brouillon) dans `docs/bible-da/esquisses/`, **choix le 25/11** à deux, puis avis des enseignants |
 | Backlog et plan | v1 proposée le 24/11, à relire par les deux |
 | Bible DA | Pas commencée |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
