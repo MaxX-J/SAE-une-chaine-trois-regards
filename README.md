@@ -28,7 +28,7 @@ Trois binômes partagent une seule chaîne, avec un nœud chacun. Chaque binôme
 | [Dossier de binôme](docs/dossier-binome/README.md) | Binôme | 27/11, 17h | Brouillon v0.4 |
 | [Charte éditoriale](docs/charte-editoriale/README.md) | Binôme | 27/11, 17h | Brouillon v0.4 |
 | [Bible DA](docs/bible-da/README.md) | Binôme | 27/11, 17h | À rédiger |
-| [Backlog et plan](docs/backlog/README.md) | Binôme | 27/11, 17h | À rédiger |
+| [Backlog et plan](docs/backlog/README.md) | Binôme | 27/11, 17h | v1 proposée |
 | [Test des valeurs](docs/test-valeurs/README.md) | Binôme | | Grille validée |
 | [Point d’avancement](docs/suivi/point.md) | Binôme | | 23/11 |
 
