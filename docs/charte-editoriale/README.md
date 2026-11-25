@@ -192,7 +192,7 @@ Ces essais portaient sur six valeurs, et le quota gratuit les a arrêtés. **Auc
 
 ### Le contrôle de la réponse
 
-Des balises de code autour du JSON sont retirées avant le contrôle : cela ne change aucune valeur. Une réponse est acceptée si elle contient exactement les neuf clés, chacune avec une valeur de sa liste. Sinon, une nouvelle demande rappelle le format. **Trois appels au plus en tout**, quelle que soit la cause des échecs. Aucune autre valeur n'est corrigée.
+Des balises de code autour du JSON sont retirées avant le contrôle : cela ne change aucune valeur. Une réponse est acceptée si elle contient exactement les neuf clés, chacune avec une valeur de sa liste. Sinon, une nouvelle demande rappelle le format. **Trois appels au plus en tout**, quelle que soit la cause des échecs. Aucune valeur n'est corrigée en silence.
 
 **Comment nous testerons `p3`.** Huit messages neufs, notés par nous deux avant de voir l'IA, puis un essai par message et par compte pour ménager le quota. Un nombre est bon à un cran près, un mot s'il est identique ; `lieu_secondaire` est jugé à la lecture. Nous notons le modèle qui a répondu. Objectif **[À CONFIRMER]** : 80 % de bonnes réponses par valeur et 100 % de JSON valides au bout des trois appels.
 
