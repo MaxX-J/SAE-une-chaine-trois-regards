@@ -109,8 +109,8 @@ Le même message redonne toujours le même signe. Planches : [emblème](https://
 | --- | --- | --- |
 | `lieu`, `lieu_secondaire` | 10 familles | Familles des étapes ; le vrai lieu vient de l'`id` |
 | `energie` | 0 à 1 | 2 à 6 étapes |
-| `emotion` | 7 | Couleur et motif du tracé |
-| `intensite` | 5 crans | Force de la couleur |
+| `emotion` | 7 | Couleur et motif du tracé ; lumière de cette couleur au sol, autour de la balade choisie |
+| `intensite` | 5 crans | Force de la couleur et de la lumière au sol |
 | `tension` | 5 crans | Tracé souple à zigzag serré, sans quitter la rue |
 | `absurdite` | 0 à 1 | À partir de 0,5 un tronçon, de 0,75 tous : la balade coupe à travers la ville |
 | `ambiance` | 9 | Voile et motif autour du parcours |
@@ -158,9 +158,13 @@ Vraies rues et vrais bâtiments, palette v3. Les blocs sont provisoires : de pr�
 
 ![Rue composée d'assets, jour et nuit](assets/batiments/apercu/scene-rue.jpg)
 
-| Colère | Joie | Tristesse |
-| --- | --- | --- |
-| ![Rue en colère](assets/batiments/apercu/scene-colere.jpg) | ![Rue en joie](assets/batiments/apercu/scene-joie.jpg) | ![Rue en tristesse](assets/batiments/apercu/scene-tristesse.jpg) |
+**Deux nuits ne se confondent pas.** La colère et la tristesse tombent souvent dans des quartiers de nuit. La lumière de l'émotion au sol les distingue (rue et assets de withRen, passants et fenêtres régénérés) :
+
+![Colère : sol éclairé de rouge, tracé cassé. Tristesse : sol bleu, tracé souple à longs tirets. Joie : sol doré, trait plein](esquisses/lumiere/lumiere-au-sol.jpg)
+
+**[À CONFIRMER]** le 26/11, à deux : lumière au sol, toits colorés, ou les deux.
+
+![Comparaison : lumière au sol, toits colorés, les deux](esquisses/lumiere/comparaison-sol-toits.jpg)
 
 **[À FOURNIR]** Vue au zoom sur une vraie rue avec plusieurs balades, jour et nuit, par withRen. Les trois quartiers voisins de son test.
 

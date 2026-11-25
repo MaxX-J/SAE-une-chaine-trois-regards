@@ -7,7 +7,7 @@ La ville change **par quartier**. Un quartier regarde les 20 derniers messages p
 | Valeur | Dans la balade d'un visiteur | Dans la ville commune | Priorité |
 | --- | --- | --- | --- |
 | `lieu`, `lieu_secondaire` | Étapes | Bâtiments réveillés | Indispensable |
-| `emotion` | Couleur du tracé | Couleur des lumières et des toits ; plus tard, posture et vêtements des passants | Indispensable, passants en plus |
+| `emotion` | Couleur du tracé, **lumière au sol** (proposé le 25/11) | Couleur des lumières et des toits (**toits à trancher le 26/11**, [comparaison](esquisses/lumiere/comparaison-sol-toits.jpg)) ; plus tard, posture et vêtements des passants | Indispensable, passants en plus |
 | `valence` | Titre et fond | **Jour, crépuscule ou nuit du quartier** | Indispensable |
 | `intensite` | Force de la couleur | Plus tard, densité du décor | Indispensable, décor en plus |
 | `energie` | Longueur | Plus tard, nombre et allure des passants | Indispensable, passants en plus |

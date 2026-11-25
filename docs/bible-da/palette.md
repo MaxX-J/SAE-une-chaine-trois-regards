@@ -68,6 +68,7 @@ La couleur et le motif disent l'émotion, **la forme dit la tension** : plus ell
 - **Tracé** : chaque émotion est éclaircie à sa mesure. Écart d'au moins 10 entre toutes, dans les quatre visions simulées.
 - **Fenêtre** : 30 % d'émotion, 70 % de lumière chaude (#FFE7A8). Elles se ressemblent, car elles servent à compter les messages.
 - **Halo** : la nuit, couleur du tracé en transparence (remarque de withRen) ; de jour, émotion pleine. Décoratif.
+- **Lumière au sol** (proposé) : l'émotion, large et floue, sous les bâtiments, plus légère le jour. Seule la balade choisie éclaire autant, pour que 300 émotions ne se mélangent pas. Force selon `intensite`, crans à régler.
 - **Sol de nuit** : papier #404253, place #3D3E4D, rue #393B4B, pavé #353646. Le mur se détache de la rue de 1,2 à 1,9 selon l'enduit, contre 1,02 avant sur le mur sable.
 
 Calculé au cran 0,75, sur ces fonds. Seuil visé : 3 (WCAG 1.4.11).
