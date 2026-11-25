@@ -35,8 +35,8 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 | GitHub | Spec sur `main`, documents du binôme dans `docs/` |
 | Six valeurs et règles de notation | Validées le 23/11. Nouvelle liste proposée pour Béziers, à valider (journal du 24/11) |
 | Grilles des dix messages | Remplies par les deux ; grille commune remplie |
-| Dossier de binôme | Brouillon v0.5 (balades), à valider par withRen |
-| Charte éditoriale | Brouillon v0.5 (dix valeurs, `p3`), à valider par withRen |
+| Dossier de binôme | Brouillon v0.6 (balades), à valider par withRen |
+| Charte éditoriale | Brouillon v0.6 (neuf valeurs, `p3`), à valider par withRen |
 | Prompt | `p3` écrit, pas essayé. Huit messages à noter dans `docs/test-valeurs/` |
 | Œuvre | Balades dans Béziers, **rendu C** (toute la ville en 2,5D), jour et nuit. Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Idée approuvée par les enseignants (25/11) |
 | Backlog et plan | v2 du 25/11, retours de withRen appliqués, à valider par les deux |

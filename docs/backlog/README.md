@@ -85,7 +85,6 @@ Chaque valeur demandée à l'IA doit avoir un effet dans une tâche indispensabl
 | `energie`, `tension`, `absurdite` | Longueur, forme du tracé, sortie des rues | B02 |
 | `valence` | Jour, crépuscule ou nuit du quartier | C08 |
 | `ambiance` | Texture | B03 |
-| `mot` | Titre | A04 |
 
 `moment` est remplacée par `valence`, qui décide de la lumière du quartier (`docs/bible-da/ville-vivante.md`). `direction` et `temps`, restées en option, sont retirées.
 
