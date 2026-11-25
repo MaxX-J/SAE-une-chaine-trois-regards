@@ -60,17 +60,21 @@ La couleur et le motif disent l'émotion, **la forme dit la tension** : plus ell
 
 | | joie | tristesse | colere | peur | surprise | degout | neutre |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Tracé | #FBE8C2 | #B0BED8 | #DB847F | #9E8AB9 | #D5EDEC | #9AA53A | #BDB9B3 |
-| Contraste sur la rue (#393B4B) | 9,2 | 5,9 | 4,0 | 3,6 | 9,0 | 4,1 | 5,7 |
+| Tracé | #FBE8C2 | #7C9FF2 | #DB847F | #9E8AB9 | #A8FEF0 | #9AA53A | #BDB9B3 |
+| Contraste sur la rue (#393B4B) | 9,2 | 4,3 | 4,0 | 3,6 | 9,5 | 4,1 | 5,7 |
 | Fenêtre | #FBD785 | #CAC3A8 | #EEB587 | #CFB49F | #C1D3A6 | #E1D387 | #E1CE9F |
 | Contraste sur le mur sable (#5F5D67) | 4,7 | 3,7 | 3,6 | 3,3 | 4,0 | 4,3 | 4,2 |
 
 - **Tracé** : chaque émotion est éclaircie à sa mesure. Écart d'au moins 10 entre toutes, dans les quatre visions simulées.
 - **Fenêtre** : 30 % d'émotion, 70 % de lumière chaude (#FFE7A8). Elles se ressemblent, car elles servent à compter les messages.
-- **Halo** : émotion pleine, décoratif.
+- **Halo** : la nuit, couleur du tracé en transparence (remarque de withRen) ; de jour, émotion pleine. Décoratif.
 - **Sol de nuit** : papier #404253, place #3D3E4D, rue #393B4B, pavé #353646. Le mur se détache de la rue de 1,2 à 1,9 selon l'enduit, contre 1,02 avant sur le mur sable.
 
 Calculé au cran 0,75, sur ces fonds. Seuil visé : 3 (WCAG 1.4.11).
+
+### Beaucoup de balades
+
+**Proposé, à valider à deux.** Pas de moyenne des tracés : chaque balade garde sa forme. Les 12 dernières restent séparées et nettes, les plus anciennes se fondent dans la rue : elle s'épaissit avec les passages et prend la couleur de l'émotion la plus fréquente. Le visiteur retrouve toujours la sienne en entier.
 
 ## Familles de lieux (ton moyen)
 
