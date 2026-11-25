@@ -20,11 +20,32 @@
 | Message masqué | Son bout de trait devient gris, la chaîne n'est pas coupée |
 | `valence` | Quartier plus chaud ou plus froid, ville toujours au crépuscule (**remplacerait jour et nuit**) |
 
+## Les bâtiments visités grandissent
+
+Idée de MaxX-J. La lumière dit par où on passe, la hauteur dit où on s'arrête.
+
+![Vide, 10, 60 et 300 messages](ville-grandit.jpg)
+
+![Zoom à 0, 60 et 300, puis tension à 0, 0,5 et 1](ville-grandit-zoom.jpg)
+
+| Quoi | Règle essayée |
+| --- | --- |
+| Visite | Une étape de balade, pas un passage dans la rue |
+| Bâtiment simple | Plus haut, jamais plus large, vite puis plafonné (jusqu'à environ 2,6 fois, plus 6 m) ; teinte chaude, fenêtres allumées |
+| Repère | Jusqu'à 1,7 fois |
+| Cimetière, nature, eau | Ne grandissent pas |
+| Message masqué | Sa visite ne compte plus |
+| `tension` | Trait souple à dents serrées, grossi de loin : **il sort encore un peu des rues** |
+| `intensite` | Force de la couleur du trait |
+
+Pas dessiné : `ambiance`. Les étages des assets de withRen restent à prévoir.
+
 ## À trancher à deux
 
 1. Garder cette idée de chaîne unique ?
 2. Crépuscule partout, ou garder jour, crépuscule et nuit ?
-3. Le sens de la teinte grise d'un message masqué.
+3. Des tours bien visibles, ou une croissance plus discrète ?
+4. Le sens de la teinte grise d'un message masqué.
 
 ## À améliorer
 
