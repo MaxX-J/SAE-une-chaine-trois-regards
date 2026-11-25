@@ -11,6 +11,7 @@
 | `lieu` | Symbole et liseré du toit | 10 familles × 3 tons |
 | `emotion` | Tracé et son motif, halo au sol, légère teinte des fenêtres | 7 teintes |
 | `intensite` | Force de la teinte | 5 crans |
+| `tension` | Forme du tracé, souple à cassée | 5 crans |
 | `valence` | Jour, crépuscule ou nuit du quartier | 3 lumières |
 | `ambiance` | Voile du parcours | 9 × 2 tons |
 
@@ -37,6 +38,23 @@ De jour et au crépuscule, un liseré encre #1C2140 passe sous le tracé (contra
 | plein, épais | longs tirets | tirets courts | points | tiret et point | double trait | plein, fin |
 
 Ces motifs sont des propositions. Un tracé absurde qui quitte les rues garde son motif : il ne doit pas être montré par des pointillés, comme dans les premières esquisses.
+
+### La tension : la forme du tracé
+
+La couleur et le motif disent l'émotion, **la forme dit la tension** : plus elle monte, plus le tracé se casse et part dans tous les sens.
+
+| `tension` | Forme |
+| --- | --- |
+| 0 | Souple, arrondie |
+| 0,25 | Légèrement brisée |
+| 0,5 | Zigzag net |
+| 0,75 | Zigzag fort |
+| 1 | Zigzag très serré, irrégulier |
+
+- Les écarts viennent de l'`id` du message : toujours les mêmes.
+- Le tracé reste dans la largeur de la rue : il ne la quitte que si `absurdite` est forte. Ce sont deux effets différents.
+- Les tirets sont découpés le long du tracé. Aux tensions fortes, ils se lisent moins bien : à tester à la taille réelle.
+- Le tracé est fixe : aucun tremblement animé.
 
 ### La nuit
 

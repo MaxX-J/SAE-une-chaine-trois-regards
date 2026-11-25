@@ -11,7 +11,7 @@ La ville change **par quartier**. Un quartier regarde les 20 derniers messages p
 | `valence` | Titre et fond | **Jour, crépuscule ou nuit du quartier** | Indispensable |
 | `intensite` | Force de la couleur | Plus tard, densité du décor | Indispensable, décor en plus |
 | `energie` | Longueur | Plus tard, nombre et allure des passants | Indispensable, passants en plus |
-| `tension` | Tracé souple ou cassé | Lumière douce ou dure, ombres plus longues | Indispensable pour le tracé |
+| `tension` | Tracé souple à très cassé, sans quitter la rue ([exemples](palette.md)) | Lumière douce ou dure, ombres plus longues | Indispensable pour le tracé |
 | `absurdite` | Sort des rues | Un détail incongru, rare | Indispensable pour le tracé |
 | `ambiance` | Texture du parcours | Météo et saison des arbres | Indispensable, en version simple |
 | `mot` | Titre | Aucun | Indispensable |
