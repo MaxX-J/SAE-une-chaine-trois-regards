@@ -1,6 +1,6 @@
 # Palette de Béziers
 
-**BROUILLON v2 du 25/11/2026, après le test de withRen, rien n'est validé.** Planches : [Figma v2](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=17-2), la [v1](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=5-2) est gardée à côté (accès selon le partage du fichier).
+**BROUILLON v3 du 25/11/2026, après la review de withRen, rien n'est validé.** Planche : [Figma v3](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=20-2), v1 et v2 gardées à côté (accès selon le partage du fichier).
 
 **L'idée :** la ville est la matière, calme ; l'émotion est la lumière posée dessus.
 
@@ -9,45 +9,58 @@
 | Valeur | Rôle | Nombre |
 | --- | --- | --- |
 | `lieu` | Symbole et liseré du toit | 10 familles × 3 tons |
-| `emotion` | Tracé, fenêtres, halo au sol | 7 teintes |
+| `emotion` | Tracé et son motif, halo au sol, légère teinte des fenêtres | 7 teintes |
 | `intensite` | Force de la teinte | 5 crans |
 | `valence` | Jour, crépuscule ou nuit du quartier | 3 lumières |
 | `ambiance` | Voile du parcours | 9 × 2 tons |
 
 La couleur ne suffit jamais : symbole pour le lieu, émotion écrite dans la liste des balades.
 
-## Émotions (reprises des passants)
+## Émotions, cinq intensités
+
+| `intensite` | joie | tristesse | colere | peur | surprise | degout | neutre |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | #F5DDAD | #C1C7D2 | #E7B9AF | #C5B7C9 | #B6D8D0 | #D9D9AF | #D9D3C9 |
+| 0,25 | #F4CD82 | #98A8C3 | #DC8E86 | #A18CB2 | #87C5BF | #C2C686 | #C2BDB2 |
+| 0,5 | #F3BE58 | #7089B4 | #D1645C | #7C609C | #57B3AE | #ACB45C | #ACA79C |
+| 0,75 | #F2B134 | #4F6FA8 | #C8413A | #5E3C8A | #2FA3A0 | #9AA53A | #9A948A |
+| 1 | #D69520 | #3A5C9E | #B73031 | #4D2D85 | #188F95 | #84912D | #747274 |
+
+`peur` est plus foncée et `degout` plus clair qu'en v2 (proposition de withRen) : les assets des passants sont à mettre à jour. Écart de couleur (CIEDE2000) d'au moins 5 entre toutes les émotions aux crans 0,5, 0,75 et 1, en vue normale et dans trois daltonismes simulés (Machado 2009). Aux crans 0 et 0,25, des paires se confondent : le motif porte alors l'émotion.
+
+### Le tracé : liseré et motif
+
+De jour et au crépuscule, un liseré encre #1C2140 passe sous le tracé (contraste 10 sur la rue de jour, 6,4 au crépuscule). La nuit, pas de liseré.
 
 | joie | tristesse | colere | peur | surprise | degout | neutre |
 | --- | --- | --- | --- | --- | --- | --- |
-| #F2B134 | #4F6FA8 | #C8413A | #7A5AA0 | #2FA3A0 | #7E8F3A | #9A948A |
+| plein, épais | longs tirets | tirets courts | points | tiret et point | double trait | plein, fin |
 
-Cette teinte est le cran 0,75. Crans plus faibles : mélange avec #F6F1E6 (68 % pour 0, 44 % pour 0,25, 20 % pour 0,5). Cran 1 : plus saturé (sauf `neutre`, plus foncé), voir Figma.
+Ces motifs sont des propositions. Un tracé absurde qui quitte les rues garde son motif : il ne doit pas être montré par des pointillés, comme dans les premières esquisses.
 
-### La nuit seulement
-
-Les teintes ci-dessus ne ressortent pas la nuit : contraste de 1,2 à 2,2 pour six émotions sur sept (constat de withRen, vérifié par calcul).
-
-- **Fenêtre** : 30 % d'émotion, 70 % de lumière chaude (#FFE7A8). Elle reste claire, pour pouvoir compter les messages.
-- **Tracé** : émotion éclaircie de 55 % de blanc.
-- **Halo au sol** : émotion pleine, décoratif, il ne porte pas l'information seul.
+### La nuit
 
 | | joie | tristesse | colere | peur | surprise | degout | neutre |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Fenêtre | #FBD785 | #CAC3A8 | #EEB587 | #D7BDA6 | #C1D3A6 | #D8CD87 | #E1CE9F |
-| Contraste sur le mur sable de nuit (#5F5D67) | 4,7 | 3,7 | 3,6 | 3,6 | 4,0 | 4,0 | 4,2 |
-| Tracé | #F9DCA4 | #B0BED8 | #E6AAA6 | #C3B5D4 | #A1D6D4 | #C5CDA6 | #D2CFCA |
-| Contraste sur la rue de nuit (#5B5C6B) | 5,0 | 3,5 | 3,3 | 3,4 | 4,1 | 4,0 | 4,2 |
+| Tracé | #FBE8C2 | #B0BED8 | #DB847F | #9E8AB9 | #D5EDEC | #9AA53A | #BDB9B3 |
+| Contraste sur la rue (#393B4B) | 9,2 | 5,9 | 4,0 | 3,6 | 9,0 | 4,1 | 5,7 |
+| Fenêtre | #FBD785 | #CAC3A8 | #EEB587 | #CFB49F | #C1D3A6 | #E1D387 | #E1CE9F |
+| Contraste sur le mur sable (#5F5D67) | 4,7 | 3,7 | 3,6 | 3,3 | 4,0 | 4,3 | 4,2 |
 
-Seuil visé : 3, celui des éléments graphiques (WCAG 1.4.11). Calculé sur ces deux fonds et au cran 0,75 seulement. Les fenêtres se ressemblent : la nuit, l'émotion se lit surtout sur le tracé.
+- **Tracé** : chaque émotion est éclaircie à sa mesure. Écart d'au moins 10 entre toutes, dans les quatre visions simulées.
+- **Fenêtre** : 30 % d'émotion, 70 % de lumière chaude (#FFE7A8). Elles se ressemblent, car elles servent à compter les messages.
+- **Halo** : émotion pleine, décoratif.
+- **Sol de nuit** : papier #404253, place #3D3E4D, rue #393B4B, pavé #353646. Le mur se détache de la rue de 1,2 à 1,9 selon l'enduit, contre 1,02 avant sur le mur sable.
+
+Calculé au cran 0,75, sur ces fonds. Seuil visé : 3 (WCAG 1.4.11).
 
 ## Familles de lieux (ton moyen)
 
 | culte | cimetiere | nature | art | commerce | savoir | fete | repere | habitat | eau |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| #B79AD6 | #8FA0B3 | #7FB069 | #E58FB1 | #E9A15B | #6FB3D9 | #F0746E | #C9A227 | #D8B08C | #0F4C5C |
+| #B79AD6 | #8FA0B3 | #7FB069 | #E58FB1 | #E9A15B | #A6B8A0 | #F0746E | #C9A227 | #D8B08C | #6FB3D9 |
 
-Halo d'un lieu traversé : 35 % du lieu, 65 % de l'émotion.
+Le symbole porte le lieu : la couleur ne suffit pas, notamment en daltonisme. La grille lieu × émotion est retirée, ses cases étaient trop proches.
 
 ## Matières, de jour
 
@@ -59,7 +72,7 @@ Halo d'un lieu traversé : 35 % du lieu, 65 % de l'émotion.
 | Végétation | #7F9F55, #97A383, #5D7A48, #6F9152, #3D5A3C, #9A8A70 |
 | Sol et eau | #F6F1E6, #E8DFCB, #D6CEBF, #BFB5A4, #7FB1BD, #4F8C9E |
 
-Crépuscule : 38 % de #8A5672. Nuit : 66 % de #1C2140. Calculés, à retoucher à l'œil.
+Crépuscule : 38 % de #8A5672. Nuit : 66 % de #1C2140, sauf le sol (voir la nuit). Calculés, à retoucher à l'œil.
 
 ## Ambiances (clair, soutenu)
 
@@ -67,14 +80,16 @@ Crépuscule : 38 % de #8A5672. Nuit : 66 % de #1C2140. Calculés, à retoucher �
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | #FFE3A3, #F2C35B | #9DB4C4, #5F7C92 | #D5E0DD, #A3B8B4 | #E3E1E2, #BDBBC4 | #DCEBF2, #A9C9DB | #F7C9A0, #E58D5A | #F6D3DC, #E79BB2 | #DDA35C, #A9632F | #F6F1E6, #E3DCCC |
 
+Vent, brume et froid se ressemblent : c'est le motif qui les sépare. La nuit, opacité nettement plus basse, à régler.
+
 ## Lumières et interface
 
-Fenêtre claire #FFE7A8, fenêtre chaude #FFA957, halo #FFCF86, nuit et encre #1C2140, nuit profonde #0D0E18, texte discret #5C5A66, papier #F6F1E6, erreur #A5322C, masqué #B8B4AB.
+Fenêtre claire #FFE7A8, fenêtre chaude #FFA957, halo #FFCF86, encre et nuit #1C2140 (un seul jeton), nuit profonde #0D0E18, texte discret #5C5A66, papier #F6F1E6, erreur #A5322C, masqué #B8B4AB.
 
 ## À tester et à décider
 
-1. Refaire le test de nuit avec tristesse, peur et colère, aux crans faibles aussi ; le jour et le crépuscule marchent.
-2. `eau` passe de #4FB0B8 à #0F4C5C (pétrole) : elle était presque identique à `surprise`. À vérifier la nuit.
-3. Adoucir la limite entre deux quartiers de lumière différente ; voile d'ambiance plus large et plus flou.
-4. La grille lieu × émotion : des cases voisines se ressemblent beaucoup.
-5. Contraste et daltonisme : daltonisme pas encore vérifié, surtout `colere` et `degout`. Liseré des toits et vraie portion de carte à tester.
+1. Valider `peur`, `degout` et le liseré sur une vraie rue.
+2. Valider l'échange : `eau` en bleu ciel, `savoir` en gris sauge.
+3. `commerce` et `habitat` restent proches (écart 9,4).
+4. Régler à l'œil l'opacité des voiles la nuit, adoucir la limite entre deux quartiers.
+5. Essayer sur un vrai écran, avec trois quartiers voisins. « Masqué » sert de fond, jamais de texte ; le texte discret est à éviter la nuit.
