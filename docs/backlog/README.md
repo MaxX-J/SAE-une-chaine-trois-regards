@@ -51,7 +51,7 @@ Binôme 2 (noeud-b) : Maxens Sevilla (M) et Rahim Tamhaev (R).
 | C06 | L'œuvre suit un changement de chaîne, repère « stable » après 3 blocs | Une fourche simulée recalcule la carte | 3 | M | 13/01 |
 | A06 | Accessibilité : clavier, liste des balades, contraste, mouvement réduit | Contrôle axe sans erreur, parcours complet au clavier | 3 | M | 13/01 |
 | C04 | ★ Zoom à trois niveaux | Les détails apparaissent sans ralentir | 3 | R | 13/01 |
-| C08 | ★ Jour et nuit | Le réglage change toute la ville, les fenêtres allumées sont toujours les mêmes | 3 | R | 13/01 |
+| C08 | ★ Jour, crépuscule et nuit par quartier selon `valence` | Un message change la lumière de son quartier ; le visiteur peut forcer le jour | 3 | R | 13/01 |
 | T02 | Test de bout en bout avec faux serveur IA | Écriture, bloc, IA et balade passent automatiquement | 3 | M | 14/01 |
 | T03 | Performance à 300 messages | Affichage fluide sur la machine de démonstration | 3 | R | 14/01 |
 | O01 | Répétition de l'oral, scénario de secours | Deux passages complets, questions échangées | 6 | M, R | 14/01 |
@@ -63,11 +63,14 @@ Les heures d'une tâche à deux sont le total des deux personnes.
 | N° | Tâche | h | Priorité |
 | --- | --- | --- | --- |
 | P01 | ★ Fenêtres allumées selon les messages d'un quartier | 2 | 1 |
-| P02 | ★ Repères en plus : théâtre, Plateau des Poètes, Madeleine | 4 | 2 |
+| P02 | ★ Repères en plus : théâtre, Plateau des Poètes, Madeleine (liste : `docs/bible-da/reperes.md`) | 4 | 2 |
 | P03 | Panneau d'état de la chaîne | 3 | 3 |
 | P04 | ★ Carte-souvenir de la balade à télécharger | 3 | 4 |
 | P05 | Animation d'apparition, désactivable | 2 | 5 |
 | P06 | ★ Passage par un lieu cité dans le message | 3 | 6 |
+| P07 | ★ Arbres, mobilier et densité du décor selon les messages | 4 | 7 |
+| P08 | ★ Passants : nombre, allure et posture | 5 | 8 |
+| P09 | ★ Détails absurdes, rares | 2 | 9 |
 
 Si nous prenons du retard, nous coupons dans cet ordre : tout ce qui est en plus, puis `ambiance` (retirée aussi de la liste des valeurs, pour ne rien demander d'inutile à l'IA), puis les bâtiments génériques au zoom, puis la nuit. Le rendu retombe alors sur des blocs simples et les repères. **Jamais** la chaîne, les messages masqués ni l'accessibilité de base.
 
@@ -80,11 +83,11 @@ Chaque valeur demandée à l'IA doit avoir un effet dans une tâche indispensabl
 | `lieu`, `lieu_secondaire` | Lieux traversés | B01 |
 | `emotion`, `intensite` | Couleur, force de la couleur | C02, C05 |
 | `energie`, `tension`, `absurdite` | Longueur, forme du tracé, sortie des rues | B02 |
-| `moment` | Titre de la balade, lumière autour du parcours | A04, C08 |
+| `valence` | Jour, crépuscule ou nuit du quartier | C08 |
 | `ambiance` | Texture | B03 |
 | `mot` | Titre | A04 |
 
-`valence` est retirée : `emotion` et `intensite` disent presque la même chose. `direction` et `temps`, restées en option, sont retirées.
+`moment` est remplacée par `valence`, qui décide de la lumière du quartier (`docs/bible-da/ville-vivante.md`). `direction` et `temps`, restées en option, sont retirées.
 
 ## 2. La répartition
 
