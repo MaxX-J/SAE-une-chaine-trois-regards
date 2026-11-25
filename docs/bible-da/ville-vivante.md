@@ -21,9 +21,12 @@ Idée de MaxX-J. On prend la moyenne de `valence` des 20 derniers messages du qu
 
 | Moyenne | Quartier |
 | --- | --- |
-| 0,25 ou plus | Jour |
-| Entre -0,25 et 0,25, ou aucun message | Crépuscule (les versions jour et nuit superposées) |
-| -0,25 ou moins | Nuit |
+| 0,12 ou plus | Jour |
+| Entre -0,12 et 0,12 | Crépuscule (les versions jour et nuit superposées) |
+| -0,12 ou moins | Nuit |
+| Aucun message | Jour |
+
+Seuils *proposés* après l'essai en rendu C : avec 0,25, presque tout restait au crépuscule.
 
 - La carte mêle donc des quartiers de jour et de nuit, et un nouveau texte peut **rallumer ou éteindre** un quartier.
 - La nuit, les **fenêtres allumées comptent les messages** du quartier (accord de MaxX-J).
