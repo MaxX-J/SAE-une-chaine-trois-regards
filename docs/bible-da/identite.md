@@ -4,6 +4,25 @@
 
 ## Le symbole
 
+Deux rôles, pour ne pas avoir deux logos concurrents.
+
+| | L'emblème | Le signe |
+| --- | --- | --- |
+| Dit | De quelle œuvre il s'agit | De quelle balade il s'agit |
+| Forme | Colline de Béziers, clocher de Saint-Nazaire, une balade autour | Pâté de maisons traversé par une balade |
+| Change | Jamais | À chaque message |
+| Où | Onglet, en-tête, accueil, documents | Fin de l'attente, carte de balade, liste |
+
+### L'emblème
+
+D'après une idée de withRen, simplifiée : [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=39-128). Retirés de la première version : le rond et la bosse (on voyait un animal), les anneaux fins, les sept couleurs d'émotion (c'est le rôle du signe).
+
+- Signature verticale et horizontale, emblème seul, inverse, sur la nuit, sur papier.
+- **Favicon et icône :** le clocher et un seul arc, de 64 à 16 px.
+- Une seule couleur, marge d'au moins la largeur du clocher, emblème complet à partir de 48 px.
+
+### Le signe
+
 **v2, le pâté de maisons.** Un *bloc* de la chaîne devient un *bloc* de maisons de Béziers : quatre cases sur quatre, en 2,5D, traversées par une balade.
 
 Planche de construction : [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=33-91). Méthode vue avec Visit Nordkyn (Neue) : une idée, un système fixe, des zones, puis la donnée.
@@ -18,9 +37,9 @@ Planche de construction : [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwt
 | | Lumière : jour, crépuscule, nuit | `valence` |
 | | Détail des maisons | `id` du message |
 
-**Quand on le voit.** À la fin de l'attente, la personne découvre **le signe de sa balade** ; il reste sur sa carte et dans la liste. L'**emblème** (losange, et pâté « jour, joie ») est fixe : onglet, en-tête, accueil, documents. Pas de symbole sur la carte commune.
+**Quand on le voit.** À la fin de l'attente, la personne découvre **le signe de sa balade** ; il reste sur sa carte et dans la liste. Pas de symbole sur la carte commune.
 
-**À améliorer.** L'`id` change encore trop peu le signe : plus d'écart entre les maisons et plusieurs rues possibles par tension. `lieu` et `intensite` n'y sont pas. Version simplifiée (losange et trait) à 32 px et moins ; versions encre et inverse.
+**À améliorer.** L'`id` choisit la rue et les maisons, mais doit garder le nombre de virages de la `tension` et ne pas effacer l'effet de l'`energie` : bornes à fixer. `lieu` et `intensite` n'y sont pas. Versions encre et inverse. Le losange simplifié est retiré, le favicon le remplace.
 
 **Écarté :** la v1 (un B dessiné par le trait, une fenêtre traversée, une épingle), jugée ratée par MaxX-J et gardée dans Figma, à droite de la planche.
 
@@ -55,7 +74,7 @@ Fondations dans Figma : 15 couleurs d'interface, 6 espacements, 3 rayons et 8 st
 
 ## À décider à deux
 
-1. Le pâté de maisons, et l'emblème fixe.
+1. L'emblème simplifié et le nom « balade béziers ».
 2. Les trois familles de caractères.
 3. Vérifier les contrastes des composants et les tester à la taille réelle.
 4. Écrans complets : écrire, suivre, carte, balade.
