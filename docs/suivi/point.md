@@ -1,4 +1,4 @@
-# Point du binôme 2 (noeud-b), mis à jour le 24/11/2026
+# Point du binôme 2 (noeud-b), mis à jour le 25/11/2026
 
 Historique détaillé : `docs/suivi/journal/`. Règles pour Claude : `CLAUDE.md`.
 
@@ -38,9 +38,9 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 | Dossier de binôme | Brouillon v0.4 |
 | Charte éditoriale | Brouillon v0.4 |
 | Prompt | `p2` adopté avec Nemotron, essais partiels (quota atteint) |
-| Œuvre | Piste : balades dans Béziers. Trois esquisses (brouillon) dans `docs/bible-da/esquisses/`, **choix le 25/11** à deux, puis avis des enseignants |
+| Œuvre | Balades dans Béziers, rendu B (carte plate, repères en relief). Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Avis des enseignants à demander |
 | Backlog et plan | v1 proposée le 24/11, à relire par les deux |
-| Bible DA | Pas commencée |
+| Bible DA | Texte pas commencé. Assets de bâtiments jour/nuit en brouillon (25/11), **à valider par MaxX-J** |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
 
 
@@ -62,7 +62,7 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 | Sujet | Décision | Statut |
 | --- | --- | --- |
 | Technique | TypeScript, Node.js, Express, Zod, SQLite (`better-sqlite3`, secours `node:sqlite`), React et Vite, SVG, SSE, Vitest, Playwright | Proposé par withRen, dans le dossier |
-| Œuvre | BD non gardée. Piste des **balades dans Béziers** : chaque message est une balade, toutes forment une seule carte | Piste de l'enseignante d'art, **à valider par withRen** |
+| Œuvre | BD non gardée. **Balades dans Béziers** : chaque message est une balade, toutes forment une seule carte. Rendu B : carte plate, une trentaine de repères en relief isométrique, style diorama souvent nocturne | Piste de l'enseignante d'art ; rendu B choisi par withRen le 25/11, **à valider par MaxX-J** |
 | Valeurs | Décrivent le message, pas le dessin | Validé à deux |
 | Dépôt | Public | Choix de MaxX-J |
 | Répartition (indicative) | MaxX-J : nœud et chaîne. withRen : IA et œuvre. Application à deux | Validée |

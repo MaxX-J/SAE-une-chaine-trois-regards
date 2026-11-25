@@ -50,7 +50,17 @@ Observé sur des photos (Google Images), la vue satellite de Google Maps et les 
 
 ## Comment ils ont été faits
 
-Les SVG sont produits par un petit script de dessin (Python), gardé hors du dépôt pendant la S48 puisque la semaine se fait sans code. Il est dans les fichiers du projet et pourra entrer dans le dépôt en S50 si on le garde. Il permet de changer une teinte, une hauteur ou l'éclairage et de tout régénérer.
+Les SVG sont produits par un petit script de dessin en Python, dans [`outil/`](outil). Ce n'est pas du code de l'application : il sert seulement à dessiner les assets. Il permet de changer une teinte, une hauteur ou l'éclairage, puis de tout régénérer :
+
+```sh
+cd docs/bible-da/assets/batiments/outil
+python3 construire.py ..   # SVG + manifest.json
+python3 planche.py ..      # pages HTML des planches
+```
+
+- `iso.py` : projection, lumière, couleurs jour/nuit, murs, toits, fenêtres, arbres.
+- `generiques.py` : les bâtiments génériques et leurs teintes.
+- `reperes.py` : les repères, un par fonction.
 
 ## Questions ouvertes
 
