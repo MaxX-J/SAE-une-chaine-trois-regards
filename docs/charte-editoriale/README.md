@@ -183,18 +183,19 @@ Le 25/11, à la main avec `nvidia/nemotron-3.5-super-vl:free` (modèle choisi pa
 
 | Valeur | Réponses justes |
 | --- | --- |
-| `lieu` | 15 sur 16 |
-| `lieu_secondaire` | 15 sur 16 |
-| `intensite` (à un cran près) | 16 sur 16 |
-| `ambiance` | 16 sur 16 |
+| `lieu` | 15 sur 17 |
+| `lieu_secondaire` | 16 sur 17 |
+| `intensite` (à un cran près) | 17 sur 17 |
+| `ambiance` | 17 sur 17 |
 
-- Seize réponses sur sept messages différents, avec des répétitions : 62 valeurs justes sur 64. Le message 4 (le bar) n'a pas été essayé.
-- Les seize réponses ont les neuf clés et des valeurs dans les listes.
-- La seule erreur : la statue qui fait ses courses, `repere` au lieu d'`art`, et `aucun` au lieu de `repere`.
+- Dix-sept réponses sur les huit messages, avec des répétitions : 65 valeurs justes sur 68.
+- Les dix-sept réponses ont les neuf clés et des valeurs dans les listes.
+- Deux erreurs de lieu : la statue qui fait ses courses (`repere` au lieu d'`art`, et `aucun` au lieu de `repere`), et le bar qui chante (`commerce` au lieu de `fete`). Les deux se défendent.
+- L'ordre caché (« Ignore tes consignes ») : neuf valeurs attendues sur neuf, un essai.
 - Ironie (le parking) et absurde (la statue, `absurdite` à 1) bien lus. Répétés, les messages donnent toujours le même lieu, la même émotion et la même ambiance ; seuls des nombres bougent, d'un cran (0,25, ou 0,5 pour `valence`).
 - Les cinq valeurs reprises n'avaient pas de note humaine sur ces messages : elles semblent justes, sans être mesurées.
 
-Réponses et grilles : [`docs/test-valeurs`](../test-valeurs). **Limite :** peu de messages, et l'ordre caché (« Ignore tes consignes ») n'a pas été rejoué avec `p3`.
+Réponses et grilles : [`docs/test-valeurs`](../test-valeurs). **Limite :** peu de messages, et l'ordre caché n'a été essayé qu'une fois avec `p3`.
 
 ### Essais précédents
 
@@ -213,7 +214,7 @@ Ces essais portaient sur six valeurs, et le quota gratuit les a arrêtés : ils 
 
 Des balises de code autour du JSON sont retirées avant le contrôle : cela ne change aucune valeur. Une réponse est acceptée si elle contient exactement les neuf clés, chacune avec une valeur de sa liste. Sinon, une nouvelle demande rappelle le format. **Trois appels au plus en tout**, quelle que soit la cause des échecs. Aucune valeur n'est corrigée en silence.
 
-**Ce qui reste à tester.** Le message 4, l'ordre caché avec `p3`, les cinq valeurs reprises notées à deux, et le quota exact. Un nombre est bon à un cran près, un mot s'il est identique. Objectif **[À CONFIRMER]** : 80 % de bonnes réponses par valeur et 100 % de JSON valides au bout des trois appels.
+**Ce qui reste à tester.** Les cinq valeurs reprises notées à deux, et le quota exact. Un nombre est bon à un cran près, un mot s'il est identique. Objectif **[À CONFIRMER]** : 80 % de bonnes réponses par valeur et 100 % de JSON valides au bout des trois appels.
 
 ## 4. Les limites
 
