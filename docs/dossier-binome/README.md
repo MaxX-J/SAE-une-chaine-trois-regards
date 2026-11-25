@@ -163,9 +163,9 @@ Un message a droit à **3 appels au plus**, toutes causes confondues, pour écon
 | Valeur | Dans la balade | Dans la ville |
 | --- | --- | --- |
 | `lieu`, `lieu_secondaire` | Étapes, symboles | Lieux éveillés |
-| `emotion` | Couleur et motif du tracé | Halo, ruban des rues passantes |
+| `emotion` | Couleur et motif du tracé | Halo |
 | `intensite` | Force de la couleur | |
-| `valence` | | Lumière du quartier : moyenne de 0,25 ou plus, jour ; de -0,25 ou moins, nuit ; sinon, crépuscule |
+| `valence` | | Lumière du quartier : moyenne de 0,12 ou plus, jour ; de -0,12 ou moins, nuit ; sinon, crépuscule ; sans message, jour **\[À CONFIRMER\]** |
 | `energie` | Longueur | |
 | `tension` | Forme, souple à cassée | |
 | `absurdite` | Sortie des rues | |
@@ -181,7 +181,7 @@ Les plages exactes, les couleurs et les motifs sont dans la [palette](../bible-d
 3. Les tracés en SVG, au sol puis répétés en transparence au-dessus, pour rester visibles.
 4. Les symboles des lieux, puis l'interface.
 
-**Beaucoup de balades.** 4 balades récentes nettes par quartier de loin, 12 au zoom **\[À CONFIRMER\]**. Les plus anciennes se fondent dans la rue, qui s'épaissit et devient un ruban de tronçons proportionnels aux émotions. Le visiteur retrouve toujours la sienne en entier.
+**Beaucoup de balades.** 4 balades récentes nettes par quartier de loin, 12 au zoom **\[À CONFIRMER\]**. Les plus anciennes usent la rue : un chemin clair, d'une seule teinte, qui s'élargit avec les passages. Le visiteur retrouve toujours la sienne en entier.
 
 **Message masqué.** Sa balade et ses effets sur la ville disparaissent ; un volet fermé marque le quartier **\[À CONFIRMER\]**. Le message reste dans la chaîne (spec 8.1) et son texte n'est jamais envoyé à l'application.
 

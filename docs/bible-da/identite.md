@@ -77,4 +77,4 @@ Fondations dans Figma : 15 couleurs d'interface, 6 espacements, 3 rayons et 8 st
 1. L'emblème simplifié et le nom « balade béziers ».
 2. Les trois familles de caractères.
 3. Vérifier les contrastes des composants et les tester à la taille réelle.
-4. Écrans complets : écrire, suivre, carte, balade.
+4. Les écrans : [Figma, page « Écrans »](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2), brouillon.

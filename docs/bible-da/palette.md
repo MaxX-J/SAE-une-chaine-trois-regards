@@ -77,7 +77,7 @@ Calculé au cran 0,75, sur ces fonds. Seuil visé : 3 (WCAG 1.4.11).
 Pas de moyenne des tracés : chaque balade garde sa forme. Principe accepté par les deux le 25/11, seuils à régler à l'œil.
 
 - **Balades récentes, par quartier** (retour de withRen) : 4 séparées et nettes vues de loin, 12 au zoom. *Chiffres proposés.*
-- **Balades plus anciennes** : elles se fondent dans la rue, qui s'épaissit avec les passages. La rue devient un **ruban découpé en tronçons de couleur**, proportionnels aux émotions : 60 % de joie donne 60 % de tronçons jaunes. *Proposé* : mélanger les couleurs donnerait un brun, et la seule plus fréquente effacerait les émotions rares (retour de withRen).
+- **Balades plus anciennes** : elles usent la rue, un chemin clair d'une seule teinte qui s'élargit avec les passages. Le ruban de couleurs, essayé par withRen, est abandonné (jugé laid). Les émotions anciennes peuvent teinter les fenêtres (*proposé*).
 - **Retrouver sa balade** (retour de withRen) : lien vers l'`id` du message, donné après l'écriture, et liste accessible. La balade remonte au premier plan, même ancienne.
 
 ## Familles de lieux (ton moyen)
