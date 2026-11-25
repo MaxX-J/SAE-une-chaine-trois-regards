@@ -37,6 +37,17 @@ Planche de construction : [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwt
 | | Lumière : jour, crépuscule, nuit | `valence` |
 | | Détail des maisons | `id` du message |
 
+**Pendant l'attente, la ville se construit** (demandé par MaxX-J, plutôt qu'un fondu) :
+
+| Étape | Ce qu'on voit |
+| --- | --- |
+| En attente | Le terrain tracé, des piquets |
+| Dans un bloc | Le chantier : échafaudages, grue, ouvriers |
+| Lue par l'IA | Façades, toits et fenêtres ; la rue prend la couleur de l'émotion |
+| Stable | Les habitants, les arbres, les fenêtres allumées |
+
+Sans animation, l'image de l'étape en cours s'affiche directement.
+
 **Quand on le voit.** À la fin de l'attente, la personne découvre **le signe de sa balade** ; il reste sur sa carte et dans la liste. Pas de symbole sur la carte commune.
 
 **À améliorer.** L'`id` choisit la rue et les maisons, mais doit garder le nombre de virages de la `tension` et ne pas effacer l'effet de l'`energie` : bornes à fixer. `lieu` et `intensite` n'y sont pas. Versions encre et inverse. Le losange simplifié est retiré, le favicon le remplace.
