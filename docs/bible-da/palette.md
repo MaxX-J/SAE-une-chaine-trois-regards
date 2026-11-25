@@ -1,6 +1,6 @@
 # Palette de Béziers
 
-**BROUILLON v1 du 25/11/2026, rien n'est validé.** withRen fait un test avec. Planche complète, 253 échantillons : [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=5-2) (accès selon le partage du fichier).
+**BROUILLON v2 du 25/11/2026, après le test de withRen, rien n'est validé.** Planches : [Figma v2](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=17-2), la [v1](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=5-2) est gardée à côté (accès selon le partage du fichier).
 
 **L'idée :** la ville est la matière, calme ; l'émotion est la lumière posée dessus.
 
@@ -24,11 +24,28 @@ La couleur ne suffit jamais : symbole pour le lieu, émotion écrite dans la lis
 
 Cette teinte est le cran 0,75. Crans plus faibles : mélange avec #F6F1E6 (68 % pour 0, 44 % pour 0,25, 20 % pour 0,5). Cran 1 : plus saturé (sauf `neutre`, plus foncé), voir Figma.
 
+### La nuit seulement
+
+Les teintes ci-dessus ne ressortent pas la nuit : contraste de 1,2 à 2,2 pour six émotions sur sept (constat de withRen, vérifié par calcul).
+
+- **Fenêtre** : 30 % d'émotion, 70 % de lumière chaude (#FFE7A8). Elle reste claire, pour pouvoir compter les messages.
+- **Tracé** : émotion éclaircie de 55 % de blanc.
+- **Halo au sol** : émotion pleine, décoratif, il ne porte pas l'information seul.
+
+| | joie | tristesse | colere | peur | surprise | degout | neutre |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Fenêtre | #FBD785 | #CAC3A8 | #EEB587 | #D7BDA6 | #C1D3A6 | #D8CD87 | #E1CE9F |
+| Contraste sur le mur sable de nuit (#5F5D67) | 4,7 | 3,7 | 3,6 | 3,6 | 4,0 | 4,0 | 4,2 |
+| Tracé | #F9DCA4 | #B0BED8 | #E6AAA6 | #C3B5D4 | #A1D6D4 | #C5CDA6 | #D2CFCA |
+| Contraste sur la rue de nuit (#5B5C6B) | 5,0 | 3,5 | 3,3 | 3,4 | 4,1 | 4,0 | 4,2 |
+
+Seuil visé : 3, celui des éléments graphiques (WCAG 1.4.11). Calculé sur ces deux fonds et au cran 0,75 seulement. Les fenêtres se ressemblent : la nuit, l'émotion se lit surtout sur le tracé.
+
 ## Familles de lieux (ton moyen)
 
 | culte | cimetiere | nature | art | commerce | savoir | fete | repere | habitat | eau |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| #B79AD6 | #8FA0B3 | #7FB069 | #E58FB1 | #E9A15B | #6FB3D9 | #F0746E | #C9A227 | #D8B08C | #4FB0B8 |
+| #B79AD6 | #8FA0B3 | #7FB069 | #E58FB1 | #E9A15B | #6FB3D9 | #F0746E | #C9A227 | #D8B08C | #0F4C5C |
 
 Halo d'un lieu traversé : 35 % du lieu, 65 % de l'émotion.
 
@@ -56,8 +73,8 @@ Fenêtre claire #FFE7A8, fenêtre chaude #FFA957, halo #FFCF86, nuit et encre #1
 
 ## À tester et à décider
 
-1. Les émotions doivent-elles être plus vives (joie, peur) ?
-2. `surprise` et `eau` sont trop proches : en changer une.
-3. Crépuscule plus rose ou plus orangé ; nuit un peu terne.
+1. Refaire le test de nuit avec tristesse, peur et colère, aux crans faibles aussi ; le jour et le crépuscule marchent.
+2. `eau` passe de #4FB0B8 à #0F4C5C (pétrole) : elle était presque identique à `surprise`. À vérifier la nuit.
+3. Adoucir la limite entre deux quartiers de lumière différente ; voile d'ambiance plus large et plus flou.
 4. La grille lieu × émotion : des cases voisines se ressemblent beaucoup.
-5. Contraste et daltonisme : pas encore vérifiés, surtout `colere` et `degout`.
+5. Contraste et daltonisme : daltonisme pas encore vérifié, surtout `colere` et `degout`. Liseré des toits et vraie portion de carte à tester.

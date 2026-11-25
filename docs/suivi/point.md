@@ -41,7 +41,7 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 | Œuvre | Balades dans Béziers, **rendu C** (toute la ville en 2,5D), jour et nuit. Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Avis des enseignants à demander |
 | Backlog et plan | v2 du 25/11, retours de withRen appliqués, à valider par les deux |
 | Bible DA | Texte pas commencé. Assets de bâtiments, passants et mobilier en brouillon (25/11) ; style des bâtiments et jour / nuit validés par MaxX-J, passants à valider. Le tableau « quelle valeur change quoi » du README des assets est à aligner sur `ville-vivante.md`. Liste des repères (`docs/bible-da/reperes.md`) et ville vivante (`docs/bible-da/ville-vivante.md`) proposées |
-| Palette | Brouillon v1 (`docs/bible-da/palette.md`, Figma), test par withRen |
+| Palette | Brouillon v2 (`docs/bible-da/palette.md`, Figma) après le test de withRen ; nuit à retester |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
 
 
