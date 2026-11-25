@@ -14,7 +14,6 @@ La ville change **par quartier**. Un quartier regarde les 20 derniers messages p
 | `tension` | Tracé souple à très cassé, sans quitter la rue ([exemples](palette.md)) | Lumière douce ou dure, ombres plus longues | Indispensable pour le tracé |
 | `absurdite` | Sort des rues | Un détail incongru, rare | Indispensable pour le tracé |
 | `ambiance` | Texture du parcours | Météo et saison des arbres | Indispensable, en version simple |
-| `mot` | Titre | Aucun | Indispensable |
 
 ## Jour et nuit : la `valence` par quartier
 
@@ -30,7 +29,7 @@ Idée de MaxX-J. On prend la moyenne de `valence` des 20 derniers messages du qu
 - La nuit, les **fenêtres allumées comptent les messages** du quartier (accord de MaxX-J).
 - Le visiteur peut forcer le jour partout, pour lire plus facilement.
 
-`moment` n'est alors plus utile : la nuit ne peut pas dépendre de deux valeurs. **Décidé par MaxX-J le 25/11 : retirer `moment`, reprendre `valence`**, déjà définie et testée (withRen : à confirmer). La liste reste à dix valeurs.
+`moment` n'est alors plus utile : la nuit ne peut pas dépendre de deux valeurs. **Décidé par MaxX-J le 25/11 : retirer `moment`, reprendre `valence`**, déjà définie et testée (withRen : à confirmer). `mot` est retirée le 25/11 par MaxX-J : neuf valeurs. Le titre d'une balade est composé par le code.
 
 ## Garde-fous
 

@@ -9,7 +9,7 @@ Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Nœud | noeud-b (producteur d'un créneau de 20 s sur trois, ordre a, b, c) |
 | Spec commune | version 1.0 du 23/11/2026 |
-| Version du dossier | 0.5, brouillon adapté aux balades |
+| Version du dossier | 0.6, brouillon adapté aux balades |
 | Langage | TypeScript, pour le nœud et pour l'application |
 
 ## 1. Le projet en bref
@@ -18,7 +18,7 @@ Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17
 
 **Ce que permet l'application.** Le visiteur lit la consigne, écrit un message de 280 caractères au plus, puis reçoit sa balade : un titre, des étapes, une distance. Elle est d'abord en attente, puis tracée quand le message est entré dans un bloc et que l'IA l'a lu. Il peut explorer la carte commune, zoomer, et retrouver sa balade par un lien contenant l'id de son message. Avant d'écrire, il est prévenu que son message ne s'effacera pas, sera partagé avec les deux autres binômes et envoyé à une IA, et ne doit contenir aucune donnée personnelle (spec 8.1).
 
-**Ce que montre l'œuvre.** Béziers en 2,5D (faux relief, sans modèle 3D). L'IA tire dix valeurs de chaque message : elles choisissent les lieux, la longueur, la couleur et la forme de la balade. En passant, chaque balade change la ville : les lieux traversés s'éveillent, les fenêtres s'allument, et l'humeur d'un quartier décide de sa lumière (jour, crépuscule ou nuit). Les messages des trois binômes suivent tous les mêmes règles ; seule la forme des étapes rappelle leur nœud d'origine.
+**Ce que montre l'œuvre.** Béziers en 2,5D (faux relief, sans modèle 3D). L'IA tire neuf valeurs de chaque message : elles choisissent les lieux, la longueur, la couleur et la forme de la balade. En passant, chaque balade change la ville : les lieux traversés s'éveillent, les fenêtres s'allument, et l'humeur d'un quartier décide de sa lumière (jour, crépuscule ou nuit). Les messages des trois binômes suivent tous les mêmes règles ; seule la forme des étapes rappelle leur nœud d'origine.
 
 **Ce qui est indispensable.**
 
@@ -129,7 +129,7 @@ Chaque fichier porte un numéro de version, `map_version`. Les logements sont re
 
 **Quel modèle.** Modèles gratuits uniquement, via OpenRouter, avec un compte et une clé par étudiant, la clé étant dans le .env. Modèle demandé : nvidia/nemotron-3.5-super-vl:free, fixe pour garder une lecture régulière. Si les deux premiers appels échouent, le troisième va à openrouter/free, accepté par le sujet. Écarté : openrouter/free seul, car il change de modèle et les réponses varient. On enregistre model\_requested (celui de l'appel retenu) et model\_used, lu dans le champ model de la réponse (sujet, section 2).
 
-**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les dix champs, leurs bornes et le prompt (`p3`, pas encore essayé) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
+**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les neuf champs, leurs bornes et le prompt (`p3`, pas encore essayé) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
 
 **Quand l'IA ne répond pas bien.**
 
@@ -140,11 +140,11 @@ Chaque fichier porte un numéro de version, `map_version`. Les logements sont re
 | Le modèle refuse de traiter le message | Aucune nouvelle tentative. | refused |
 | Réponse correcte | Valeurs enregistrées telles quelles après validation. | ok |
 
-Un message a droit à **3 appels au plus**, toutes causes confondues, pour économiser le quota gratuit. Ensuite sa ligne reste telle quelle. Pour tout statut différent de ok, la balade est tracée avec les valeurs par défaut de la charte (repère, neutre, nombres à 0, titre « Balade ») ; les vrais lieux viennent de l'id du message.
+Un message a droit à **3 appels au plus**, toutes causes confondues, pour économiser le quota gratuit. Ensuite sa ligne reste telle quelle. Pour tout statut différent de ok, la balade est tracée avec les valeurs par défaut de la charte (repère, neutre, nombres à 0) ; les vrais lieux viennent de l'id du message.
 
 **Limites à connaître.** Nos essais à la main ont atteint la limite gratuite en quelques messages : le chiffre exact reste à relever, et le secours openrouter/free peut être bloqué par la même limite. On garde du quota pour le 10/12 et l'oral, et on code avec un faux serveur d'IA. Les modèles gratuits ont un quota par minute et par jour, à vérifier sur OpenRouter avant S50. Le worker traite donc un message à la fois. Les blocs acceptent 150 messages par minute au plus, et les limites par nœud en laissent entrer 120 (spec 8.2) : en cas d'afflux, la file IA prend du retard sans rien casser, mais un quota journalier trop bas peut laisser des balades neutres longtemps.
 
-**Contre les injections.** Une réponse est acceptée seulement si elle passe un schéma strict. Un message qui tente de donner des ordres à l'IA ne peut au pire que choisir des valeurs dans les bornes. Un seul texte libre de l'IA est affiché, `mot`, le titre de la balade : lettres seulement, 2 à 14 caractères, filtre de la charte, et « Balade » s'il est refusé (les autres valeurs sont gardées). Il n'apparaît jamais sur la carte commune. Tout le reste vient de nombres et de listes fermées.
+**Contre les injections.** Une réponse est acceptée seulement si elle passe un schéma strict. Un message qui tente de donner des ordres à l'IA ne peut au pire que choisir des valeurs dans les bornes. Aucun texte libre de l'IA n'est affiché : seulement des nombres et des mots de listes fermées. Le titre d'une balade est composé par le code avec les vrais lieux.
 
 ## 6. Des valeurs à l'œuvre
 
@@ -170,7 +170,6 @@ Un message a droit à **3 appels au plus**, toutes causes confondues, pour écon
 | `tension` | Forme, souple à cassée | |
 | `absurdite` | Sortie des rues | |
 | `ambiance` | Voile autour du parcours | |
-| `mot` | Titre | |
 | Sans IA | Forme des étapes selon le nœud, distance | Fenêtres allumées : une par message récent du quartier |
 
 Les plages exactes, les couleurs et les motifs sont dans la [palette](../bible-da/palette.md), les effets dans la [ville vivante](../bible-da/ville-vivante.md).
@@ -239,7 +238,7 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 | Redémarrage au milieu d'un créneau, double signature | Technique | Créneau écrit en base avant de signer (table slot\_log, spec 4.2.3). |
 | Modèle gratuit en panne ou quota atteint | Technique | Section 5 : tentatives, statut enregistré, valeurs par défaut. L'IA ne bloque jamais la chaîne. |
 | Fuite de la clé privée ou de la clé OpenRouter | Technique | .env hors de Git, .gitignore dès le premier commit, analyse des secrets sur le dépôt. En cas de fuite : on prévient les six (spec 8.4). |
-| Texte choquant produit par l'IA ou par un visiteur, affiché dans l'œuvre | Technique | Filtre avant signature, valeurs bornées, titre filtré et absent de la carte commune, balade retirée pour un message masqué. |
+| Texte choquant produit par l'IA ou par un visiteur, affiché dans l'œuvre | Technique | Filtre avant signature, valeurs bornées, aucun texte libre de l'IA, balade retirée pour un message masqué. |
 | Ville lente à afficher | Technique | Fond en images, SVG seulement dans la zone visible et allégés, nombre de tracés limité. Essai à 300 messages avant la fin de S2. |
 | OpenStreetMap incomplet ou mal classé | Technique | Tri à la main d'environ 80 lieux, positions vérifiées. |
 | Trop de balades au même endroit (un seul cimetière dans le centre) | Technique | Plusieurs lieux par famille, lieu de départ choisi par l'id, zone élargie si besoin. |

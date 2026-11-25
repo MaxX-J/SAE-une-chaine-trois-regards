@@ -6,9 +6,9 @@
 
 1. Chacun remplit **sa** grille seul, sans IA et sans montrer ses notes : `grille-p3-MaxX-J.csv` ou `grille-p3-withRen.csv`. Ne la poussez qu'une fois **les deux** finies.
 2. Comparez, décidez une note commune pour chaque case, **avant** de voir l'IA.
-3. Chacun essaie quatre messages avec Nemotron, dans un nouveau chat à chaque fois : MaxX-J les messages 1 à 4, withRen 5 à 8. Notez la réponse et le modèle. S'il reste du quota, échangez.
+3. Chacun essaie quatre messages avec Nemotron, dans un nouveau chat à chaque fois : MaxX-J les messages 1 à 4 (le 2 deux fois de plus), withRen 5 à 8 (le 8 deux fois de plus). Soit 6 appels chacun. Notez la réponse et le modèle.
 
-Seules les cinq valeurs nouvelles sont à noter. `mot` : un mot de 2 à 14 lettres. `lieu_secondaire` : `aucun` le plus souvent.
+Seules les quatre valeurs nouvelles comptent : `lieu`, `lieu_secondaire`, `intensite`, `ambiance`. La colonne `mot` des grilles est abandonnée. `lieu_secondaire` : `aucun` le plus souvent. `ambiance` : `neutre` si le texte ne dit rien.
 
 ## Les messages
 
