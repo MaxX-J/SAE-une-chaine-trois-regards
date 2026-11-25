@@ -723,5 +723,323 @@
     "nuit": "vegetation/lampadaire-nuit.svg"
    }
   }
+ ],
+ "personnages": [
+  {
+   "id": "debout",
+   "type": "allure",
+   "fichiers": {
+    "jour": "vie/personnages/personne-debout-jour.svg",
+    "nuit": "vie/personnages/personne-debout-nuit.svg"
+   }
+  },
+  {
+   "id": "marche",
+   "type": "allure",
+   "fichiers": {
+    "jour": "vie/personnages/personne-marche-jour.svg",
+    "nuit": "vie/personnages/personne-marche-nuit.svg"
+   }
+  },
+  {
+   "id": "course",
+   "type": "allure",
+   "fichiers": {
+    "jour": "vie/personnages/personne-course-jour.svg",
+    "nuit": "vie/personnages/personne-course-nuit.svg"
+   }
+  },
+  {
+   "id": "assis",
+   "type": "allure",
+   "fichiers": {
+    "jour": "vie/personnages/personne-assis-jour.svg",
+    "nuit": "vie/personnages/personne-assis-nuit.svg"
+   }
+  },
+  {
+   "id": "parapluie",
+   "type": "allure",
+   "fichiers": {
+    "jour": "vie/personnages/personne-parapluie-jour.svg",
+    "nuit": "vie/personnages/personne-parapluie-nuit.svg"
+   }
+  },
+  {
+   "id": "joie",
+   "type": "emotion",
+   "fichiers": {
+    "jour": "vie/personnages/personne-joie-jour.svg",
+    "nuit": "vie/personnages/personne-joie-nuit.svg"
+   }
+  },
+  {
+   "id": "tristesse",
+   "type": "emotion",
+   "fichiers": {
+    "jour": "vie/personnages/personne-tristesse-jour.svg",
+    "nuit": "vie/personnages/personne-tristesse-nuit.svg"
+   }
+  },
+  {
+   "id": "colere",
+   "type": "emotion",
+   "fichiers": {
+    "jour": "vie/personnages/personne-colere-jour.svg",
+    "nuit": "vie/personnages/personne-colere-nuit.svg"
+   }
+  },
+  {
+   "id": "peur",
+   "type": "emotion",
+   "fichiers": {
+    "jour": "vie/personnages/personne-peur-jour.svg",
+    "nuit": "vie/personnages/personne-peur-nuit.svg"
+   }
+  },
+  {
+   "id": "surprise",
+   "type": "emotion",
+   "fichiers": {
+    "jour": "vie/personnages/personne-surprise-jour.svg",
+    "nuit": "vie/personnages/personne-surprise-nuit.svg"
+   }
+  },
+  {
+   "id": "degout",
+   "type": "emotion",
+   "fichiers": {
+    "jour": "vie/personnages/personne-degout-jour.svg",
+    "nuit": "vie/personnages/personne-degout-nuit.svg"
+   }
+  }
+ ],
+ "mobilier": [
+  {
+   "id": "poubelle-bac",
+   "fichiers": {
+    "jour": "vie/mobilier/poubelle-bac-jour.svg",
+    "nuit": "vie/mobilier/poubelle-bac-nuit.svg"
+   }
+  },
+  {
+   "id": "poubelle-rue",
+   "fichiers": {
+    "jour": "vie/mobilier/poubelle-rue-jour.svg",
+    "nuit": "vie/mobilier/poubelle-rue-nuit.svg"
+   }
+  },
+  {
+   "id": "poubelle-debordante",
+   "fichiers": {
+    "jour": "vie/mobilier/poubelle-debordante-jour.svg",
+    "nuit": "vie/mobilier/poubelle-debordante-nuit.svg"
+   }
+  },
+  {
+   "id": "banc",
+   "fichiers": {
+    "jour": "vie/mobilier/banc-jour.svg",
+    "nuit": "vie/mobilier/banc-nuit.svg"
+   }
+  },
+  {
+   "id": "arbuste",
+   "fichiers": {
+    "jour": "vie/mobilier/arbuste-jour.svg",
+    "nuit": "vie/mobilier/arbuste-nuit.svg"
+   }
+  },
+  {
+   "id": "laurier-rose",
+   "fichiers": {
+    "jour": "vie/mobilier/laurier-rose-jour.svg",
+    "nuit": "vie/mobilier/laurier-rose-nuit.svg"
+   }
+  },
+  {
+   "id": "buis-taille",
+   "fichiers": {
+    "jour": "vie/mobilier/buis-taille-jour.svg",
+    "nuit": "vie/mobilier/buis-taille-nuit.svg"
+   }
+  },
+  {
+   "id": "jardiniere",
+   "fichiers": {
+    "jour": "vie/mobilier/jardiniere-jour.svg",
+    "nuit": "vie/mobilier/jardiniere-nuit.svg"
+   }
+  },
+  {
+   "id": "potelets",
+   "fichiers": {
+    "jour": "vie/mobilier/potelets-jour.svg",
+    "nuit": "vie/mobilier/potelets-nuit.svg"
+   }
+  },
+  {
+   "id": "panneau",
+   "fichiers": {
+    "jour": "vie/mobilier/panneau-jour.svg",
+    "nuit": "vie/mobilier/panneau-nuit.svg"
+   }
+  },
+  {
+   "id": "feu-tricolore",
+   "fichiers": {
+    "jour": "vie/mobilier/feu-tricolore-jour.svg",
+    "nuit": "vie/mobilier/feu-tricolore-nuit.svg"
+   }
+  },
+  {
+   "id": "fontaine",
+   "fichiers": {
+    "jour": "vie/mobilier/fontaine-jour.svg",
+    "nuit": "vie/mobilier/fontaine-nuit.svg"
+   }
+  },
+  {
+   "id": "velo",
+   "fichiers": {
+    "jour": "vie/mobilier/velo-jour.svg",
+    "nuit": "vie/mobilier/velo-nuit.svg"
+   }
+  },
+  {
+   "id": "terrasse-cafe",
+   "fichiers": {
+    "jour": "vie/mobilier/terrasse-cafe-jour.svg",
+    "nuit": "vie/mobilier/terrasse-cafe-nuit.svg"
+   }
+  },
+  {
+   "id": "lampadaire-eteint",
+   "fichiers": {
+    "jour": "vie/mobilier/lampadaire-eteint-jour.svg",
+    "nuit": "vie/mobilier/lampadaire-eteint-nuit.svg"
+   }
+  },
+  {
+   "id": "lampadaire-gresille",
+   "fichiers": {
+    "jour": "vie/mobilier/lampadaire-gresille-jour.svg",
+    "nuit": "vie/mobilier/lampadaire-gresille-nuit.svg"
+   }
+  },
+  {
+   "id": "flaque",
+   "fichiers": {
+    "jour": "vie/mobilier/flaque-jour.svg",
+    "nuit": "vie/mobilier/flaque-nuit.svg"
+   }
+  },
+  {
+   "id": "feuilles-mortes",
+   "fichiers": {
+    "jour": "vie/mobilier/feuilles-mortes-jour.svg",
+    "nuit": "vie/mobilier/feuilles-mortes-nuit.svg"
+   }
+  },
+  {
+   "id": "pigeons",
+   "fichiers": {
+    "jour": "vie/mobilier/pigeons-jour.svg",
+    "nuit": "vie/mobilier/pigeons-nuit.svg"
+   }
+  },
+  {
+   "id": "chat",
+   "fichiers": {
+    "jour": "vie/mobilier/chat-jour.svg",
+    "nuit": "vie/mobilier/chat-nuit.svg"
+   }
+  },
+  {
+   "id": "platane-printemps",
+   "fichiers": {
+    "jour": "vie/mobilier/platane-printemps-jour.svg",
+    "nuit": "vie/mobilier/platane-printemps-nuit.svg"
+   }
+  },
+  {
+   "id": "platane-ete",
+   "fichiers": {
+    "jour": "vie/mobilier/platane-ete-jour.svg",
+    "nuit": "vie/mobilier/platane-ete-nuit.svg"
+   }
+  },
+  {
+   "id": "platane-automne",
+   "fichiers": {
+    "jour": "vie/mobilier/platane-automne-jour.svg",
+    "nuit": "vie/mobilier/platane-automne-nuit.svg"
+   }
+  },
+  {
+   "id": "platane-hiver",
+   "fichiers": {
+    "jour": "vie/mobilier/platane-hiver-jour.svg",
+    "nuit": "vie/mobilier/platane-hiver-nuit.svg"
+   }
+  }
+ ],
+ "incongrus": [
+  {
+   "id": "piano",
+   "fichiers": {
+    "jour": "vie/incongrus/piano-jour.svg",
+    "nuit": "vie/incongrus/piano-nuit.svg"
+   }
+  },
+  {
+   "id": "baignoire",
+   "fichiers": {
+    "jour": "vie/incongrus/baignoire-jour.svg",
+    "nuit": "vie/incongrus/baignoire-nuit.svg"
+   }
+  },
+  {
+   "id": "taureau",
+   "fichiers": {
+    "jour": "vie/incongrus/taureau-jour.svg",
+    "nuit": "vie/incongrus/taureau-nuit.svg"
+   }
+  },
+  {
+   "id": "poisson-volant",
+   "fichiers": {
+    "jour": "vie/incongrus/poisson-volant-jour.svg",
+    "nuit": "vie/incongrus/poisson-volant-nuit.svg"
+   }
+  }
+ ],
+ "variables_css_personnages": {
+  "--haut": "haut (couleur de l'émotion)",
+  "--bas": "pantalon",
+  "--peau": "peau",
+  "--cheveux": "cheveux",
+  "--objet": "parapluie"
+ },
+ "couleurs_emotions": {
+  "joie": "#f2b134",
+  "tristesse": "#4f6fa8",
+  "colere": "#c8413a",
+  "peur": "#7a5aa0",
+  "surprise": "#2fa3a0",
+  "degout": "#7e8f3a",
+  "neutre": "#9a948a"
+ },
+ "peaux": [
+  "#f1c9a5",
+  "#d9a47c",
+  "#a86f4c",
+  "#6f4630"
+ ],
+ "cheveux": [
+  "#2b211c",
+  "#5a3a24",
+  "#b88a4a",
+  "#8c8c8c"
  ]
 }

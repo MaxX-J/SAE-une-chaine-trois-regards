@@ -118,6 +118,8 @@ class S:
 
     def __init__(self, aid, night=False, seed=0):
         self.aid = aid
+        import hashlib
+        self.k = 'b' + hashlib.md5(aid.encode()).hexdigest()[:4]
         self.night = night
         self.rng = random.Random(f'{aid}|{seed}')
         self.el = []
@@ -142,10 +144,10 @@ class S:
 
     def uid(self, p='c'):
         self.n += 1
-        return f'{self.aid}-{p}{self.n}'
+        return f'{self.k}{p}{self.n}'
 
     def g(self, name):
-        return f'url(#{self.aid}-{name})'
+        return f'url(#{self.k}{name})'
 
     # ---------- couleurs ----------
     def col(self, base, n=NT):
@@ -632,21 +634,22 @@ class S:
         ys = [p[1] for p in self.pts] or [0]
         x0, x1, y0, y1 = min(xs) - pad, max(xs) + pad, min(ys) - pad, max(ys) + pad
         night = self.night
-        a = self.aid
+        a = self.k
         defs = [
-            f'<linearGradient id="{a}-ao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{SHADOW_TINT}" stop-opacity="0"/><stop offset="1" stop-color="{SHADOW_TINT}" stop-opacity="{0.28 if not night else 0.45}"/></linearGradient>',
-            f'<linearGradient id="{a}-lit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a8"/><stop offset="1" stop-color="#ffa957"/></linearGradient>',
-            f'<linearGradient id="{a}-shop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0c4"/><stop offset="1" stop-color="#ffb867"/></linearGradient>',
-            f'<radialGradient id="{a}-glow"><stop offset="0" stop-color="#ffc977" stop-opacity="0.55"/><stop offset="1" stop-color="#ffb357" stop-opacity="0"/></radialGradient>',
-            f'<radialGradient id="{a}-pool"><stop offset="0" stop-color="#ffcf86" stop-opacity="0.5"/><stop offset="1" stop-color="#ffb357" stop-opacity="0"/></radialGradient>',
-            f'<linearGradient id="{a}-water" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{"#7fb1bd" if not night else "#1f3450"}"/><stop offset="1" stop-color="{"#4f8c9e" if not night else "#152540"}"/></linearGradient>',
-            f'<radialGradient id="{a}-rose"><stop offset="0" stop-color="#ffe2a0"/><stop offset="0.45" stop-color="#e0705a"/><stop offset="1" stop-color="#4a5fb0"/></radialGradient>',
-            f'<linearGradient id="{a}-screen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e2557a"/><stop offset="0.5" stop-color="#f19a4a"/><stop offset="1" stop-color="#5a7fe0"/></linearGradient>',
+            f'<linearGradient id="{a}ao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{SHADOW_TINT}" stop-opacity="0"/><stop offset="1" stop-color="{SHADOW_TINT}" stop-opacity="{0.28 if not night else 0.45}"/></linearGradient>',
+            f'<linearGradient id="{a}lit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a8"/><stop offset="1" stop-color="#ffa957"/></linearGradient>',
+            f'<linearGradient id="{a}shop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0c4"/><stop offset="1" stop-color="#ffb867"/></linearGradient>',
+            f'<radialGradient id="{a}glow"><stop offset="0" stop-color="#ffc977" stop-opacity="0.55"/><stop offset="1" stop-color="#ffb357" stop-opacity="0"/></radialGradient>',
+            f'<radialGradient id="{a}pool"><stop offset="0" stop-color="#ffcf86" stop-opacity="0.5"/><stop offset="1" stop-color="#ffb357" stop-opacity="0"/></radialGradient>',
+            f'<linearGradient id="{a}water" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{"#7fb1bd" if not night else "#1f3450"}"/><stop offset="1" stop-color="{"#4f8c9e" if not night else "#152540"}"/></linearGradient>',
+            f'<radialGradient id="{a}rose"><stop offset="0" stop-color="#ffe2a0"/><stop offset="0.45" stop-color="#e0705a"/><stop offset="1" stop-color="#4a5fb0"/></radialGradient>',
+            f'<linearGradient id="{a}screen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e2557a"/><stop offset="0.5" stop-color="#f19a4a"/><stop offset="1" stop-color="#5a7fe0"/></linearGradient>',
         ]
         m = ''
         if meta:
             import json
             m = f'<metadata>{json.dumps(meta, ensure_ascii=False)}</metadata>'
-        return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x0:.1f} {y0:.1f} {x1 - x0:.1f} {y1 - y0:.1f}" width="{x1 - x0:.0f}" height="{y1 - y0:.0f}" data-ancre="0,0" data-px-par-metre="{U:g}">'
+        from opti import optimise
+        return optimise(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x0:.1f} {y0:.1f} {x1 - x0:.1f} {y1 - y0:.1f}" width="{x1 - x0:.0f}" height="{y1 - y0:.0f}" data-ancre="0,0" data-px-par-metre="{U:g}">'
                 f'<title>{title}</title>{m}<defs>{"".join(defs)}{"".join(self.defs)}</defs>'
                 f'{"".join(self.el)}</svg>')

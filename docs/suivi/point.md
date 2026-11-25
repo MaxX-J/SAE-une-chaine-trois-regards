@@ -40,7 +40,7 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 | Prompt | `p2` adopté avec Nemotron, essais partiels (quota atteint) |
 | Œuvre | Balades dans Béziers, rendu B (carte plate, repères en relief). Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Avis des enseignants à demander |
 | Backlog et plan | v1 proposée le 24/11, à relire par les deux |
-| Bible DA | Texte pas commencé. Assets de bâtiments jour/nuit en brouillon (25/11), **à valider par MaxX-J** |
+| Bible DA | Texte pas commencé. Assets de bâtiments, passants et mobilier jour/nuit en brouillon (25/11), avec une proposition « quelle valeur change quoi » dans le README des assets, **à valider par MaxX-J** |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
 
 
