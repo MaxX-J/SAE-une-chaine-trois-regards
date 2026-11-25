@@ -1,0 +1,727 @@
+{
+ "version": 1,
+ "projection": {
+  "type": "isometrique 2:1",
+  "px_par_metre": 10.0,
+  "echelle_verticale": 1.12,
+  "ancre": "Le point (0,0) du viewBox est le centre de l'emprise au sol.",
+  "axes": "x vers la droite et le bas de l'écran, y vers la gauche et le bas, z vers le haut",
+  "lumiere": "de la gauche : face gauche éclairée, face droite à l'ombre"
+ },
+ "generiques": [
+  {
+   "id": "maison-ville-r2",
+   "variante": "a",
+   "description": "Maison de ville R+2, toit à deux pans, génoise",
+   "emprise_m": [
+    8,
+    9
+   ],
+   "couleurs": {
+    "wall": "#d8a466",
+    "shut": "#7d97ab"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-ville-r2-a-jour.svg",
+    "nuit": "generiques/maison-ville-r2-a-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-ville-r2",
+   "variante": "b",
+   "description": "Maison de ville R+2, toit à deux pans, génoise",
+   "emprise_m": [
+    8,
+    9
+   ],
+   "couleurs": {
+    "wall": "#df9f83",
+    "shut": "#86a890"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-ville-r2-b-jour.svg",
+    "nuit": "generiques/maison-ville-r2-b-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-ville-r2",
+   "variante": "c",
+   "description": "Maison de ville R+2, toit à deux pans, génoise",
+   "emprise_m": [
+    8,
+    9
+   ],
+   "couleurs": {
+    "wall": "#eee0c1",
+    "shut": "#8c4140",
+    "tile": "#b85e3d"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-ville-r2-c-jour.svg",
+    "nuit": "generiques/maison-ville-r2-c-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-ville-r3",
+   "variante": "a",
+   "description": "Maison de ville R+3, toit à quatre pans, balcons",
+   "emprise_m": [
+    7,
+    10
+   ],
+   "couleurs": {
+    "wall": "#df9f83",
+    "shut": "#4f6b55"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-ville-r3-a-jour.svg",
+    "nuit": "generiques/maison-ville-r3-a-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-ville-r3",
+   "variante": "b",
+   "description": "Maison de ville R+3, toit à quatre pans, balcons",
+   "emprise_m": [
+    7,
+    10
+   ],
+   "couleurs": {
+    "wall": "#e8c47c",
+    "shut": "#9ea3c9"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-ville-r3-b-jour.svg",
+    "nuit": "generiques/maison-ville-r3-b-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-ville-r3",
+   "variante": "c",
+   "description": "Maison de ville R+3, toit à quatre pans, balcons",
+   "emprise_m": [
+    7,
+    10
+   ],
+   "couleurs": {
+    "wall": "#d8d1c2",
+    "shut": "#6e4c37",
+    "tile": "#cd7b4e"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-ville-r3-c-jour.svg",
+    "nuit": "generiques/maison-ville-r3-c-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-etroite",
+   "variante": "a",
+   "description": "Maison étroite d'une travée, R+3 avec attique",
+   "emprise_m": [
+    4.6,
+    9
+   ],
+   "couleurs": {
+    "wall": "#eee0c1",
+    "shut": "#5f9ea0"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-etroite-a-jour.svg",
+    "nuit": "generiques/maison-etroite-a-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-etroite",
+   "variante": "b",
+   "description": "Maison étroite d'une travée, R+3 avec attique",
+   "emprise_m": [
+    4.6,
+    9
+   ],
+   "couleurs": {
+    "wall": "#e8b9a3",
+    "shut": "#a7aaa8"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-etroite-b-jour.svg",
+    "nuit": "generiques/maison-etroite-b-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-etroite",
+   "variante": "c",
+   "description": "Maison étroite d'une travée, R+3 avec attique",
+   "emprise_m": [
+    4.6,
+    9
+   ],
+   "couleurs": {
+    "wall": "#c98f62",
+    "shut": "#ece8de"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-etroite-c-jour.svg",
+    "nuit": "generiques/maison-etroite-c-nuit.svg"
+   }
+  },
+  {
+   "id": "immeuble-commerce",
+   "variante": "a",
+   "description": "Immeuble avec commerces et stores bannes, balcon filant",
+   "emprise_m": [
+    12,
+    11
+   ],
+   "couleurs": {
+    "wall": "#e5cfa2",
+    "shut": "#7d97ab",
+    "awn": [
+     "#a8452f",
+     "#f1e6d2"
+    ]
+   },
+   "fichiers": {
+    "jour": "generiques/immeuble-commerce-a-jour.svg",
+    "nuit": "generiques/immeuble-commerce-a-nuit.svg"
+   }
+  },
+  {
+   "id": "immeuble-commerce",
+   "variante": "b",
+   "description": "Immeuble avec commerces et stores bannes, balcon filant",
+   "emprise_m": [
+    12,
+    11
+   ],
+   "couleurs": {
+    "wall": "#d8a466",
+    "shut": "#86a890",
+    "awn": [
+     "#3f6a52",
+     "#efe6d2"
+    ]
+   },
+   "fichiers": {
+    "jour": "generiques/immeuble-commerce-b-jour.svg",
+    "nuit": "generiques/immeuble-commerce-b-nuit.svg"
+   }
+  },
+  {
+   "id": "immeuble-commerce",
+   "variante": "c",
+   "description": "Immeuble avec commerces et stores bannes, balcon filant",
+   "emprise_m": [
+    12,
+    11
+   ],
+   "couleurs": {
+    "wall": "#e8b9a3",
+    "shut": "#a7aaa8",
+    "awn": [
+     "#2f5277",
+     "#efe6d2"
+    ]
+   },
+   "fichiers": {
+    "jour": "generiques/immeuble-commerce-c-jour.svg",
+    "nuit": "generiques/immeuble-commerce-c-nuit.svg"
+   }
+  },
+  {
+   "id": "immeuble-bourgeois",
+   "variante": "a",
+   "description": "Immeuble bourgeois XIXe en pierre de taille, toit à la Mansart en zinc",
+   "emprise_m": [
+    16,
+    13
+   ],
+   "couleurs": {
+    "wall": "#ddcba5",
+    "shut": "#a7aaa8",
+    "awn": [
+     "#6e2b33",
+     "#e9dcc8"
+    ]
+   },
+   "fichiers": {
+    "jour": "generiques/immeuble-bourgeois-a-jour.svg",
+    "nuit": "generiques/immeuble-bourgeois-a-nuit.svg"
+   }
+  },
+  {
+   "id": "immeuble-bourgeois",
+   "variante": "b",
+   "description": "Immeuble bourgeois XIXe en pierre de taille, toit à la Mansart en zinc",
+   "emprise_m": [
+    16,
+    13
+   ],
+   "couleurs": {
+    "wall": "#e4d6b8",
+    "shut": "#ece8de",
+    "awn": [
+     "#3f6a52",
+     "#efe6d2"
+    ]
+   },
+   "fichiers": {
+    "jour": "generiques/immeuble-bourgeois-b-jour.svg",
+    "nuit": "generiques/immeuble-bourgeois-b-nuit.svg"
+   }
+  },
+  {
+   "id": "immeuble-bourgeois",
+   "variante": "c",
+   "description": "Immeuble bourgeois XIXe en pierre de taille, toit à la Mansart en zinc",
+   "emprise_m": [
+    16,
+    13
+   ],
+   "couleurs": {
+    "wall": "#d6c29c",
+    "shut": "#9ea3c9",
+    "awn": [
+     "#c58a2c",
+     "#f3ead6"
+    ]
+   },
+   "fichiers": {
+    "jour": "generiques/immeuble-bourgeois-c-jour.svg",
+    "nuit": "generiques/immeuble-bourgeois-c-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-angle",
+   "variante": "a",
+   "description": "Maison d'angle avec commerces sur deux rues",
+   "emprise_m": [
+    10,
+    10
+   ],
+   "couleurs": {
+    "wall": "#e8c47c",
+    "shut": "#7d97ab",
+    "awn": [
+     "#c58a2c",
+     "#f3ead6"
+    ]
+   },
+   "fichiers": {
+    "jour": "generiques/maison-angle-a-jour.svg",
+    "nuit": "generiques/maison-angle-a-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-angle",
+   "variante": "b",
+   "description": "Maison d'angle avec commerces sur deux rues",
+   "emprise_m": [
+    10,
+    10
+   ],
+   "couleurs": {
+    "wall": "#df9f83",
+    "shut": "#4f6b55",
+    "awn": [
+     "#a8452f",
+     "#f1e6d2"
+    ]
+   },
+   "fichiers": {
+    "jour": "generiques/maison-angle-b-jour.svg",
+    "nuit": "generiques/maison-angle-b-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-angle",
+   "variante": "c",
+   "description": "Maison d'angle avec commerces sur deux rues",
+   "emprise_m": [
+    10,
+    10
+   ],
+   "couleurs": {
+    "wall": "#e5cfa2",
+    "shut": "#8c4140",
+    "awn": [
+     "#3f6a52",
+     "#efe6d2"
+    ]
+   },
+   "fichiers": {
+    "jour": "generiques/maison-angle-c-jour.svg",
+    "nuit": "generiques/maison-angle-c-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-faubourg",
+   "variante": "a",
+   "description": "Petite maison de faubourg R+1",
+   "emprise_m": [
+    7,
+    8
+   ],
+   "couleurs": {
+    "wall": "#c98f62",
+    "shut": "#86a890"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-faubourg-a-jour.svg",
+    "nuit": "generiques/maison-faubourg-a-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-faubourg",
+   "variante": "b",
+   "description": "Petite maison de faubourg R+1",
+   "emprise_m": [
+    7,
+    8
+   ],
+   "couleurs": {
+    "wall": "#eee0c1",
+    "shut": "#7d97ab"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-faubourg-b-jour.svg",
+    "nuit": "generiques/maison-faubourg-b-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-faubourg",
+   "variante": "c",
+   "description": "Petite maison de faubourg R+1",
+   "emprise_m": [
+    7,
+    8
+   ],
+   "couleurs": {
+    "wall": "#d8a466",
+    "shut": "#6e4c37",
+    "tile": "#cd7b4e"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-faubourg-c-jour.svg",
+    "nuit": "generiques/maison-faubourg-c-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-maitre",
+   "variante": "a",
+   "description": "Maison de maître avec jardin, grille et palmier",
+   "emprise_m": [
+    12,
+    13
+   ],
+   "couleurs": {
+    "wall": "#eee0c1",
+    "shut": "#4f6b55"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-maitre-a-jour.svg",
+    "nuit": "generiques/maison-maitre-a-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-maitre",
+   "variante": "b",
+   "description": "Maison de maître avec jardin, grille et palmier",
+   "emprise_m": [
+    12,
+    13
+   ],
+   "couleurs": {
+    "wall": "#e8b9a3",
+    "shut": "#a7aaa8"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-maitre-b-jour.svg",
+    "nuit": "generiques/maison-maitre-b-nuit.svg"
+   }
+  },
+  {
+   "id": "maison-maitre",
+   "variante": "c",
+   "description": "Maison de maître avec jardin, grille et palmier",
+   "emprise_m": [
+    12,
+    13
+   ],
+   "couleurs": {
+    "wall": "#e5cfa2",
+    "shut": "#7d97ab"
+   },
+   "fichiers": {
+    "jour": "generiques/maison-maitre-c-jour.svg",
+    "nuit": "generiques/maison-maitre-c-nuit.svg"
+   }
+  },
+  {
+   "id": "residence",
+   "variante": "a",
+   "description": "Résidence des années 60-70, R+6, toit-terrasse",
+   "emprise_m": [
+    24,
+    12
+   ],
+   "couleurs": {
+    "wall": "#ece6da",
+    "shut": "#ece8de"
+   },
+   "fichiers": {
+    "jour": "generiques/residence-a-jour.svg",
+    "nuit": "generiques/residence-a-nuit.svg"
+   }
+  },
+  {
+   "id": "residence",
+   "variante": "b",
+   "description": "Résidence des années 60-70, R+6, toit-terrasse",
+   "emprise_m": [
+    24,
+    12
+   ],
+   "couleurs": {
+    "wall": "#e6d7bd",
+    "shut": "#6e4c37"
+   },
+   "fichiers": {
+    "jour": "generiques/residence-b-jour.svg",
+    "nuit": "generiques/residence-b-nuit.svg"
+   }
+  },
+  {
+   "id": "residence",
+   "variante": "c",
+   "description": "Résidence des années 60-70, R+6, toit-terrasse",
+   "emprise_m": [
+    24,
+    12
+   ],
+   "couleurs": {
+    "wall": "#dfe0dc",
+    "shut": "#7d97ab"
+   },
+   "fichiers": {
+    "jour": "generiques/residence-c-jour.svg",
+    "nuit": "generiques/residence-c-nuit.svg"
+   }
+  },
+  {
+   "id": "chai",
+   "variante": "a",
+   "description": "Chai viticole en pierre, grandes portes cintrées",
+   "emprise_m": [
+    22,
+    12
+   ],
+   "couleurs": {
+    "wall": "#dac6a0"
+   },
+   "fichiers": {
+    "jour": "generiques/chai-a-jour.svg",
+    "nuit": "generiques/chai-a-nuit.svg"
+   }
+  },
+  {
+   "id": "chai",
+   "variante": "b",
+   "description": "Chai viticole en pierre, grandes portes cintrées",
+   "emprise_m": [
+    22,
+    12
+   ],
+   "couleurs": {
+    "wall": "#d2b98e",
+    "doorc": "#4f6b55"
+   },
+   "fichiers": {
+    "jour": "generiques/chai-b-jour.svg",
+    "nuit": "generiques/chai-b-nuit.svg"
+   }
+  },
+  {
+   "id": "chai",
+   "variante": "c",
+   "description": "Chai viticole en pierre, grandes portes cintrées",
+   "emprise_m": [
+    22,
+    12
+   ],
+   "couleurs": {
+    "wall": "#e2d2b2",
+    "doorc": "#7d4a3a"
+   },
+   "fichiers": {
+    "jour": "generiques/chai-c-jour.svg",
+    "nuit": "generiques/chai-c-nuit.svg"
+   }
+  }
+ ],
+ "reperes": [
+  {
+   "id": "cathedrale-saint-nazaire",
+   "description": "Cathédrale Saint-Nazaire : façade fortifiée, rosace, clocher carré crénelé avec campanile",
+   "emprise_m": [
+    29,
+    47
+   ],
+   "fichiers": {
+    "jour": "reperes/cathedrale-saint-nazaire-jour.svg",
+    "nuit": "reperes/cathedrale-saint-nazaire-nuit.svg"
+   }
+  },
+  {
+   "id": "hotel-de-ville",
+   "description": "Hôtel de ville (1746) : pierre de taille, avant-corps, tour de l'horloge et campanile en fer",
+   "emprise_m": [
+    30,
+    22
+   ],
+   "fichiers": {
+    "jour": "reperes/hotel-de-ville-jour.svg",
+    "nuit": "reperes/hotel-de-ville-nuit.svg"
+   }
+  },
+  {
+   "id": "polygone",
+   "description": "Polygone : centre commercial à ciel ouvert, gradins blancs, pergola et rotonde à écran",
+   "emprise_m": [
+    60,
+    32
+   ],
+   "fichiers": {
+    "jour": "reperes/polygone-jour.svg",
+    "nuit": "reperes/polygone-nuit.svg"
+   }
+  },
+  {
+   "id": "gare",
+   "description": "Gare : bâtiment voyageurs à arcades, pavillon central à horloge, marquise sur les voies",
+   "emprise_m": [
+    68,
+    35
+   ],
+   "fichiers": {
+    "jour": "reperes/gare-jour.svg",
+    "nuit": "reperes/gare-nuit.svg"
+   }
+  },
+  {
+   "id": "cimetiere-vieux",
+   "description": "Cimetière Vieux : enclos, portail cintré, tombes, chapelles et cyprès",
+   "emprise_m": [
+    46,
+    38
+   ],
+   "fichiers": {
+    "jour": "reperes/cimetiere-vieux-jour.svg",
+    "nuit": "reperes/cimetiere-vieux-nuit.svg"
+   }
+  },
+  {
+   "id": "arenes",
+   "description": "Arènes (1897) : mur de brique à deux rangs d'arcades, pavillon d'entrée rayé",
+   "emprise_m": [
+    48.0,
+    50.0
+   ],
+   "fichiers": {
+    "jour": "reperes/arenes-jour.svg",
+    "nuit": "reperes/arenes-nuit.svg"
+   }
+  },
+  {
+   "id": "halles",
+   "description": "Halles (1891, style Baltard) : fer, persiennes, lanterneau et portail en pierre",
+   "emprise_m": [
+    38,
+    26
+   ],
+   "fichiers": {
+    "jour": "reperes/halles-jour.svg",
+    "nuit": "reperes/halles-nuit.svg"
+   }
+  },
+  {
+   "id": "pont-vieux",
+   "description": "Pont-Vieux sur l'Orb : arches en pierre et avant-becs",
+   "emprise_m": [
+    78,
+    52
+   ],
+   "fichiers": {
+    "jour": "reperes/pont-vieux-jour.svg",
+    "nuit": "reperes/pont-vieux-nuit.svg"
+   }
+  },
+  {
+   "id": "ecluses-fonseranes",
+   "description": "Écluses de Fonseranes : escalier de huit bassins sur le canal du Midi",
+   "emprise_m": [
+    78.0,
+    23.0
+   ],
+   "fichiers": {
+    "jour": "reperes/ecluses-fonseranes-jour.svg",
+    "nuit": "reperes/ecluses-fonseranes-nuit.svg"
+   }
+  },
+  {
+   "id": "allees-paul-riquet",
+   "description": "Allées Paul-Riquet : platanes, statue de Riquet et kiosque",
+   "emprise_m": [
+    64,
+    20
+   ],
+   "fichiers": {
+    "jour": "reperes/allees-paul-riquet-jour.svg",
+    "nuit": "reperes/allees-paul-riquet-nuit.svg"
+   }
+  }
+ ],
+ "vegetation": [
+  {
+   "id": "platane",
+   "fichiers": {
+    "jour": "vegetation/platane-jour.svg",
+    "nuit": "vegetation/platane-nuit.svg"
+   }
+  },
+  {
+   "id": "cypres",
+   "fichiers": {
+    "jour": "vegetation/cypres-jour.svg",
+    "nuit": "vegetation/cypres-nuit.svg"
+   }
+  },
+  {
+   "id": "palmier",
+   "fichiers": {
+    "jour": "vegetation/palmier-jour.svg",
+    "nuit": "vegetation/palmier-nuit.svg"
+   }
+  },
+  {
+   "id": "olivier",
+   "fichiers": {
+    "jour": "vegetation/olivier-jour.svg",
+    "nuit": "vegetation/olivier-nuit.svg"
+   }
+  },
+  {
+   "id": "pin-parasol",
+   "fichiers": {
+    "jour": "vegetation/pin-parasol-jour.svg",
+    "nuit": "vegetation/pin-parasol-nuit.svg"
+   }
+  },
+  {
+   "id": "lampadaire",
+   "fichiers": {
+    "jour": "vegetation/lampadaire-jour.svg",
+    "nuit": "vegetation/lampadaire-nuit.svg"
+   }
+  }
+ ]
+}
