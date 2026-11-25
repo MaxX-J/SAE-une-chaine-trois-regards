@@ -129,7 +129,7 @@ Chaque fichier porte un numéro de version, `map_version`. Les logements sont re
 
 **Quel modèle.** Modèles gratuits uniquement, via OpenRouter, avec un compte et une clé par étudiant, la clé étant dans le .env. Modèle demandé : nvidia/nemotron-3.5-super-vl:free, fixe pour garder une lecture régulière. Si les deux premiers appels échouent, le troisième va à openrouter/free, accepté par le sujet. Écarté : openrouter/free seul, car il change de modèle et les réponses varient. On enregistre model\_requested (celui de l'appel retenu) et model\_used, lu dans le champ model de la réponse (sujet, section 2).
 
-**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les neuf champs, leurs bornes et le prompt (`p3`, pas encore essayé) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
+**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les neuf champs, leurs bornes et le prompt (`p3`) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
 
 **Quand l'IA ne répond pas bien.**
 
