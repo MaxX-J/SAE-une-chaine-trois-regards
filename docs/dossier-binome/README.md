@@ -277,6 +277,13 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 - Dossier docs/ pour centraliser les rendus, les schémas et les liens utiles, versionné avec le code.
 - Secrets uniquement dans .env, jamais dans un commit.
 
+**L'IA pour concevoir.** Nous arrivons avec nos idées, nous les soumettons à Claude, et nous gardons, changeons ou refusons ses retours. Quelques exemples :
+
+- **Nos idées :** la ville (withRen), les balades dans Béziers (piste de l'enseignante d'art, choisie à deux), les bâtiments, les passants et le jour et la nuit (withRen), la lumière selon la `valence` (MaxX-J).
+- **Retours gardés :** l'IA hors de la chaîne, le jour et la nuit par quartier, le liseré et le contraste de la palette.
+- **Retours refusés ou corrigés par nous :** la valeur `sociabilite`, le `mot` libre, le ruban de couleurs au sol (jugé laid à l'essai), l'ordre des tâches du backlog et la palette de nuit (retours de withRen).
+- **Ce que nous vérifions :** les choix sont décidés par nous, le journal `docs/suivi/` dit qui a décidé quoi.
+
 **L'IA pour coder.** Le sujet l'autorise ; à l'oral, chacun doit expliquer tout ce que le binôme a produit. Nos règles :
 
 - L'IA propose, nous relisons, lançons les tests et comprenons chaque ligne avant de fusionner.

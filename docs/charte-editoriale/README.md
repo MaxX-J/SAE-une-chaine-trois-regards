@@ -179,7 +179,7 @@ Le premier vérifie une émotion forte, le deuxième l'absurde sans émotion mar
 
 ### Essais de `p3`
 
-Le 25/11, à la main avec `nvidia/nemotron-3.5-super-vl:free` (modèle choisi par les deux, pas relevé sur chaque réponse). Nous avons d'abord noté huit messages neufs chacun de notre côté, puis décidé une note commune, **avant** de voir l'IA. Claude a proposé les notes communes à partir des deux grilles et des règles ; le binôme les a acceptées.
+Le 25/11, à la main avec `nvidia/nemotron-3.5-super-vl:free` (modèle choisi par les deux, pas relevé sur chaque réponse). Nous avons d'abord noté huit messages neufs chacun de notre côté, **avant** de voir l'IA. Nous avons comparé nos grilles avec l'aide de Claude, qui a relevé les écarts et proposé une synthèse d'après nos règles ; nous l'avons relue et validée. Ces notes communes servent de référence.
 
 | Valeur | Réponses justes |
 | --- | --- |
