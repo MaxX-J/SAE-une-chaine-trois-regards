@@ -30,7 +30,7 @@ Idée de MaxX-J. On prend la moyenne de `valence` des 20 derniers messages du qu
 - La nuit, les **fenêtres allumées comptent les messages** du quartier (accord de MaxX-J).
 - Le visiteur peut forcer le jour partout, pour lire plus facilement.
 
-`moment` n'est alors plus utile : la nuit ne peut pas dépendre de deux valeurs. **Proposé : retirer `moment`, reprendre `valence`**, déjà définie et testée. La liste reste à dix valeurs.
+`moment` n'est alors plus utile : la nuit ne peut pas dépendre de deux valeurs. **Décidé par MaxX-J le 25/11 : retirer `moment`, reprendre `valence`**, déjà définie et testée (withRen : à confirmer). La liste reste à dix valeurs.
 
 ## Garde-fous
 
