@@ -25,8 +25,13 @@ def emit(folder, aid, night, fn, bounds, title, meta):
     s = S(aid, night)
     s.cx, s.cy = (bounds[0] + bounds[2]) / 2, (bounds[1] + bounds[3]) / 2
     fn(s)
+    # même cadre pour le jour et la nuit : on dessine aussi l'autre version
+    other = aid.replace('-jour', '-nuit') if not night else aid.replace('-nuit', '-jour')
+    o = S(other, not night)
+    o.cx, o.cy = s.cx, s.cy
+    fn(o)
     os.makedirs(f'{OUT}/{folder}', exist_ok=True)
-    open(f'{OUT}/{folder}/{aid}.svg', 'w').write(s.svg(title, meta=meta))
+    open(f'{OUT}/{folder}/{aid}.svg', 'w').write(s.svg(title, meta=meta, extra_pts=o.pts))
     return f'{folder}/{aid}.svg'
 
 

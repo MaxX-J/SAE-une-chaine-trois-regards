@@ -40,7 +40,7 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 | Prompt | `p2` adopté avec Nemotron, essais partiels (quota atteint) |
 | Œuvre | Balades dans Béziers, **rendu C** (toute la ville en 2,5D), jour et nuit. Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Avis des enseignants à demander |
 | Backlog et plan | v2 du 25/11, retours de withRen appliqués, à valider par les deux |
-| Bible DA | Texte pas commencé. Assets de bâtiments, passants et mobilier en brouillon (25/11) ; style des bâtiments et jour / nuit validés par MaxX-J, passants à valider. Le tableau « quelle valeur change quoi » du README des assets est à aligner sur `ville-vivante.md`. Liste des repères (`docs/bible-da/reperes.md`) et ville vivante (`docs/bible-da/ville-vivante.md`) proposées |
+| Bible DA | Texte pas commencé. Assets de bâtiments, passants et mobilier en brouillon (25/11) ; style des bâtiments et jour / nuit validés par MaxX-J, passants à valider. Le README des assets renvoie désormais à `ville-vivante.md`, validée par withRen le 25/11 ; fenêtres comptables, teinte des toits et des lumières prêtes dans les SVG. Liste des repères (`docs/bible-da/reperes.md`) et ville vivante (`docs/bible-da/ville-vivante.md`) proposées |
 | Palette | Brouillon v3 (`docs/bible-da/palette.md`, Figma) après la review de withRen ; à tester sur les assets |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
 
@@ -63,7 +63,7 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 | Sujet | Décision | Statut |
 | --- | --- | --- |
 | Technique | TypeScript, Node.js, Express, Zod, SQLite (`better-sqlite3`, secours `node:sqlite`), React et Vite, SVG, SSE, Vitest, Playwright | Proposé par withRen, dans le dossier |
-| Œuvre | BD non gardée. **Balades dans Béziers** : chaque message est une balade, toutes forment une seule carte. **Rendu C** : toute la ville en 2,5D, repères détaillés, jour et nuit | Choisi le 25/11 ; d'après MaxX-J, le « rendu B » noté le matin était une erreur. Avis des enseignants à demander |
+| Œuvre | BD non gardée. **Balades dans Béziers** : chaque message est une balade, toutes forment une seule carte. **Rendu C** : toute la ville en 2,5D, repères détaillés, jour et nuit | Choisi le 25/11 ; d'après MaxX-J, le « rendu B » noté le matin était une erreur ; confirmé par withRen. Avis des enseignants à demander |
 | Valeurs | Décrivent le message, pas le dessin | Validé à deux |
 | Dépôt | Public | Choix de MaxX-J |
 | Répartition (indicative) | MaxX-J : nœud et chaîne. withRen : IA et œuvre. Application à deux | Validée |

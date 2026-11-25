@@ -10,6 +10,7 @@ La lumière vient de la gauche (côté +y, -x) : face L éclairée, face R à l'
 """
 import math
 import random
+import re
 
 U = 10.0          # px par mètre (largeur au sol)
 ZK = 1.12         # échelle verticale
@@ -128,6 +129,7 @@ class S:
         self.n = 0
         self.ox = self.oy = 0.0
         self.cx = self.cy = 0.0
+        self._fen = False
 
     # ---------- repère ----------
     def at(self, ox, oy):
@@ -289,8 +291,11 @@ class S:
             n = scl(n, -1)
         c = self.col(base, n)
         self.poly(pts, c, sw=0.45)
-        if not tex:
-            return
+        if tex:
+            self._pan_tex(pts, c, eave, up, step, courses, kind)
+        self.poly(pts, '#000', stroke=None, extra=' class="tt"')
+
+    def _pan_tex(self, pts, c, eave, up, step, courses, kind):
         k = self.clip(pts)
         a, b = eave
         L = math.dist(a[:2], b[:2])
@@ -404,26 +409,35 @@ class S:
         shp = arch(u - w / 2, u + w / 2, z, z + h, pointed=pointed) if (arch_ or pointed) else rect(u - w / 2, u + w / 2, z, z + h)
         if lit is None:
             lit = self.rng.random() < 0.58
+        own = self.night and not self._fen
+        if own:
+            self.raw(f'<g class="fen{" on" if lit else ""}" data-n="@">')
         if self.night:
-            fill = self.g('lit') if lit else self.col('#2b3550', n)
+            self.fpoly(face, plane, shp, self.col('#2b3550', n), o=o, stroke=self.col('#2b2626', n), sw=0.35)
+            self.raw('<g class="lum">')
+            self.fpoly(face, plane, shp, self.g('lit'), o=o, stroke=self.col('#2b2626', n), sw=0.35)
+            self.raw('</g>')
         else:
-            fill = self.col('#4b6272', n)
-        self.fpoly(face, plane, shp, fill, o=o, stroke=self.col('#2b2626', n), sw=0.35)
+            self.fpoly(face, plane, shp, self.col('#4b6272', n), o=o, stroke=self.col('#2b2626', n), sw=0.35)
         if not self.night:
             self.fpoly(face, plane, [(u - w / 2, z + h * 0.35), (u - w / 2 + w * 0.45, z + h * 0.95), (u - w / 2 + w * 0.7, z + h * 0.95), (u - w / 2 + w * 0.2, z + h * 0.35)], '#ffffff', o=o, stroke=None, op=0.13)
         if mull:
             mc = self.col('#e8e0d0', n) if not (self.night and lit) else '#7a4a22'
             self.fline(face, plane, (u, z), (u, z + h * (0.92 if not arch_ else 0.8)), mc, o=o, w=0.45, op=0.8)
             self.fline(face, plane, (u - w / 2, z + h * 0.62), (u + w / 2, z + h * 0.62), mc, o=o, w=0.35, op=0.7)
+        if own:
+            self.raw('</g>')
         return lit
 
     def window(self, face, plane, u, z, w, h, shut=None, arch_=False, pointed=False, lit=None, surround='#efe5cf', sill=True, bal=False, mull=True, e=0.14, iron='#2f2b2d'):
         n = self.fn(face)
         if lit is None:
             lit = self.rng.random() < 0.58
-        if self.night and lit:
+        if self.night:
+            self.raw(f'<g class="fen{" on" if lit else ""}" data-n="@">')
+            self._fen = True
             X, Y = self.P(*self.fp(face, plane, u, z + h / 2))
-            self.raw(f'<ellipse cx="{X:.1f}" cy="{Y:.1f}" rx="{w * U * 1.5:.1f}" ry="{h * U * 0.95:.1f}" fill="{self.g("glow")}"/>')
+            self.raw(f'<g class="lum"><ellipse cx="{X:.1f}" cy="{Y:.1f}" rx="{w * U * 1.5:.1f}" ry="{h * U * 0.95:.1f}" fill="{self.g("glow")}"/></g>')
         shp = (lambda a, b, c, d: arch(a, b, c, d, pointed=pointed)) if (arch_ or pointed) else rect
         if surround:
             self.fpoly(face, plane, shp(u - w / 2 - e, u + w / 2 + e, z - e * 0.5, z + h + e), self.col(surround, n), sw=0.35)
@@ -445,6 +459,9 @@ class S:
             self.fpoly(face, plane, rect(u - w / 2 - e - 0.08, u + w / 2 + e + 0.08, z - e * 0.5 - 0.12, z - e * 0.5), self.col(surround or '#efe5cf', NT), sw=0.3)
         if bal:
             self.balcony(face, plane, u - w / 2 - 0.4, u + w / 2 + 0.4, z - 0.05, iron=iron)
+        if self.night:
+            self.raw('</g>')
+            self._fen = False
         return lit
 
     def balcony(self, face, plane, u0, u1, z, dp=0.65, slab='#e7ddca', iron='#2f2b2d', rail=1.0):
@@ -629,17 +646,17 @@ class S:
             self.poly(pts, self.col(cc, NL), stroke=None)
 
     # ---------- sortie ----------
-    def svg(self, title='', pad=8, meta=None):
-        xs = [p[0] for p in self.pts] or [0]
-        ys = [p[1] for p in self.pts] or [0]
+    def svg(self, title='', pad=8, meta=None, extra_pts=()):
+        xs = [p[0] for p in self.pts] + [p[0] for p in extra_pts] or [0]
+        ys = [p[1] for p in self.pts] + [p[1] for p in extra_pts] or [0]
         x0, x1, y0, y1 = min(xs) - pad, max(xs) + pad, min(ys) - pad, max(ys) + pad
         night = self.night
         a = self.k
         defs = [
             f'<linearGradient id="{a}ao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{SHADOW_TINT}" stop-opacity="0"/><stop offset="1" stop-color="{SHADOW_TINT}" stop-opacity="{0.28 if not night else 0.45}"/></linearGradient>',
-            f'<linearGradient id="{a}lit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a8"/><stop offset="1" stop-color="#ffa957"/></linearGradient>',
+            f'<linearGradient id="{a}lit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--lumiere,#ffe7a8)"/><stop offset="1" style="stop-color:var(--lumiere-bas,#ffa957)"/></linearGradient>',
             f'<linearGradient id="{a}shop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0c4"/><stop offset="1" stop-color="#ffb867"/></linearGradient>',
-            f'<radialGradient id="{a}glow"><stop offset="0" stop-color="#ffc977" stop-opacity="0.55"/><stop offset="1" stop-color="#ffb357" stop-opacity="0"/></radialGradient>',
+            f'<radialGradient id="{a}glow"><stop offset="0" style="stop-color:var(--lueur,#ffc977)" stop-opacity="0.55"/><stop offset="1" stop-color="#ffb357" stop-opacity="0"/></radialGradient>',
             f'<radialGradient id="{a}pool"><stop offset="0" stop-color="#ffcf86" stop-opacity="0.5"/><stop offset="1" stop-color="#ffb357" stop-opacity="0"/></radialGradient>',
             f'<linearGradient id="{a}water" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{"#7fb1bd" if not night else "#1f3450"}"/><stop offset="1" stop-color="{"#4f8c9e" if not night else "#152540"}"/></linearGradient>',
             f'<radialGradient id="{a}rose"><stop offset="0" stop-color="#ffe2a0"/><stop offset="0.45" stop-color="#e0705a"/><stop offset="1" stop-color="#4a5fb0"/></radialGradient>',
@@ -649,7 +666,21 @@ class S:
         if meta:
             import json
             m = f'<metadata>{json.dumps(meta, ensure_ascii=False)}</metadata>'
+        body = ''.join(self.el)
+        k = body.count('data-n="@"')
+        if k:
+            order = list(range(k))
+            random.Random(self.aid).shuffle(order)
+            it = iter(order)
+            body = re.sub(r'data-n="@"', lambda _m: f'data-n="{next(it)}"', body)
+        css = []
+        if 'class="tt"' in body:
+            css.append('.tt{fill:var(--toit,#000);opacity:var(--toit-force,0);mix-blend-mode:color}')
+        if 'class="fen' in body:
+            css.append('.fen:not(.on) .lum{display:none}')
+        if css:
+            body = f'<style>{"".join(css)}</style>' + body
         from opti import optimise
         return optimise(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x0:.1f} {y0:.1f} {x1 - x0:.1f} {y1 - y0:.1f}" width="{x1 - x0:.0f}" height="{y1 - y0:.0f}" data-ancre="0,0" data-px-par-metre="{U:g}">'
                 f'<title>{title}</title>{m}<defs>{"".join(defs)}{"".join(self.defs)}</defs>'
-                f'{"".join(self.el)}</svg>')
+                f'{body}</svg>')
