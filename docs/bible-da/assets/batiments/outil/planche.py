@@ -23,3 +23,24 @@ def variantes():
     h.append('</div></body></html>')
     open(f'{B}/planche-variantes.html', 'w').write(''.join(h))
 page('jour'); page('nuit'); variantes()
+def vie(mode):
+    bg, fg, card = ('#f3efe6', '#2b2440', '#fbf8f2') if mode == 'jour' else ('#141831', '#e8e4f5', '#1c2142')
+    css = f'body{{margin:0;background:{bg};color:{fg};font:15px/1.3 system-ui,sans-serif;padding:28px}}h1{{font-size:30px;margin:0 0 4px}}h2{{font-size:20px;margin:26px 0 12px}}.g{{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}}.c{{background:{card};border-radius:10px;padding:10px;display:flex;flex-direction:column;align-items:center}}.c img{{width:100%;height:150px;object-fit:contain}}.p img{{height:120px}}.c b{{margin-top:6px;font-size:13px}}.c i{{display:inline-block;width:12px;height:12px;border-radius:6px;margin-right:4px;vertical-align:-1px}}'
+    h = [f'<html><head><meta charset="utf-8"><style>{css}</style></head><body>',
+         f'<h1>La vie de la carte : gens, mobilier, incongrus ({mode})</h1><div style="opacity:.7">Même isométrie que les bâtiments. Les vêtements des personnages se recolorent en CSS (couleur de l\'émotion).</div>',
+         '<h2>Personnages : allures et émotions</h2><div class="g p">']
+    for p in m['personnages']:
+        col = m['couleurs_emotions'].get(p['id'])
+        dot = f'<i style="background:{col}"></i>' if col else ''
+        h.append(f'<div class="c"><img src="{p["fichiers"][mode]}"><b>{dot}{p["id"]}</b></div>')
+    h.append('</div><h2>Mobilier, végétation de saison</h2><div class="g">')
+    for v in m['mobilier']:
+        h.append(f'<div class="c"><img src="{v["fichiers"][mode]}"><b>{v["id"]}</b></div>')
+    h.append('</div><h2>Éléments incongrus (absurdité)</h2><div class="g">')
+    for v in m['incongrus']:
+        h.append(f'<div class="c"><img src="{v["fichiers"][mode]}"><b>{v["id"]}</b></div>')
+    h.append('</div></body></html>')
+    open(f'{B}/planche-vie-{mode}.html', 'w').write(''.join(h))
+vie('jour'); vie('nuit')
+for sc in ('joie', 'tristesse', 'colere'):
+    open(f'{B}/scene-{sc}.html', 'w').write(f'<html><body style="margin:0;background:#e9e3d6"><img src="apercu/scene-{sc}.svg" style="width:100%;display:block"></body></html>')

@@ -5,6 +5,8 @@ import json, os, sys
 from iso import S, U, ZK
 import generiques as G
 import reperes as R
+import vie as V
+import scenes as SC
 
 OUT = sys.argv[1]
 MODES = (('jour', False), ('nuit', True))
@@ -14,7 +16,9 @@ manifest = {
                    'ancre': "Le point (0,0) du viewBox est le centre de l'emprise au sol.",
                    'axes': "x vers la droite et le bas de l'écran, y vers la gauche et le bas, z vers le haut",
                    'lumiere': 'de la gauche : face gauche éclairée, face droite à l\'ombre'},
-    'generiques': [], 'reperes': [], 'vegetation': []}
+    'generiques': [], 'reperes': [], 'vegetation': [], 'personnages': [], 'mobilier': [], 'incongrus': [],
+    'variables_css_personnages': {'--haut': 'haut (couleur de l\'émotion)', '--bas': 'pantalon', '--peau': 'peau', '--cheveux': 'cheveux', '--objet': 'parapluie'},
+    'couleurs_emotions': V.EMOTIONS, 'peaux': V.PEAUX, 'cheveux': V.CHEVEUX}
 
 
 def emit(folder, aid, night, fn, bounds, title, meta):
@@ -57,6 +61,22 @@ for name, fn in VEG.items():
     files = {mode: emit('vegetation', f'{name}-{mode}', night, fn, (0, 0, 0, 0), f'{name} ({mode})', {'id': name, 'mode': mode})
              for mode, night in MODES}
     manifest['vegetation'].append({'id': name, 'fichiers': files})
+
+os.makedirs(f'{OUT}/vie/personnages', exist_ok=True)
+for name in V.POSTURES_ALLURE + [p for p in V.POSTURES_EMOTION if p != 'neutre']:
+    pose = V.POSTURES_EMOTION.get(name, name)
+    haut = V.EMOTIONS.get(name, V.EMOTIONS['neutre'] if name != 'parapluie' else '#4f6b55')
+    files = {}
+    for mode, night in MODES:
+        f = f'vie/personnages/personne-{name}-{mode}.svg'
+        open(f'{OUT}/{f}', 'w').write(V.person_svg(pose, night, haut))
+        files[mode] = f
+    manifest['personnages'].append({'id': name, 'type': 'emotion' if name in V.EMOTIONS else 'allure', 'fichiers': files})
+for key, d in (('mobilier', V.MOBILIER), ('incongrus', V.INCONGRUS)):
+    for name, fn in d.items():
+        files = {mode: emit(f'vie/{key}', f'{name}-{mode}', night, fn, (0, 0, 0, 0), f'{name} ({mode})', {'id': name, 'mode': mode})
+                 for mode, night in MODES}
+        manifest[key].append({'id': name, 'fichiers': files})
 
 json.dump(manifest, open(f'{OUT}/manifest.json', 'w'), ensure_ascii=False, indent=1)
 
@@ -102,6 +122,11 @@ def scene(night):
 
 
 os.makedirs(f'{OUT}/apercu', exist_ok=True)
+DEMOS = {'scene-joie': dict(night=False, emotion='joie', energie=0.8, tension=0.0, saison='printemps', seed=3),
+         'scene-tristesse': dict(night=True, emotion='tristesse', energie=0.25, tension=0.3, saison='automne', pluie=True, seed=4),
+         'scene-colere': dict(night=True, emotion='colere', energie=0.7, tension=1.0, saison='hiver', incongru='taureau', seed=5)}
+for k, kw in DEMOS.items():
+    open(f'{OUT}/apercu/{k}.svg', 'w').write(SC.rue(k, **kw))
 for night in (False, True):
     open(f'{OUT}/apercu/scene-{"nuit" if night else "jour"}.svg', 'w').write(scene(night))
 print('ok', sum(len(f) for _, _, f in os.walk(OUT)))
