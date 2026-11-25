@@ -4,13 +4,17 @@
 
 ## Le symbole
 
-| Piste | Idée | Pour | Contre |
-| --- | --- | --- | --- |
-| **A. Le B en balade** (recommandée) | Un seul trait dessine le B de Béziers. Ses trois étapes, carré, rond et triangle, sont les trois nœuds | Suit les règles de l'œuvre : il prend la couleur, le motif et la forme d'une vraie balade | Devient fouillis à tension 1 |
-| B. La fenêtre traversée | Une fenêtre (un message) traversée par un trajet | Très lié à l'œuvre | Moins net en petit |
-| C. L'épingle habitée | Une épingle avec une fenêtre | Se comprend tout de suite | Ressemble à toutes les cartes |
+**v2, le pâté de maisons.** Un *bloc* de la chaîne devient un *bloc* de maisons de Béziers : quatre cases sur quatre, en 2,5D, traversées par une balade.
 
-**Déclinaisons de A :** sept émotions (couleur et motif), jour, crépuscule et nuit, trois tensions, masqué, une seule couleur, inverse, et de 16 à 96 px. À 32 px et moins, les étapes disparaissent.
+| Fixe | Change |
+| --- | --- |
+| La grille de 4 × 4, la perspective, l'entrée à gauche et la sortie à droite | Le chemin, la hauteur et la couleur des maisons : `id` du message |
+| Maisons basses devant la balade, hautes derrière, pour qu'elle reste visible | La couleur de la rue : `emotion` |
+| | Jour, crépuscule ou nuit : `valence` |
+
+Chaque balade a donc son signe. Version simplifiée (un losange et le trait) à 32 px et moins ; versions encre et inverse. Une version fixe, à choisir, sert d'emblème à l'œuvre.
+
+**Écarté :** la v1 (un B dessiné par le trait, une fenêtre traversée, une épingle), jugée ratée par MaxX-J et gardée dans Figma, à droite de la planche.
 
 ## La typographie
 
@@ -36,14 +40,14 @@ Tailles : 64, 36 et 24 pour les titres, 18 pour les textes, 15 pour les détails
 | Aide | 3114, 15, 112 |
 | Légende | Couleur, motif et nom de chaque émotion |
 | Quartier | Humeur écrite, car la lumière ne suffit pas |
-| Interrupteur | Toujours voir de jour |
+| Interrupteur | Toujours voir de jour : réglage personnel pour qui lit mal dans les quartiers de nuit, ne change pas l'œuvre des autres |
 | Zoom | Trois boutons de 48 px |
 
 Fondations dans Figma : 15 couleurs d'interface, 6 espacements, 3 rayons et 8 styles de texte. Principes : contraste AA, focus visible, la couleur jamais seule.
 
 ## À décider à deux
 
-1. Piste A, B ou C ?
+1. Le pâté de maisons, et l'emblème fixe.
 2. Les trois familles de caractères.
 3. Vérifier les contrastes des composants et les tester à la taille réelle.
 4. Écrans complets : écrire, suivre, carte, balade.
