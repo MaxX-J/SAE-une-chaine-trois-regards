@@ -6,13 +6,21 @@
 
 **v2, le pâté de maisons.** Un *bloc* de la chaîne devient un *bloc* de maisons de Béziers : quatre cases sur quatre, en 2,5D, traversées par une balade.
 
-| Fixe | Change |
-| --- | --- |
-| La grille de 4 × 4, la perspective, l'entrée à gauche et la sortie à droite | Le chemin, la hauteur et la couleur des maisons : `id` du message |
-| Maisons basses devant la balade, hautes derrière, pour qu'elle reste visible | La couleur de la rue : `emotion` |
-| | Jour, crépuscule ou nuit : `valence` |
+Planche de construction : [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=33-91). Méthode vue avec Visit Nordkyn (Neue) : une idée, un système fixe, des zones, puis la donnée.
 
-Chaque balade a donc son signe. Version simplifiée (un losange et le trait) à 32 px et moins ; versions encre et inverse. Une version fixe, à choisir, sert d'emblème à l'œuvre.
+| Fixe | Ce qui le change | Donnée |
+| --- | --- | --- |
+| Grille de 4 × 4, hauteur limitée | | |
+| Entrée à gauche, sortie à droite | Nombre de virages de la rue | `tension` |
+| Zone haute derrière, zone basse devant la rue | Hauteur des maisons | `energie` |
+| | Une maison quitte le sol | `absurdite` |
+| | Couleur de la rue, seule couleur du signe | `emotion` |
+| | Lumière : jour, crépuscule, nuit | `valence` |
+| | Détail des maisons | `id` du message |
+
+**Quand on le voit.** À la fin de l'attente, la personne découvre **le signe de sa balade** ; il reste sur sa carte et dans la liste. L'**emblème** (losange, et pâté « jour, joie ») est fixe : onglet, en-tête, accueil, documents. Pas de symbole sur la carte commune.
+
+**À améliorer.** L'`id` change encore trop peu le signe : plus d'écart entre les maisons et plusieurs rues possibles par tension. `lieu` et `intensite` n'y sont pas. Version simplifiée (losange et trait) à 32 px et moins ; versions encre et inverse.
 
 **Écarté :** la v1 (un B dessiné par le trait, une fenêtre traversée, une épingle), jugée ratée par MaxX-J et gardée dans Figma, à droite de la planche.
 
