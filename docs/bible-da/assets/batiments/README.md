@@ -1,6 +1,6 @@
-# Bâtiments de Béziers en relief (rendu B)
+# Bâtiments de Béziers en relief (rendu C)
 
-**BROUILLON du 25/11/2026**, à valider par MaxX-J et withRen. Pour le rendu B : la carte reste plate et les repères passent en relief 2,5D.
+**BROUILLON du 25/11/2026**, à valider par MaxX-J et withRen. Pour le rendu C (validé par withRen le 25/11) : toute la ville est en 2,5D, avec des repères détaillés, de jour et de nuit. Les bâtiments génériques remplissent la ville, les repères sont dessinés sur mesure.
 
 | Jour | Nuit |
 | --- | --- |
@@ -49,23 +49,24 @@ Trois rues de démonstration, générées par `outil/scenes.py` à partir de val
 
 **Personnages.** Ils mesurent environ 1,8 m (20 px). Leurs couleurs sont des variables CSS, avec une valeur par défaut : `--haut`, `--bas`, `--peau`, `--cheveux`, `--objet`. Pour les changer, il faut insérer le SVG dans la page (ou passer par `<use>`) : une balise `<img>` affiche toujours les couleurs par défaut. Les couleurs des émotions sont dans `manifest.json` (`couleurs_emotions`).
 
-**Lampadaire grésillant.** Il clignote tout seul grâce à une petite animation CSS dans le SVG.
+**Lampadaire grésillant.** Sa lumière varie lentement (cycle de 5 s, aucun éclair), et l'animation s'arrête si le visiteur a demandé moins de mouvement (`prefers-reduced-motion`).
 
-### Proposition : quelle valeur change quoi
+### Quelle valeur change quoi
 
-C'est une **proposition de Claude, à valider à deux**. Elle n'utilise que les six valeurs validées le 23/11, et un réglage reste lisible seul.
+La correspondance qui fait foi est dans [`ville-vivante.md`](../../ville-vivante.md) (validée par withRen le 25/11, à confirmer par MaxX-J là où elle le demande). En résumé, pour ces assets : `valence` donne le jour, le crépuscule ou la nuit du quartier ; `emotion` la couleur des lumières et des toits, puis la pose et les vêtements des passants ; `energie` le nombre et l'allure des passants ; `intensite` la densité du décor ; `tension` une lumière plus dure ; `absurdite` un élément incongru, rare ; `ambiance` la météo et la saison des arbres ; `lieu` le mobilier.
 
-| Valeur | Ce qui change dans la balade |
-| --- | --- |
-| `emotion` | La pose des passants et la couleur de leurs vêtements (une partie des passants seulement, pour rester naturel) |
-| `energie` | Le nombre de passants (de 3 à 19 sur une rue) et leur allure : assis, debout, marche, course |
-| `valence` | La météo et la saison du platane : printemps ou été si positive, automne si négative, hiver et pluie (flaques, parapluies) si très négative. Terrasses et lauriers fleuris si positive |
-| `tension` | L'éclairage : à partir de 0,5 des lampadaires éteints et des poubelles qui débordent, à partir de 0,75 des lampadaires qui grésillent |
-| `absurdite` | Un élément incongru, rare : à partir de 0,75 seulement, un seul par balade |
-| `theme` | Le mobilier dominant : `nature` plus d'arbustes, `societe` plus de passants et de bancs, `quotidien` poubelles et vélos, `relation` passants par deux, `imaginaire` autorise l'incongru dès 0,5 |
-| *(hors valeurs)* | Jour ou nuit selon l'heure du message dans la chaîne |
+Ce que les assets couvrent déjà pour `ambiance` : soleil (platane d'été), pluie (flaques, parapluies), floraison (printemps), feuilles (automne), froid (hiver). Il manque le vent, la brume et la chaleur.
 
-Avis : rendre la carte vivante est une bonne idée, à une condition : chaque valeur ne pilote qu'**un seul** aspect visible, sinon on ne sait plus lire la carte. Les éléments incongrus doivent rester rares pour garder leur effet.
+## Réglages pour le code
+
+![Réglages : fenêtres, toits et lumières](apercu/reglages.jpg)
+
+Ces réglages ne marchent que si le SVG est inséré dans la page (pas avec une balise `<img>`). Si le même SVG est inséré plusieurs fois, il faut préfixer ses `id` à chaque fois (comme le fait SVGR), sinon toutes les copies prennent les couleurs de la première.
+
+- **Même cadre jour et nuit.** Les deux versions d'un asset ont exactement le même `viewBox`. Pour le crépuscule, on peut donc superposer la nuit sur le jour avec une opacité de 0,5.
+- **Fenêtres qui comptent les messages** (versions nuit). Chaque fenêtre est un groupe `class="fen"` avec un numéro `data-n` (0, 1, 2…), dans un ordre mélangé pour que les fenêtres allumées soient réparties sur la façade. Une fenêtre est allumée quand elle a aussi la classe `on`. Pour N messages : mettre `on` sur les fenêtres dont `data-n` est inférieur à N. Par défaut, environ 6 fenêtres sur 10 sont allumées. Les vitrines et les portes restent toujours éclairées.
+- **Couleur des toits.** `--toit` (couleur) et `--toit-force` (de 0 à 1, 0 par défaut). La teinte garde l'ombre et la lumière du toit.
+- **Couleur des lumières** (versions nuit). `--lumiere` et `--lumiere-bas` pour le dégradé des fenêtres, `--lueur` pour le halo.
 
 ## Optimisation
 

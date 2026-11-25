@@ -267,8 +267,9 @@ def lampadaire_variant(s, mode):
         return
     anim = ''
     if mode == 'gresille':
-        anim = ' class="g"'
-        s.raw('<style>@keyframes g{0%,18%,22%,60%,64%,100%{opacity:1}20%,62%{opacity:.15}40%{opacity:.75}}.g{animation:g 2.3s steps(1) infinite}</style>')
+        anim = f' class="{s.k}g"'
+        # variation lente (pas d'éclair), coupée si le visiteur demande moins de mouvement
+        s.raw(f'<style>@keyframes {s.k}g{{0%,100%{{opacity:1}}40%{{opacity:.4}}55%{{opacity:.55}}70%{{opacity:.35}}}}.{s.k}g{{animation:{s.k}g 5s ease-in-out infinite}}@media (prefers-reduced-motion:reduce){{.{s.k}g{{animation:none}}}}</style>')
     s.raw(f'<g{anim}><ellipse cx="{X0:.1f}" cy="{Y0:.1f}" rx="32" ry="16" fill="{s.g("pool")}"/><circle cx="{X:.1f}" cy="{Y:.1f}" r="16" fill="{s.g("glow")}"/><circle cx="{X:.1f}" cy="{Y:.1f}" r="1.6" fill="#fff4d0"/></g>')
 
 
