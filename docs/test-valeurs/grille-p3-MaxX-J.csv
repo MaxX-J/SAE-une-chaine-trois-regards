@@ -1,9 +1,9 @@
 ﻿n;message;lieu;lieu_secondaire;intensite;ambiance;mot;note
-1;Aux Halles, le poissonnier chante plus fort que les mouettes.;;;;;;
-2;Chaque dimanche j'apporte des fleurs à mon grand-père, il fait toujours froid là-haut.;;;;;;
-3;Trois heures de cours et je n'ai rien compris, je suis vidé.;;;;;;
-4;Hier soir tout le bar chantait, même le serveur pleurait de rire !;;;;;;
-5;Et si la statue de la place descendait faire ses courses la nuit ?;;;;;;
-6;Il bruine sur le canal, deux canards se disputent un bout de pain.;;;;;;
-7;Mon voisin claque la porte à minuit, j'ai peur de sortir sur le palier.;;;;;;
-8;Bravo, encore un parking à la place des arbres.;;;;;;
+1;Aux Halles, le poissonnier chante plus fort que les mouettes.;halles;marche ou poissonier;0.25;Soleil;Le Chanteur;
+2;Chaque dimanche j'apporte des fleurs à mon grand-père, il fait toujours froid là-haut.;commerce fleuriste;epad hopital;0;froid;la famille;
+3;Trois heures de cours et je n'ai rien compris, je suis vidé.;ecole;ecole;0.25;neutre;La fatigue;
+4;Hier soir tout le bar chantait, même le serveur pleurait de rire !;fete;bar ou fete;0.5;Chaleur;la rigolade;
+5;Et si la statue de la place descendait faire ses courses la nuit ?;art;repere;0;neutre;la statue qui bouge;
+6;Il bruine sur le canal, deux canards se disputent un bout de pain.;nature;nature;0.25;Brume froid;la bagarre;
+7;Mon voisin claque la porte à minuit, j'ai peur de sortir sur le palier.;habitat;habitat;0.75;froid vent;la dispute;
+8;Bravo, encore un parking à la place des arbres.;commerce;nature;0.5;neutre;Le remplcement;

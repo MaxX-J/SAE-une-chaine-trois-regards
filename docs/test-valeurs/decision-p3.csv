@@ -1,0 +1,9 @@
+﻿n;message;lieu;lieu_secondaire;intensite;ambiance
+1;Aux Halles, le poissonnier chante plus fort que les mouettes.;commerce;aucun;0,25;neutre
+2;Chaque dimanche j'apporte des fleurs à mon grand-père, il fait toujours froid là-haut.;cimetiere;aucun;0,5;froid
+3;Trois heures de cours et je n'ai rien compris, je suis vidé.;savoir;aucun;0,5;neutre
+4;Hier soir tout le bar chantait, même le serveur pleurait de rire !;fete;aucun;0,75;neutre
+5;Et si la statue de la place descendait faire ses courses la nuit ?;art;repere;0;neutre
+6;Il bruine sur le canal, deux canards se disputent un bout de pain.;eau|nature;nature|aucun;0;pluie
+7;Mon voisin claque la porte à minuit, j'ai peur de sortir sur le palier.;habitat;aucun;0,75;neutre
+8;Bravo, encore un parking à la place des arbres.;repere|nature;aucun;0,5;neutre

@@ -26,7 +26,7 @@ Trois binômes partagent une seule chaîne, avec un nœud chacun. Chaque binôme
 |---|---|---|---|
 | [Spec commune](docs/spec-commune/README.md) | Les six | 26/11, 12h30 | v1.0 validée |
 | [Dossier de binôme](docs/dossier-binome/README.md) | Binôme | 27/11, 17h | Brouillon v0.6 |
-| [Charte éditoriale](docs/charte-editoriale/README.md) | Binôme | 27/11, 17h | Brouillon v0.6 |
+| [Charte éditoriale](docs/charte-editoriale/README.md) | Binôme | 27/11, 17h | Brouillon v0.7 |
 | [Bible DA](docs/bible-da/README.md) | Binôme | 27/11, 17h | À rédiger |
 | [Backlog et plan](docs/backlog/README.md) | Binôme | 27/11, 17h | v2 proposée |
 | [Test des valeurs](docs/test-valeurs/README.md) | Binôme | | Grille validée |
