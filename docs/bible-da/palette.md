@@ -1,6 +1,6 @@
 # Palette de Béziers
 
-**BROUILLON v3 du 25/11/2026, après la review de withRen, rien n'est validé.** Planche : [Figma v3](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=20-2), v1 et v2 gardées à côté (accès selon le partage du fichier).
+**BROUILLON v3.1 du 26/11/2026.** Choix de MaxX-J le 26/11 marqués, à valider par withRen. Planche : [Figma v3](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=20-2), v1 et v2 gardées à côté (accès selon le partage du fichier).
 
 **L'idée :** la ville est la matière, calme ; l'émotion est la lumière posée dessus.
 
@@ -9,11 +9,10 @@
 | Valeur | Rôle | Nombre |
 | --- | --- | --- |
 | `lieu` | Symbole et liseré du toit | 10 familles × 3 tons |
-| `emotion` | Tracé et son motif, halo au sol, légère teinte des fenêtres | 7 teintes |
+| `emotion` | Tracé et son motif, couleur des rues ; émotion dominante du quartier : sol, toits, saison des arbres ; vêtements des passants | 7 teintes |
 | `intensite` | Force de la teinte | 5 crans |
 | `tension` | Forme du tracé, souple à cassée | 5 crans |
 | `valence` | Jour, crépuscule ou nuit du quartier | 3 lumières |
-| `ambiance` | Voile du parcours | 9 × 2 tons |
 
 La couleur ne suffit jamais : symbole pour le lieu, émotion écrite dans la liste des balades.
 
@@ -37,7 +36,7 @@ De jour et au crépuscule, un liseré encre #1C2140 passe sous le tracé (contra
 | --- | --- | --- | --- | --- | --- | --- |
 | plein, épais | longs tirets | tirets courts | points | tiret et point | double trait | plein, fin |
 
-Ces motifs sont des propositions. Un tracé absurde qui quitte les rues garde son motif : il ne doit pas être montré par des pointillés, comme dans les premières esquisses.
+Ces motifs sont des propositions.
 
 ### La tension : la forme du tracé
 
@@ -52,7 +51,7 @@ La couleur et le motif disent l'émotion, **la forme dit la tension** : plus ell
 | 1 | Zigzag très serré, irrégulier |
 
 - Les écarts viennent de l'`id` du message : toujours les mêmes.
-- Le tracé reste dans la largeur de la rue : il ne la quitte que si `absurdite` est forte. Ce sont deux effets différents.
+- Le tracé reste toujours dans la largeur de la rue (MaxX-J, 26/11). `absurdite` ne déforme plus le tracé : elle pose un objet incongru.
 - Les tirets sont découpés le long du tracé. Aux tensions fortes, ils se lisent moins bien : à tester à la taille réelle.
 - Le tracé est fixe : aucun tremblement animé.
 
@@ -68,17 +67,18 @@ La couleur et le motif disent l'émotion, **la forme dit la tension** : plus ell
 - **Tracé** : chaque émotion est éclaircie à sa mesure. Écart d'au moins 10 entre toutes, dans les quatre visions simulées.
 - **Fenêtre** : 30 % d'émotion, 70 % de lumière chaude (#FFE7A8). Elles se ressemblent, car elles servent à compter les messages.
 - **Halo** : la nuit, couleur du tracé en transparence (remarque de withRen) ; de jour, émotion pleine. Décoratif.
-- **Lumière au sol** (proposé) : l'émotion, large et floue, sous les bâtiments, plus légère le jour. Seule la balade choisie éclaire autant, pour que 300 émotions ne se mélangent pas. Force selon `intensite`, crans à régler.
+- **Sol et toits du quartier** (MaxX-J, 26/11) : l'émotion la plus fréquente des 20 derniers messages du quartier, large et floue au sol, en teinte sur les toits (`--toit`, `--toit-force` des assets), plus légère le jour. Une seule émotion par quartier, pour que 300 émotions ne se mélangent pas. Force à régler à l'œil.
+- **Bâtiments visités** : teinte chaude (fenêtre chaude #FFA957) sur la façade et fenêtres allumées. Entourés d'un quartier coloré, ils se lisent.
 - **Sol de nuit** : papier #404253, place #3D3E4D, rue #393B4B, pavé #353646. Le mur se détache de la rue de 1,2 à 1,9 selon l'enduit, contre 1,02 avant sur le mur sable.
 
 Calculé au cran 0,75, sur ces fonds. Seuil visé : 3 (WCAG 1.4.11).
 
 ### Beaucoup de balades
 
-Pas de moyenne des tracés : chaque balade garde sa forme. Principe accepté par les deux le 25/11, seuils à régler à l'œil.
+Une seule chaîne (MaxX-J, 26/11) : chaque balade part de la fin de la précédente.
 
-- **Balades récentes, par quartier** (retour de withRen) : 4 séparées et nettes vues de loin, 12 au zoom. *Chiffres proposés.*
-- **Balades plus anciennes** : elles usent la rue, un chemin clair d'une seule teinte qui s'élargit avec les passages. Le ruban de couleurs, essayé par withRen, est abandonné (jugé laid). Les émotions anciennes peuvent teinter les fenêtres (*proposé*).
+- **Traînée** : les dernières balades sont nettes et s'estompent ; la plus récente est la plus forte, avec un point et un halo. Nombre à calibrer sur l'œuvre (12 est trop peu).
+- **Rues** : une rue prend l'émotion de son dernier passage ; plus elle est empruntée, plus elle brille, en se tassant. Le ruban de couleurs, essayé par withRen, reste abandonné.
 - **Retrouver sa balade** (retour de withRen) : lien vers l'`id` du message, donné après l'écriture, et liste accessible. La balade remonte au premier plan, même ancienne.
 
 ## Familles de lieux (ton moyen)
@@ -101,13 +101,9 @@ Le symbole porte le lieu : la couleur ne suffit pas, notamment en daltonisme. La
 
 Crépuscule : 38 % de #8A5672. Nuit : 66 % de #1C2140, sauf le sol (voir la nuit). Calculés, à retoucher à l'œil.
 
-## Ambiances (clair, soutenu)
+## Ambiances
 
-| soleil | pluie | vent | brume | froid | chaleur | floraison | feuilles | neutre |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| #FFE3A3, #F2C35B | #9DB4C4, #5F7C92 | #D5E0DD, #A3B8B4 | #E3E1E2, #BDBBC4 | #DCEBF2, #A9C9DB | #F7C9A0, #E58D5A | #F6D3DC, #E79BB2 | #DDA35C, #A9632F | #F6F1E6, #E3DCCC |
-
-Vent, brume et froid se ressemblent : c'est le motif qui les sépare. La nuit, opacité nettement plus basse, à régler.
+Retirées avec la valeur `ambiance` (MaxX-J, 26/11).
 
 ## Lumières et interface
 
@@ -115,8 +111,8 @@ Fenêtre claire #FFE7A8, fenêtre chaude #FFA957, halo #FFCF86, encre et nuit #1
 
 ## À tester et à décider
 
-1. Valider `peur`, `degout` et le liseré sur une vraie rue.
-2. Valider l'échange : `eau` en bleu ciel, `savoir` en gris sauge.
-3. `commerce` et `habitat` restent proches (écart 9,4).
-4. Régler à l'œil l'opacité des voiles la nuit, adoucir la limite entre deux quartiers.
-5. Essayer sur un vrai écran, avec trois quartiers voisins. « Masqué » sert de fond, jamais de texte ; le texte discret est à éviter la nuit.
+Validés par MaxX-J le 26/11 : `peur`, `degout` et le liseré ; `eau` en bleu ciel et `savoir` en gris sauge ; `commerce` et `habitat` gardés malgré leur écart de 9,4. Les vêtements des passants reprennent exactement les teintes des émotions.
+
+1. Prendre toutes les lumières (sol, toits, rues) dans cette palette.
+2. Régler à l'œil l'opacité des voiles la nuit, adoucir la limite entre deux quartiers.
+3. Essayer sur un vrai écran, avec trois quartiers voisins. « Masqué » sert de fond, jamais de texte ; le texte discret est à éviter la nuit.

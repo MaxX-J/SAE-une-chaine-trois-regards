@@ -1,6 +1,6 @@
 # Essai : une seule chaîne
 
-**BROUILLON du 25/11/2026, pas décidé.** Idée de MaxX-J : chaque balade part d'où la précédente s'est arrêtée, comme un bloc suit le précédent. © les contributeurs OpenStreetMap, ODbL. Messages et émotions inventés.
+**Essai du 25/11/2026. Chaîne unique choisie par MaxX-J le 26/11, à valider par withRen.** Idée de MaxX-J : chaque balade part d'où la précédente s'est arrêtée, comme un bloc suit le précédent. © les contributeurs OpenStreetMap, ODbL. Messages et émotions inventés.
 
 ## De loin
 
@@ -40,12 +40,13 @@ Idée de MaxX-J. La lumière dit par où on passe, la hauteur dit où on s'arrê
 
 Pas dessiné : `ambiance`. Les étages des assets de withRen restent à prévoir.
 
-## À trancher à deux
+## Choix du 26/11 (MaxX-J)
 
-1. Garder cette idée de chaîne unique ?
-2. Crépuscule partout, ou garder jour, crépuscule et nuit ?
-3. Des tours bien visibles, ou une croissance plus discrète ?
-4. Le sens de la teinte grise d'un message masqué.
+1. Chaîne unique : gardée.
+2. Jour, crépuscule et nuit : gardés, le crépuscule partout est abandonné.
+3. Les bâtiments grandissent par **étages**, pas en étirant l'image.
+4. Message masqué : un volet fermé, pas de bout gris.
+5. `tension` reste dans la rue ; `absurdite` pose un objet incongru ; `ambiance` est retirée.
 
 ## À améliorer
 

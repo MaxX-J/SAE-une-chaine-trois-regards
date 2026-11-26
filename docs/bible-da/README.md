@@ -2,9 +2,9 @@
 
 Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
 
-**Version 0.1, brouillon du 25/11/2026.** Rendu : vendredi 27/11, 17h, PDF. **[À FOURNIR]** : image ou contenu attendu. **[À CONFIRMER]** : choix à valider à deux. Fond de carte : © les contributeurs OpenStreetMap (ODbL).
+**Version 0.2, brouillon du 26/11/2026.** Rendu : vendredi 27/11, 17h, PDF. Les choix de cette version sont ceux de MaxX-J le 26/11, **à valider par withRen**. **[À FOURNIR]** : image ou contenu attendu. **[À CONFIRMER]** : choix encore ouvert. Fond de carte : © les contributeurs OpenStreetMap (ODbL).
 
-**En une phrase.** Chaque message devient une balade dans Béziers, et toutes les balades, ensemble, dessinent le Béziers que les gens ressentent.
+**En une phrase.** Chaque message devient une balade dans Béziers ; chaque balade repart d'où la précédente s'est arrêtée, et ensemble elles dessinent le Béziers que les gens ressentent.
 
 ## 1. Intention
 
@@ -14,17 +14,17 @@ Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
 | --- | --- | --- |
 | On écrit | La confiance, puis le poids des mots | Une question simple, un avertissement clair : ce message ne s'effacera pas |
 | On attend | La curiosité | Une ville se construit, étape par étape |
-| On découvre sa balade | « C'est la mienne » | Un signe unique, un chemin dans de vraies rues |
-| On regarde la ville | D'être un parmi d'autres | Des quartiers s'allument, s'éteignent, s'usent sous les pas |
+| On découvre sa balade | « C'est la mienne » | Un signe unique, un chemin dans de vraies rues, au bout de la chaîne |
+| On regarde la ville | D'être un parmi d'autres | Une seule ligne qui traverse la ville, des rues qui s'allument, des bâtiments qui grandissent |
 | On revient | L'attachement | La ville a changé, sa balade est toujours là |
 
-**Notre regard sur la chaîne.** Une blockchain garde des paroles qu'on n'efface pas ; une ville garde les pas de ceux qui la traversent. Un *bloc* de la chaîne est un *bloc* de maisons. Les messages des trois binômes passent dans la même ville, sous les mêmes règles.
+**Notre regard sur la chaîne.** Une blockchain garde des paroles qu'on n'efface pas, chaque bloc accroché au précédent. Notre ville fait pareil : **une seule balade continue**, chaque message part de la dernière étape du précédent. Un *bloc* de la chaîne est un *bloc* de maisons. Les messages des trois binômes passent dans la même ville, sous les mêmes règles.
 
 **Pourquoi Béziers.** C'est notre lieu. Les rues, les bâtiments et les repères sont vrais : le visiteur peut reconnaître son quartier, ce qui rend l'abstrait (une émotion lue par une IA) très concret. Piste donnée par l'enseignante d'art, choisie par nous deux ; balade individuelle puis carte commune approuvées par les enseignants.
 
 **Ce que nous refusons.** Juger le visiteur, le suivre, donner une adresse, se moquer d'un lieu de culte ou de mémoire, et une œuvre qu'on ne peut pas lire sans voir les couleurs.
 
-**Écarté.** Une planche de BD, une galaxie, un visage, une forêt, des flèches, une ville de nuit générique : testés en esquisses. Béziers l'emporte parce que la donnée y a déjà une place, la rue.
+**Écarté.** Une planche de BD, une galaxie, un visage, une forêt, des flèches, une ville de nuit générique : testés en esquisses. Puis des balades séparées : à 300, elles faisaient un fouillis. Béziers l'emporte parce que la donnée y a déjà une place, la rue.
 
 ## 2. Moodboard
 
@@ -36,23 +36,23 @@ Nous regardons des **systèmes** : pour chaque référence, comment l'image est 
 | Visit Nordkyn, Neue (cours) | Une forme fixe, que le vent et la température changent | Idée, système, zones, puis la donnée : notre planche du signe | Sa forme hexagonale |
 | MIT Media Lab, TheGreenEyl (cours) | Trois formes dans une grille de 4 × 4 invisible, 12 combinaisons de couleurs, environ 40 000 logos par combinaison | Une grille fixe, un signe par personne | Ses formes |
 | Jardin virtuel de Qubo Gas (cours) | Un jardin qui change selon la météo, en temps réel | Une donnée extérieure change un paysage familier | Le temps réel météo |
-| Strava | Des parcours superposés : plus on passe, plus le chemin se voit | Les rues qui s'usent sous les balades | Le suivi des personnes : nous n'utilisons aucune position |
+| Strava | Des parcours superposés : plus on passe, plus le chemin se voit | Les rues qui s'allument sous les passages | Le suivi des personnes : nous n'utilisons aucune position |
 | Plan de métro | Une géographie simplifiée en lignes, couleurs et étapes | Étapes, lignes, lecture rapide | L'abstraction : nos rues restent vraies |
-| Monopoly | Un plateau où un lieu a une couleur et une pièce posée dessus | Les familles de lieux, les repères en volume | Son dessin et son argent |
+| Monopoly | Un plateau où un lieu a une couleur et une pièce posée dessus | Les familles de lieux, les repères en volume, les maisons qui s'ajoutent | Son dessin et son argent |
 | Google Maps | Le zoom révèle des détails, niveau par niveau | Trois niveaux : ville, quartier, lieu | L'aspect, la recherche, les données personnelles |
 
 **[À FOURNIR]** Images et sources, par withRen. Chaque image sera légendée avec son auteur, sa date et son adresse. Nous nous en inspirons sans reprendre de dessin.
 
 ## 3. Ambiance colorée
 
-**L'idée.** La ville est la **matière**, calme ; l'émotion est la **lumière** posée dessus. Palette **fermée**, environ 200 teintes, détaillée dans [palette.md](palette.md).
+**L'idée.** La ville est la **matière** ; l'émotion est la **lumière** posée dessus : sur le sol et les toits du quartier, et dans les rues où la chaîne passe. Palette **fermée**, détaillée dans [palette.md](palette.md).
 
 | Groupe | Teintes | Donnée qui choisit | Usage |
 | --- | --- | --- | --- |
 | Matières de Béziers | Enduits, tuiles, zinc, volets, végétation, eau : 30 de jour | `valence` du quartier, en trois lumières | Bâtiments, sol, eau |
-| Émotions | 7 teintes × 5 crans | `emotion`, `intensite` | Tracé, halo |
+| Émotions | 7 teintes × 5 crans | `emotion`, `intensite` | Tracé, rues, sol et toits du quartier, vêtements des passants |
+| Bâtiments visités | Une teinte chaude | Nombre de visites | Façades et fenêtres des bâtiments qui grandissent |
 | Familles de lieux | 10 familles × 3 tons | `lieu` | Symbole, liseré |
-| Ambiances | 9 × 2 tons | `ambiance` | Voile autour d'un parcours |
 | Interface | Encre, papier, gris | Aucune | Panneaux, boutons |
 
 | joie | tristesse | colere | peur | surprise | degout | neutre |
@@ -60,7 +60,7 @@ Nous regardons des **systèmes** : pour chaque référence, comment l'image est 
 | #F2B134 | #4F6FA8 | #C8413A | #5E3C8A | #2FA3A0 | #9AA53A | #9A948A |
 | trait plein, épais | longs tirets | tirets courts | points | tiret et point | double trait | trait plein, fin |
 
-**Elle tient à 3 comme à 300.** Les teintes de la ville sont nombreuses mais proches et calmes ; les sept émotions ne colorent que les tracés. Sur la carte commune, un seul tracé est fort à la fois.
+**Elle tient à 3 comme à 300.** Un quartier ne prend qu'**une** émotion à la fois, celle qui domine chez lui. Les teintes de la ville restent proches et calmes. Une rue ne garde que la couleur de son dernier passage. Sur la carte, un seul tracé est fort à la fois : la tête de la chaîne, ou la balade choisie.
 
 **Chaque choix.**
 
@@ -68,8 +68,8 @@ Nous regardons des **systèmes** : pour chaque référence, comment l'image est 
 - Sept émotions testées par calcul : écart d'au moins 5 dans trois daltonismes simulés (crans 0,5 à 1), et au moins 10 la nuit.
 - Le motif double la couleur : on lit l'émotion sans la couleur.
 - Un liseré encre garde le tracé lisible le jour et au crépuscule (contraste 10 et 6,4).
-
-**[À CONFIRMER]** Peur et dégoût plus contrastés, eau et savoir échangées, à voir sur les assets.
+- Validé le 26/11 par MaxX-J : peur et dégoût avec le liseré, `eau` en bleu ciel et `savoir` en gris sauge, `commerce` et `habitat` gardés.
+- Toutes les lumières (sol, toits, rues) viennent des teintes de la palette, jamais d'une teinte à part.
 
 ## 4. Typographie
 
@@ -81,7 +81,7 @@ Nous regardons des **systèmes** : pour chaque référence, comment l'image est 
 
 **Lisible ou texture ?** Lisible, toujours. Le message se lit dans un panneau, en 18 px. Sur la carte, **aucun mot** : la ville, les symboles et les tracés parlent. Nous avons écarté le texte comme texture, car un message mérite d'être lu, et parce que notre esquisse de flèches avec des mots devenait illisible à 300.
 
-Jamais moins de 15 px. Contraste AA au moins. **[À CONFIRMER]** les trois familles.
+Jamais moins de 15 px. Contraste AA au moins. Les trois familles sont choisies (MaxX-J, 26/11).
 
 ## 5. Symbole
 
@@ -91,13 +91,14 @@ Jamais moins de 15 px. Contraste AA au moins. **[À CONFIRMER]** les trois famil
 | Change | Jamais | À chaque message |
 | Où | Onglet, en-tête, accueil, documents | Fin de l'attente, carte de balade, liste |
 
-**L'emblème** vient d'une idée de withRen, simplifiée : une seule couleur, une signature verticale et horizontale, inverse, sur papier, sur la nuit, et un favicon (le clocher et un arc) lisible à 16 px.
+**L'emblème** vient d'une idée de withRen, simplifiée : une seule couleur, une signature verticale et horizontale, inverse, sur papier, sur la nuit, et un favicon (le clocher et un arc) lisible à 16 px. Nom : « balade béziers ».
 
 **Le signe** répond à un système fixe que la donnée déforme :
 
 | Fixe | Change |
 | --- | --- |
-| Grille de 4 × 4, entrée à gauche, sortie à droite, maisons basses devant | Le nombre de virages (`tension`), la hauteur (`energie`), une maison qui quitte le sol (`absurdite`), la couleur de la rue (`emotion`), la lumière (`valence`), le détail des maisons (`id`) |
+| Grille de 4 × 4, entrée à gauche, sortie à droite, maisons basses devant | Le nombre de virages (`tension`), la hauteur générale (`energie`), un objet incongru posé dans la grille (`absurdite`), la couleur de la rue (`emotion`), la lumière (`valence`) |
+| | L'`id` : couleur des façades (matières de la palette), hauteur de chaque maison, place des maisons et de la rue, **toujours dans la grille** |
 
 Le même message redonne toujours le même signe. Planches : [emblème](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=39-128) et [construction](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=33-91). Détails : [identite.md](identite.md).
 
@@ -107,66 +108,77 @@ Le même message redonne toujours le même signe. Planches : [emblème](https://
 
 | Donnée | Plage | Règle |
 | --- | --- | --- |
+| Message précédent | | La balade part de sa dernière étape |
 | `lieu`, `lieu_secondaire` | 10 familles | Familles des étapes ; le vrai lieu vient de l'`id` |
 | `energie` | 0 à 1 | 2 à 6 étapes |
-| `emotion` | 7 | Couleur et motif du tracé ; lumière de cette couleur au sol, autour de la balade choisie |
-| `intensite` | 5 crans | Force de la couleur et de la lumière au sol |
-| `tension` | 5 crans | Tracé souple à zigzag serré, sans quitter la rue |
-| `absurdite` | 0 à 1 | À partir de 0,5 un tronçon, de 0,75 tous : la balade coupe à travers la ville |
-| `ambiance` | 9 | Voile et motif autour du parcours |
-| `id` | Empreinte SHA-256 | Choisit les lieux et les détails, toujours pareil |
+| `emotion` | 7 | Couleur et motif du tracé, couleur des rues traversées |
+| `intensite` | 5 crans | Force de la couleur |
+| `tension` | 5 crans | Tracé souple à zigzag serré, **toujours dans la largeur de la rue** |
+| `absurdite` | 0 à 1 | À partir de 0,5, un objet incongru (piano, baignoire, taureau, poisson volant) apparaît près d'une étape ; à 1, près de chaque étape **[À CONFIRMER]** |
+| `id` | Empreinte SHA-256 | Choisit les lieux, l'objet incongru et les détails, toujours pareil |
 
-Les chemins suivent les vraies rues d'OpenStreetMap. Un zigzag reste dans la rue : c'est la tension. Quitter la rue, c'est l'absurdité.
+Les chemins suivent les vraies rues d'OpenStreetMap, du plus court chemin d'une étape à l'autre. Repasser au même endroit est permis. **[À CONFIRMER]** La longueur maximale d'un trajet, et le trajet quand l'IA a échoué (élément neutre). `ambiance` est retirée (MaxX-J, 26/11).
+
+**L'ordre** est celui de la chaîne : un message est tracé une fois dans un bloc, puis ne bouge plus tant que la chaîne ne change pas. Si la chaîne change, la balade est recalculée.
 
 ### De la balade à la ville
 
 Un quartier regarde ses **20 derniers messages**, quel que soit le binôme.
 
-| Donnée du quartier | Plage | Règle |
+| Donnée | Plage | Règle |
 | --- | --- | --- |
-| Moyenne de `valence` | 0,12 ou plus | Jour |
+| Moyenne de `valence` du quartier | 0,12 ou plus | Jour |
 | | Entre -0,12 et 0,12 | Crépuscule (jour et nuit superposés) |
 | | -0,12 ou moins | Nuit |
 | | Aucun message | Jour |
-| Nombre de messages | | Fenêtres allumées la nuit et au crépuscule |
-| Passages dans une rue | | La rue s'use : chemin plus clair, plus large |
-| Message masqué | | Sa balade et ses effets disparaissent, un volet fermé reste **[À CONFIRMER]** |
+| Émotion la plus fréquente du quartier | 7 | Lumière au sol et teinte des toits de **tout le quartier** ; à égalité, la plus récente |
+| Même émotion | 7 | Saison des arbres : joie et surprise en fleurs, neutre en été, colère et dégoût en automne, tristesse et peur en hiver *(proposé)* |
+| Nombre de messages du quartier | | Fenêtres allumées la nuit et au crépuscule |
+| Rue empruntée | | Couleur de l'émotion du dernier passage ; plus elle est empruntée, plus elle brille, en se tassant |
+| Étape sur un bâtiment | | Il gagne des **étages**, jusqu'à un plafond, prend une teinte chaude et allume ses fenêtres. Cimetières, nature et eau ne grandissent pas |
+| Message masqué | | Sa balade et ses effets disparaissent ; un **volet fermé** reste dans le quartier où elle passait. La balade suivante part toujours du même point |
 
-**Ce qu'un nouveau texte déplace.** Il ajoute sa balade, use les rues qu'il emprunte, allume des fenêtres, et peut **faire passer un quartier du jour à la nuit**. La moyenne tend vers zéro quand les messages sont nombreux : les seuils à 0,12 viennent d'un essai, avec 0,25 tout restait au crépuscule. **[À CONFIRMER]**
+**Ce qu'un nouveau texte déplace.** Il prolonge la chaîne, colore les rues qu'il emprunte, fait grandir les bâtiments où il s'arrête, peut changer l'émotion d'un quartier (sol, toits, arbres) et **le faire passer du jour à la nuit**. La moyenne tend vers zéro quand les messages sont nombreux : les seuils à 0,12 viennent d'un essai, avec 0,25 tout restait au crépuscule.
 
-**Beaucoup de balades.** De loin, 4 balades récentes par quartier ; au zoom, 12. Les plus anciennes usent la rue. Celle qu'on choisit est seule épaisse, avec halo et épingles. Testé et rejeté : le ruban de couleurs au sol.
+**Beaucoup de balades.** Une traînée suit la tête de la chaîne : les dernières balades sont nettes et s'estompent, la plus récente est la plus forte, avec un point et un halo. Le nombre de balades de la traînée sera calibré sur l'œuvre (12 est trop peu). Plus anciennes, elles ne restent que dans la lumière des rues et la hauteur des bâtiments. La balade qu'on choisit est seule épaisse, avec ses épingles.
 
-**Trois niveaux de zoom.** Ville : blocs simples. Quartier : bâtiments génériques et repères. Lieu : fenêtres, arbres, passants, mobilier.
+**La lumière dit par où on passe, la hauteur dit où on s'arrête.**
+
+**Trois niveaux de zoom.** Ville : blocs simples. Quartier : bâtiments génériques et repères. Lieu : fenêtres, arbres, passants, mobilier, objets incongrus.
 
 ### Garde-fous
 
-Aucun clignotement rapide ; mouvement coupé si on le demande ; le jour peut être forcé partout ; lieux de culte, cimetières et mémoires sans humour ; religions non distinguées ; aucune adresse ; silhouettes sans visage. Détails : [ville-vivante.md](ville-vivante.md).
+Aucun clignotement rapide ; mouvement coupé si on le demande ; l'humeur du quartier est toujours écrite, puisqu'on ne peut pas forcer le jour ; lieux de culte, cimetières et mémoires sans humour ni objet incongru ; religions non distinguées ; aucune adresse ; silhouettes sans visage. Détails : [ville-vivante.md](ville-vivante.md).
 
 ## 7. Esquisses
 
-Vraies rues et vrais bâtiments, palette v3. Les blocs sont provisoires : de près, les bâtiments de withRen les remplacent. Messages inventés, émotions choisies par quartier pour montrer les trois lumières.
+Vraies rues et vrais bâtiments, palette v3. Les blocs sont provisoires : de près, les bâtiments de withRen les remplacent. Messages inventés.
 
-| Vide | 10 messages |
-| --- | --- |
-| ![Béziers sans balade, de jour](esquisses/rendu-c/01-vide.jpg) | ![Dix balades](esquisses/rendu-c/02-dix.jpg) |
-| Un texte masqué | 60 messages |
-| ![Même vue, une balade et ses effets retirés](esquisses/rendu-c/03-masque.jpg) | ![Soixante balades](esquisses/rendu-c/04-soixante.jpg) |
-| 300 messages | Une balade choisie |
-| ![Trois cents balades](esquisses/rendu-c/05-trois-cents.jpg) | ![Une balade de joie](esquisses/rendu-c/06-une-balade.jpg) |
+**La chaîne unique**, de loin : vide, 10 messages, 10 dont le dernier masqué, 60 et 300. Dans cet essai, le masqué est encore gris et la ville au crépuscule partout : ces deux règles sont remplacées par le volet fermé et les trois lumières.
+
+![Une seule chaîne : vide, 10, 10 dont un masqué, 60 et 300 messages](esquisses/une-chaine/loin.jpg)
+
+**Les bâtiments visités grandissent.** Dans cet essai, la hauteur est étirée ; dans l'œuvre, ce seront des étages.
+
+![Vide, 10, 60 et 300 messages, bâtiments visités plus hauts](esquisses/une-chaine/ville-grandit.jpg)
+
+![Zoom à 0, 60 et 300, puis tension à 0, 0,5 et 1](esquisses/une-chaine/ville-grandit-zoom.jpg)
 
 **De près** : bâtiments, passants et mobilier dessinés par withRen, jour et nuit.
 
 ![Rue composée d'assets, jour et nuit](assets/batiments/apercu/scene-rue.jpg)
 
-**Deux nuits ne se confondent pas.** La colère et la tristesse tombent souvent dans des quartiers de nuit. La lumière de l'émotion au sol les distingue (rue et assets de withRen, passants et fenêtres régénérés) :
-
-![Colère : sol éclairé de rouge, tracé cassé. Tristesse : sol bleu, tracé souple à longs tirets. Joie : sol doré, trait plein](esquisses/lumiere/lumiere-au-sol.jpg)
-
-**[À CONFIRMER]** le 26/11, à deux : lumière au sol, toits colorés, ou les deux.
+**Deux nuits ne se confondent pas.** La colère et la tristesse tombent souvent dans des quartiers de nuit. La lumière de l'émotion les distingue. Retenu (MaxX-J, 26/11) : **le sol et les toits**, la troisième colonne.
 
 ![Comparaison : lumière au sol, toits colorés, les deux](esquisses/lumiere/comparaison-sol-toits.jpg)
 
-**[À FOURNIR]** Vue au zoom sur une vraie rue avec plusieurs balades, jour et nuit, par withRen. Les trois quartiers voisins de son test.
+**Avant la chaîne** : les esquisses du rendu C, balades séparées, gardées pour montrer le chemin.
+
+| Vide | 300 messages, balades séparées |
+| --- | --- |
+| ![Béziers sans balade, de jour](esquisses/rendu-c/01-vide.jpg) | ![Trois cents balades séparées](esquisses/rendu-c/05-trois-cents.jpg) |
+
+**[À FOURNIR]** Vue au zoom sur une vraie rue, avec la chaîne, des bâtiments à étages, un objet incongru, jour et nuit, par withRen. Les trois quartiers voisins de son test.
 
 ## 8. Design system
 
@@ -179,10 +191,12 @@ Interface calme, sur papier clair, pour laisser parler la ville. Principes : con
 | Statut | En attente, dans un bloc, lue par l'IA, stable, masquée : un signe et un mot |
 | Carte balade | Titre, émotion écrite et motif, message, étapes, distance, empreinte |
 | Avertissement et aide | Non effaçable, partagé, IA ; 3114, 15, 112 |
-| Légende, quartier | Couleur, motif et mot ; l'humeur est toujours écrite |
-| Interrupteur, zoom | Toujours voir de jour ; boutons de 48 px |
+| Légende, quartier | Couleur, motif et mot ; l'humeur et la lumière du quartier sont toujours écrites |
+| Zoom | Trois boutons de 48 px |
 
-**Les écrans** (brouillon, [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2)) : écrire, attendre (la ville se construit en quatre étapes : terrain, chantier, façades, habitants), découvrir sa balade, explorer, et un refus sur téléphone. **[À FOURNIR]** captures pour le PDF.
+L'interrupteur « toujours voir de jour » est retiré (MaxX-J, 26/11) : la lumière fait partie de l'œuvre, et l'humeur écrite suffit pour lire.
+
+**Les écrans** (brouillon, [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2)) : écrire, attendre (la ville se construit en quatre étapes : terrain, chantier, façades, habitants), découvrir sa balade, explorer, et un refus sur téléphone. Les captures sont faites (MaxX-J, 26/11).
 
 **Liste accessible.** Une liste des balades, au clavier et au lecteur d'écran, double la carte : titre, émotion, étapes, distance.
 
@@ -191,6 +205,6 @@ Interface calme, sur papier clair, pour laisser parler la ville. Principes : con
 | Quoi | Qui |
 | --- | --- |
 | Moodboard illustré et sourcé | withRen |
-| Vue au zoom sur une vraie rue | withRen |
-| Choisir : emblème, polices, seuil 0,12, peur et dégoût | les deux |
-| Captures Figma, PDF, relecture | MaxX-J |
+| Vue au zoom sur une vraie rue, étages des bâtiments | withRen |
+| Valider les choix du 26/11 | withRen |
+| PDF, relecture | les deux |

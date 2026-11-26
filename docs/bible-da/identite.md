@@ -1,6 +1,6 @@
 # Symbole, typographie et design system
 
-**BROUILLON v1 du 25/11/2026, propositions à choisir à deux.** Planche : [Figma, page « Symbole, typographie, design system »](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=25-2) (accès selon le partage du fichier). Couleurs : [palette](palette.md).
+**BROUILLON v1.1 du 26/11/2026.** Planche : [Figma, page « Symbole, typographie, design system »](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=25-2) (accès selon le partage du fichier). Couleurs : [palette](palette.md).
 
 ## Le symbole
 
@@ -32,10 +32,10 @@ Planche de construction : [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwt
 | Grille de 4 × 4, hauteur limitée | | |
 | Entrée à gauche, sortie à droite | Nombre de virages de la rue | `tension` |
 | Zone haute derrière, zone basse devant la rue | Hauteur des maisons | `energie` |
-| | Une maison quitte le sol | `absurdite` |
-| | Couleur de la rue, seule couleur du signe | `emotion` |
+| | Un objet incongru posé dans la grille | `absurdite` |
+| | Couleur de la rue, seule couleur vive du signe | `emotion` |
 | | Lumière : jour, crépuscule, nuit | `valence` |
-| | Détail des maisons | `id` du message |
+| | Couleur des façades, hauteur de chaque maison, place des maisons et de la rue, toujours dans la grille (MaxX-J, 26/11) | `id` du message |
 
 **Pendant l'attente, la ville se construit** (demandé par MaxX-J, plutôt qu'un fondu) :
 
@@ -50,7 +50,7 @@ Sans animation, l'image de l'étape en cours s'affiche directement.
 
 **Quand on le voit.** À la fin de l'attente, la personne découvre **le signe de sa balade** ; il reste sur sa carte et dans la liste. Pas de symbole sur la carte commune.
 
-**À améliorer.** L'`id` choisit la rue et les maisons, mais doit garder le nombre de virages de la `tension` et ne pas effacer l'effet de l'`energie` : bornes à fixer. `lieu` et `intensite` n'y sont pas. Versions encre et inverse. Le losange simplifié est retiré, le favicon le remplace.
+**À améliorer.** L'`id` ne doit pas effacer le nombre de virages de la `tension` ni l'effet de l'`energie` : bornes à fixer en dessinant. `lieu` et `intensite` n'y sont pas. Versions encre et inverse. Le losange simplifié est retiré, le favicon le remplace.
 
 **Écarté :** la v1 (un B dessiné par le trait, une fenêtre traversée, une épingle), jugée ratée par MaxX-J et gardée dans Figma, à droite de la planche.
 
@@ -78,14 +78,13 @@ Tailles : 64, 36 et 24 pour les titres, 18 pour les textes, 15 pour les détails
 | Aide | 3114, 15, 112 |
 | Légende | Couleur, motif et nom de chaque émotion |
 | Quartier | Humeur écrite, car la lumière ne suffit pas |
-| Interrupteur | Toujours voir de jour : réglage personnel pour qui lit mal dans les quartiers de nuit, ne change pas l'œuvre des autres |
 | Zoom | Trois boutons de 48 px |
 
 Fondations dans Figma : 15 couleurs d'interface, 6 espacements, 3 rayons et 8 styles de texte. Principes : contraste AA, focus visible, la couleur jamais seule.
 
 ## À décider à deux
 
-1. L'emblème simplifié et le nom « balade béziers ».
-2. Les trois familles de caractères.
-3. Vérifier les contrastes des composants et les tester à la taille réelle.
-4. Les écrans : [Figma, page « Écrans »](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2), brouillon.
+Choisis par MaxX-J le 26/11, à valider par withRen : l'emblème simplifié, le nom « balade béziers », les trois familles de caractères. L'interrupteur « toujours voir de jour » est retiré.
+
+1. Contrastes des composants vérifiés, captures faites (MaxX-J, 26/11).
+2. Les écrans : [Figma, page « Écrans »](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2), brouillon.

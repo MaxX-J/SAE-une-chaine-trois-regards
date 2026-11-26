@@ -1,6 +1,6 @@
 # Dossier de binôme 2 (noeud-b)
 
-25/11/2026
+26/11/2026
 
 Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17h). Ce dossier s'appuie sur la spec commune v1.0 sans la recopier : les numéros comme 4.2 ou 6.3 renvoient à ses sections. Un repère marque ce qui n'est pas figé : **\[À CONFIRMER\]**, proposition que le binôme doit valider. L'œuvre est décrite dans la bible DA, les valeurs et le prompt dans la charte éditoriale.
 
@@ -9,16 +9,16 @@ Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Nœud | noeud-b (producteur d'un créneau de 20 s sur trois, ordre a, b, c) |
 | Spec commune | version 1.0 du 23/11/2026 |
-| Version du dossier | 0.6, brouillon adapté aux balades |
+| Version du dossier | 0.7, une seule chaîne de balades |
 | Langage | TypeScript, pour le nœud et pour l'application |
 
 ## 1. Le projet en bref
 
-**Notre regard.** Une blockchain garde des paroles qu'on ne peut plus effacer ; une ville garde les pas de ceux qui la traversent. Nous faisons se rencontrer les deux : **chaque message devient une balade dans Béziers, et toutes les balades, ensemble, dessinent le Béziers que les gens ressentent.** Les enseignants ont approuvé cette idée : une balade individuelle, puis toutes regroupées.
+**Notre regard.** Une blockchain garde des paroles qu'on ne peut plus effacer ; une ville garde les pas de ceux qui la traversent. Nous faisons se rencontrer les deux : **chaque message devient une balade dans Béziers, qui repart d'où la précédente s'est arrêtée ; ensemble, elles dessinent le Béziers que les gens ressentent.** Les enseignants ont approuvé cette idée : une balade individuelle, puis toutes regroupées.
 
 **Ce que permet l'application.** Le visiteur lit la consigne, écrit un message de 280 caractères au plus, puis reçoit sa balade : un titre, des étapes, une distance. Elle est d'abord en attente, puis tracée quand le message est entré dans un bloc et que l'IA l'a lu. Il peut explorer la carte commune, zoomer, et retrouver sa balade par un lien contenant l'id de son message. Avant d'écrire, il est prévenu que son message ne s'effacera pas, sera partagé avec les deux autres binômes et envoyé à une IA, et ne doit contenir aucune donnée personnelle (spec 8.1).
 
-**Ce que montre l'œuvre.** Béziers en 2,5D (faux relief, sans modèle 3D). L'IA tire neuf valeurs de chaque message : elles choisissent les lieux, la longueur, la couleur et la forme de la balade. En passant, chaque balade change la ville : les lieux traversés s'éveillent, les fenêtres s'allument, et l'humeur d'un quartier décide de sa lumière (jour, crépuscule ou nuit). Les messages des trois binômes suivent tous les mêmes règles ; seule la forme des étapes rappelle leur nœud d'origine.
+**Ce que montre l'œuvre.** Béziers en 2,5D (faux relief, sans modèle 3D). L'IA tire huit valeurs de chaque message : elles choisissent les lieux, la longueur, la couleur et la forme de la balade. Toutes les balades forment **une seule ligne** à travers la ville, comme les blocs de la chaîne. En passant, chaque balade change la ville : les rues empruntées prennent sa couleur, les bâtiments où elle s'arrête gagnent des étages, et chaque quartier prend l'émotion qui domine chez lui (sol, toits, arbres) et une lumière selon son humeur (jour, crépuscule ou nuit). Les messages des trois binômes suivent tous les mêmes règles ; seule la forme des étapes rappelle leur nœud d'origine.
 
 **Ce qui est indispensable.**
 
@@ -27,7 +27,7 @@ Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17
 - Un nœud complet, qui passe les cas de test de la spec (section 10).
 - Garder la trace du modèle d'IA qui a réellement répondu.
 
-**Ce qui est en plus, si le temps le permet.** Passants et mobilier, repères supplémentaires, panneau sur l'état de la chaîne, carte-souvenir à télécharger, animation d'apparition. Le détail est dans le backlog, rendu à part.
+**Ce qui est en plus, si le temps le permet.** Passants et mobilier, objets incongrus, repères supplémentaires, panneau sur l'état de la chaîne, carte-souvenir à télécharger, animation d'apparition. Le détail est dans le backlog, rendu à part.
 
 ## 2. L'architecture
 
@@ -129,7 +129,7 @@ Chaque fichier porte un numéro de version, `map_version`. Les logements sont re
 
 **Quel modèle.** Modèles gratuits uniquement, via OpenRouter, avec un compte et une clé par étudiant, la clé étant dans le .env. Modèle demandé : nvidia/nemotron-3.5-super-vl:free, fixe pour garder une lecture régulière. Si les deux premiers appels échouent, le troisième va à openrouter/free, accepté par le sujet. Écarté : openrouter/free seul, car il change de modèle et les réponses varient. On enregistre model\_requested (celui de l'appel retenu) et model\_used, lu dans le champ model de la réponse (sujet, section 2).
 
-**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les neuf champs, leurs bornes et le prompt (`p3`) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
+**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les huit champs, leurs bornes et le prompt (`p4`, à réessayer) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
 
 **Quand l'IA ne répond pas bien.**
 
@@ -152,25 +152,27 @@ Un message a droit à **3 appels au plus**, toutes causes confondues, pour écon
 
 **La balade.** Fonction pure : mêmes valeurs, même id et même `map_version` donnent toujours la même balade.
 
-1. `lieu` et `lieu_secondaire` donnent les familles ; `energie` donne le nombre d'étapes, de 2 à 6.
-2. La première étape est choisie par l'id dans la famille, les suivantes par l'id parmi les lieux proches.
-3. Un plus court chemin (A*) relie les étapes sur le réseau de rues.
-4. `absurdite` peut faire quitter les rues : un tronçon à partir de 0,5, tous à partir de 0,75.
+1. La balade part de la dernière étape du message précédent dans la chaîne. Le premier message part d'un repère fixe.
+2. `lieu` et `lieu_secondaire` donnent les familles ; `energie` donne le nombre d'étapes, de 2 à 6.
+3. Les étapes sont choisies par l'id dans la famille, parmi les lieux proches.
+4. Un plus court chemin (A*) relie les étapes sur le réseau de rues. Repasser au même endroit est permis. Longueur maximale d'un trajet, et trajet quand l'IA a échoué : **\[À CONFIRMER\]**.
 5. `tension` déforme le tracé, sans le faire sortir de la rue.
+6. `absurdite` à 0,5 ou plus pose un objet incongru (piano, baignoire, taureau, poisson volant) près d'une étape, choisi par l'id.
+
+Si la chaîne change (spec 5), les balades sont recalculées depuis le premier bloc qui diffère.
 
 **Le quartier.** Il regarde les 20 derniers messages de la chaîne passés chez lui. Chaque nouveau texte modifie donc l'effet des précédents, quel que soit le binôme qui l'a écrit.
 
 | Valeur | Dans la balade | Dans la ville |
 | --- | --- | --- |
-| `lieu`, `lieu_secondaire` | Étapes, symboles | Lieux éveillés |
-| `emotion` | Couleur et motif du tracé | Halo |
+| `lieu`, `lieu_secondaire` | Étapes, symboles | Bâtiments visités : étages en plus, teinte chaude |
+| `emotion` | Couleur et motif du tracé | Couleur des rues empruntées ; émotion dominante du quartier : sol, toits, saison des arbres |
 | `intensite` | Force de la couleur | |
-| `valence` | | Lumière du quartier : moyenne de 0,12 ou plus, jour ; de -0,12 ou moins, nuit ; sinon, crépuscule ; sans message, jour **\[À CONFIRMER\]** |
-| `energie` | Longueur | |
+| `valence` | | Lumière du quartier : moyenne de 0,12 ou plus, jour ; de -0,12 ou moins, nuit ; sinon, crépuscule ; sans message, jour |
+| `energie` | Nombre d'étapes | |
 | `tension` | Forme, souple à cassée | |
-| `absurdite` | Sortie des rues | |
-| `ambiance` | Voile autour du parcours | |
-| Sans IA | Forme des étapes selon le nœud, distance | Fenêtres allumées : une par message récent du quartier |
+| `absurdite` | Objet incongru | Il reste dans la ville |
+| Sans IA | Forme des étapes selon le nœud, distance | Fenêtres allumées : une par message récent du quartier ; lumière d'une rue selon le nombre de passages |
 
 Les plages exactes, les couleurs et les motifs sont dans la [palette](../bible-da/palette.md), les effets dans la [ville vivante](../bible-da/ville-vivante.md).
 
@@ -181,13 +183,13 @@ Les plages exactes, les couleurs et les motifs sont dans la [palette](../bible-d
 3. Les tracés en SVG, au sol puis répétés en transparence au-dessus, pour rester visibles.
 4. Les symboles des lieux, puis l'interface.
 
-**Beaucoup de balades.** 4 balades récentes nettes par quartier de loin, 12 au zoom **\[À CONFIRMER\]**. Les plus anciennes usent la rue : un chemin clair, d'une seule teinte, qui s'élargit avec les passages. Le visiteur retrouve toujours la sienne en entier.
+**Beaucoup de balades.** Une traînée suit la tête de la chaîne : les dernières balades sont nettes et s'estompent, la plus récente porte un point et un halo. Le nombre de balades de la traînée sera calibré sur l'œuvre. Les plus anciennes ne restent que dans la lumière des rues et la hauteur des bâtiments. Le visiteur retrouve toujours la sienne en entier.
 
-**Message masqué.** Sa balade et ses effets sur la ville disparaissent ; un volet fermé marque le quartier **\[À CONFIRMER\]**. Le message reste dans la chaîne (spec 8.1) et son texte n'est jamais envoyé à l'application.
+**Message masqué.** Sa balade et ses effets sur la ville disparaissent ; un volet fermé marque le quartier. La balade suivante part toujours du même point. Le message reste dans la chaîne (spec 8.1) et son texte n'est jamais envoyé à l'application.
 
-**Accessibilité.** Une liste des balades, lisible au clavier et au lecteur d'écran, double la carte : titre, émotion écrite, étapes, distance. La couleur est toujours doublée d'un symbole ou d'un motif. Le visiteur peut forcer le jour partout. Aucun clignotement rapide, animations coupées si l'utilisateur demande moins de mouvement.
+**Accessibilité.** Une liste des balades, lisible au clavier et au lecteur d'écran, double la carte : titre, émotion écrite, étapes, distance. La couleur est toujours doublée d'un symbole ou d'un motif. L'humeur et la lumière de chaque quartier sont écrites. Aucun clignotement rapide, animations coupées si l'utilisateur demande moins de mouvement.
 
-**Écarté.** Une moyenne des tracés (une balade qui n'est celle de personne) ; la vraie 3D (trop longue, texte moins accessible) ; un service de cartes en direct (dépendance au réseau et à un tiers) ; un rendu fait par l'IA, non reproductible.
+**Écarté.** Une moyenne des tracés (une balade qui n'est celle de personne) ; des balades séparées (illisibles à 300) ; un réglage pour forcer le jour (la lumière fait partie de l'œuvre) ; la vraie 3D (trop longue, texte moins accessible) ; un service de cartes en direct (dépendance au réseau et à un tiers) ; un rendu fait par l'IA, non reproductible.
 
 ## 7. Les choix techniques
 
@@ -209,7 +211,7 @@ Les plages exactes, les couleurs et les motifs sont dans la [palette](../bible-d
 | Exécution | Le nœud tourne directement sur l'ordinateur du binôme, hôte Tailscale nommé noeud-b. Trois instances locales, sur trois ports, servent aux essais. | Tailscale tourne déjà sur la machine, rien d'autre à installer. | Docker : une couche réseau et un outil de plus, sans bénéfice ici. |
 | Fonctionnement réseau | Tailscale, port 8080, adresse IP en secours (spec 6.1) | Imposé par le sujet et la spec. | Aucun. |
 
-**Machine du nœud.** L'ordinateur de MaxX-J héberge noeud-b le 10/12. S'il est éteint, notre créneau reste vide et les deux autres nœuds continuent (spec 7). Celui de withRen sert de secours **\[À CONFIRMER\]** : il faut alors y copier la base et la clé privée, sans jamais faire tourner les deux en même temps (double signature).
+**Machine du nœud.** L'ordinateur de MaxX-J héberge noeud-b le 10/12. S'il est éteint, notre créneau reste vide et les deux autres nœuds continuent (spec 7). Celui de withRen sert de secours : il faut alors y copier la base et la clé privée, sans jamais faire tourner les deux en même temps (double signature).
 
 **Pour reprendre le projet.** Le dépôt suit l'arborescence du référentiel : docs/, infra/, src/ (nœud, application, code commun), tests/ (dont tests/vectors/), .github/, .env.example, .gitignore, README.md. Le README donne l'installation (npm install), la copie de .env.example vers .env, le lancement du nœud et de l'application, et la commande des tests.
 
@@ -244,12 +246,10 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 | Trop de balades au même endroit (un seul cimetière dans le centre) | Technique | Plusieurs lieux par famille, lieu de départ choisi par l'id, zone élargie si besoin. |
 | Une balade blesse (lieu de culte, deuil, domicile) | Humain | Aucun détail moqueur dans ces lieux, religions non distinguées, aucune adresse. |
 | Peu de temps de production : 3 jours de S50 (7 au 9/12) avant la jonction du 10/12 | Temps | Backlog classé en indispensable et en plus. Nous préparons chez nous en S49 : environnement, tri des lieux, essais du prompt à la main. |
-| La direction artistique prend plus de temps que prévu | Temps | Les bâtiments sont déjà dessinés en brouillon. Ordre de coupe : passants et mobilier, ambiances, bâtiments au zoom, nuit. Il reste des blocs simples et les balades. |
+| La direction artistique prend plus de temps que prévu | Temps | Les bâtiments sont déjà dessinés en brouillon. Ordre de coupe : passants et mobilier, objets incongrus, étages des bâtiments, bâtiments au zoom, nuit. Il reste des blocs simples et les balades. |
 | Un des deux est absent ou chargé par d'autres cours | Binôme | Les deux relisent tout le code. Journal d'avancement dans docs/suivi/. Chacun doit pouvoir expliquer l'ensemble à l'oral. |
 | Charge déséquilibrée entre les deux, note individualisée | Binôme | Répartition visible dans le backlog, point d'équilibre chaque semaine. |
 | Code écrit avec l'IA et mal compris | Binôme | Section 10 : relecture et explication obligatoires avant fusion. |
-
-**\[À CONFIRMER\]** Ajouter les contraintes personnelles connues (autres projets, examens, déplacements) pendant S49 et S50.
 
 ## 10. L'organisation
 
@@ -263,9 +263,9 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 | IA, carte commune, styles, zoom | Worker, quartiers, dessin | withRen | MaxX-J |
 | Balade calculée, vue d'un parcours, accessibilité | Chemins, titre, liste | MaxX-J | withRen |
 | Tests et jonction | Vecteurs, cas partagés, bout en bout | les deux | les deux |
-| Documents de rendu | MaxX-J : charte et dossier ; withRen : bible DA **\[À CONFIRMER\]** | voir contenu | les deux |
+| Documents de rendu | Rédigés et relus à deux : MaxX-J surtout la charte et le dossier, withRen surtout les dessins de la bible DA | voir contenu | les deux |
 
-**Travailler à deux.** Un daily chaque matin, dix minutes, avec l'enseignant (le premier mardi 24/11), puis un court point entre nous en fin de journée pour ce qui est fait et ce qui bloque. Pendant S49, un message par jour suffit. Les six se parlent sur Discord (spec 11). **\[À CONFIRMER\]** Canal propre au binôme.
+**Travailler à deux.** Un daily chaque matin, dix minutes, avec l'enseignant (le premier mardi 24/11), puis un court point entre nous en fin de journée pour ce qui est fait et ce qui bloque. Pendant S49, un message par jour suffit. Les six se parlent sur Discord (spec 11), et nous deux sur un canal propre au binôme.
 
 **Git.**
 
@@ -279,7 +279,7 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 
 **L'IA pour concevoir.** Nous arrivons avec nos idées, nous les soumettons à Claude, et nous gardons, changeons ou refusons ses retours. Quelques exemples :
 
-- **Nos idées :** la ville (withRen), les balades dans Béziers (piste de l'enseignante d'art, choisie à deux), les bâtiments, les passants et le jour et la nuit (withRen), la lumière selon la `valence` (MaxX-J).
+- **Nos idées :** la ville (withRen), les balades dans Béziers (piste de l'enseignante d'art, choisie à deux), les bâtiments, les passants et le jour et la nuit (withRen), la lumière selon la `valence`, la chaîne unique de balades et les bâtiments qui grandissent (MaxX-J).
 - **Retours gardés :** l'IA hors de la chaîne, le jour et la nuit par quartier, le liseré et le contraste de la palette.
 - **Retours refusés ou corrigés par nous :** la valeur `sociabilite`, le `mot` libre, le ruban de couleurs au sol (jugé laid à l'essai), l'ordre des tâches du backlog et la palette de nuit (retours de withRen).
 - **Ce que nous vérifions :** les choix sont décidés par nous, le journal `docs/suivi/` dit qui a décidé quoi.

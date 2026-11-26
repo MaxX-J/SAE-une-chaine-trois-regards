@@ -1,4 +1,4 @@
-# Point du binôme 2 (noeud-b), mis à jour le 25/11/2026
+# Point du binôme 2 (noeud-b), mis à jour le 26/11/2026
 
 Historique détaillé : `docs/suivi/journal/`. Règles pour Claude : `CLAUDE.md`.
 
@@ -68,7 +68,8 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 | Valeurs | Décrivent le message, pas le dessin | Validé à deux |
 | Dépôt | Public | Choix de MaxX-J |
 | Répartition (indicative) | MaxX-J : nœud et chaîne. withRen : IA et œuvre. Application à deux | Validée |
-| Machine le 10/12 | PC de MaxX-J | **À valider par withRen** |
+| Œuvre, 26/11 | Une seule chaîne de balades ; jour, crépuscule, nuit gardés ; émotion du quartier au sol et sur les toits ; bâtiments visités : étages et teinte chaude ; masqué = volet fermé ; traînée à calibrer ; `ambiance` retirée (huit valeurs) ; zigzag dans la rue ; `absurdite` = objet incongru ; pas d'interrupteur « toujours de jour » | Choix de MaxX-J, **à valider par withRen** (journal du 26/11) |
+| Machine le 10/12 | PC de MaxX-J, secours PC de withRen | Choix de MaxX-J le 26/11, **à valider par withRen** |
 | Accès à l'application | Par Tailscale, port séparé du 8080 | Choix de MaxX-J |
 | Modèle | `nvidia/nemotron-3.5-super-vl:free`, secours `openrouter/free` au 3e appel | Choix de MaxX-J, **à valider par withRen** |
 | Docker | Non | Choix de MaxX-J |
@@ -78,7 +79,7 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 | Échec de l'IA | Élément neutre, avec son `status` | Proposé, **à valider** |
 | Consigne | « Raconte un moment, une pensée ou une idée folle. » | Choix de MaxX-J, **à valider par withRen** |
 
-**Encore à décider :** PC de secours, qui rédige charte, bible DA et backlog, canal du binôme, contraintes de dates en S49 et S50. Dans la charte : message d'aide 3114, gros mots sans cible acceptés, objectif de 80 % au test.
+**Encore à décider (26/11) :** longueur maximale d'un trajet et trajet si l'IA échoue, nombre de balades de la traînée, liste des repères, phrase du 3114. `p4` (`p3` sans `ambiance`) à réessayer.
 
 ## 6. Les six valeurs
 
