@@ -2,7 +2,7 @@
 
 Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
 
-**Version 0.2, brouillon du 26/11/2026.** Rendu : vendredi 27/11, 17h, PDF. Les choix de cette version sont ceux de MaxX-J le 26/11, **à valider par withRen**. **[À FOURNIR]** : image ou contenu attendu. **[À CONFIRMER]** : choix encore ouvert. Fond de carte : © les contributeurs OpenStreetMap (ODbL).
+**Version 0.2, brouillon du 26/11/2026.** Rendu : vendredi 27/11, 17h, PDF. Les choix de cette version sont ceux de MaxX-J le 26/11, **validés par withRen**. **[À FOURNIR]** : image ou contenu attendu. **[À CONFIRMER]** : choix encore ouvert. Fond de carte : © les contributeurs OpenStreetMap (ODbL).
 
 **En une phrase.** Chaque message devient une balade dans Béziers ; chaque balade repart d'où la précédente s'est arrêtée, et ensemble elles dessinent le Béziers que les gens ressentent.
 
@@ -210,6 +210,5 @@ L'interrupteur « toujours voir de jour » est retiré (MaxX-J, 26/11) : la lumi
 
 | Quoi | Qui |
 | --- | --- |
-| Moodboard : deux planches dans Figma (withRen, MaxX-J), à garder côte à côte ou fusionner, puis exporter | les deux |
-| Valider les choix du 26/11 | withRen |
+| Moodboard : les deux premières planches ne sont pas validées, un nouveau est à faire, puis à exporter | les deux |
 | PDF, relecture | les deux |

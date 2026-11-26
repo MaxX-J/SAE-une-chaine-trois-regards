@@ -84,7 +84,7 @@ Fondations dans Figma : 15 couleurs d'interface, 6 espacements, 3 rayons et 8 st
 
 ## À décider à deux
 
-Choisis par MaxX-J le 26/11, à valider par withRen : l'emblème simplifié, le nom « balade béziers », les trois familles de caractères. L'interrupteur « toujours voir de jour » est retiré.
+Choisis par MaxX-J le 26/11, validés par withRen : l'emblème simplifié, le nom « balade béziers », les trois familles de caractères. L'interrupteur « toujours voir de jour » est retiré.
 
 1. Contrastes des composants vérifiés, captures faites (MaxX-J, 26/11).
 2. Les écrans : [Figma, page « Écrans »](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2), brouillon.

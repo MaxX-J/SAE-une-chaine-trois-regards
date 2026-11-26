@@ -35,13 +35,13 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 | GitHub | Spec sur `main`, documents du binôme dans `docs/` |
 | Six valeurs et règles de notation | Validées le 23/11. Nouvelle liste proposée pour Béziers, à valider (journal du 24/11) |
 | Grilles des dix messages | Remplies par les deux ; grille commune remplie |
-| Dossier de binôme | Brouillon v0.7 (une seule chaîne), à valider par withRen |
-| Charte éditoriale | Brouillon v0.8 (huit valeurs, `p4` à réessayer), à valider par withRen |
+| Dossier de binôme | Brouillon v0.7 (une seule chaîne), choix validés à deux ; relecture finale avant le PDF |
+| Charte éditoriale | Brouillon v0.8 (huit valeurs, `p4` à réessayer), choix validés à deux ; `p5` et la balade en attente restent des propositions |
 | Prompt | `p3` essayé avec Nemotron : 65 valeurs justes sur 68 (17 réponses, 8 messages), ordre caché résisté |
 | Œuvre | Balades dans Béziers, **rendu C** (toute la ville en 2,5D), jour et nuit, **une seule chaîne de balades** (26/11, voir section 5). Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Idée approuvée par les enseignants (25/11) |
-| Backlog et plan | v2.1 du 26/11, v2 validée par MaxX-J, à valider par withRen |
+| Backlog et plan | v2.2 du 26/11, validé à deux |
 | Bible DA | **Texte v0.2** du 26/11 (`docs/bible-da/README.md`), moodboard et vue au zoom de withRen attendus. Assets de bâtiments, passants et mobilier en brouillon (25/11) ; style des bâtiments et jour / nuit validés par MaxX-J, passants à valider. Le README des assets renvoie désormais à `ville-vivante.md`, validée par withRen le 25/11 ; fenêtres comptables, teinte des toits et des lumières prêtes dans les SVG. Liste des repères (`docs/bible-da/reperes.md`) et ville vivante (`docs/bible-da/ville-vivante.md`) proposées |
-| Symbole, typographie, design system | v1.1 (`docs/bible-da/identite.md`, Figma) : emblème, nom et polices choisis par MaxX-J, à valider par withRen |
+| Symbole, typographie, design system | v1.1 (`docs/bible-da/identite.md`, Figma) : emblème, nom et polices choisis par MaxX-J, validés par withRen |
 | Palette | v3.1 (`docs/bible-da/palette.md`, Figma), points ouverts tranchés par MaxX-J le 26/11 ; lumières à tester sur les assets |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
 
@@ -70,18 +70,18 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 | Valeurs | Décrivent le message, pas le dessin | Validé à deux |
 | Dépôt | Public | Choix de MaxX-J |
 | Répartition (indicative) | MaxX-J : nœud et chaîne. withRen : IA et œuvre. Application à deux | Validée |
-| Œuvre, 26/11 | Une seule chaîne de balades ; jour, crépuscule, nuit gardés ; émotion du quartier au sol et sur les toits ; bâtiments visités : étages et teinte chaude ; masqué = volet fermé ; traînée à calibrer ; `ambiance` retirée (huit valeurs) ; zigzag dans la rue ; `absurdite` = objet incongru ; pas d'interrupteur « toujours de jour » | Choix de MaxX-J, **à valider par withRen** (journal du 26/11) |
-| Machine le 10/12 | PC de MaxX-J, secours PC de withRen | Choix de MaxX-J le 26/11, **à valider par withRen** |
+| Œuvre, 26/11 | Une seule chaîne de balades ; jour, crépuscule, nuit gardés ; émotion du quartier au sol et sur les toits ; bâtiments visités : étages et teinte chaude ; masqué = volet fermé ; traînée à calibrer ; `ambiance` retirée (huit valeurs) ; zigzag dans la rue ; `absurdite` = objet incongru ; pas d'interrupteur « toujours de jour » | Choix de MaxX-J, validés par withRen le 26/11 (journal du 26/11) |
+| Machine le 10/12 | PC de MaxX-J, secours PC de withRen | Choix de MaxX-J le 26/11, validé par withRen |
 | Accès à l'application | Par Tailscale, port séparé du 8080 | Choix de MaxX-J |
-| Modèle | `nvidia/nemotron-3.5-super-vl:free`, secours `openrouter/free` au 3e appel | Choix de MaxX-J, **à valider par withRen** |
+| Modèle | `nvidia/nemotron-3.5-super-vl:free`, secours `openrouter/free` au 3e appel | Choix de MaxX-J, validé par withRen le 26/11 |
 | Docker | Non | Choix de MaxX-J |
 | Stable | Après 3 blocs suivants (repère d'affichage) | Choix de MaxX-J |
 | Limite visiteur | Cookie anonyme, 5 messages par 10 s | Choix de MaxX-J |
 | Sauvegarde | Export JSON quotidien des résultats IA | Choix de MaxX-J |
 | Échec de l'IA | Élément neutre, avec son `status` | Proposé, **à valider** |
-| Consigne | « Raconte un moment, une pensée ou une idée folle. » | Choix de MaxX-J, **à valider par withRen** |
+| Consigne | « Raconte un moment, une pensée ou une idée folle. » | Choix de MaxX-J, validé par withRen le 26/11 |
 
-**Encore à décider (26/11) :** longueur maximale d'un trajet et trajet si l'IA échoue, nombre de balades de la traînée, liste des repères, phrase du 3114. `p4` (`p3` sans `ambiance`) à réessayer.
+**Encore à décider (26/11) :** longueur maximale d'un trajet et trajet si l'IA échoue, nombre de balades de la traînée, liste des repères. Phrase du 3114 gardée (26/11). Moodboard : pas validé, un nouveau est à faire. `p4` (`p3` sans `ambiance`) à réessayer.
 
 ## 6. Les six valeurs (règles du 23/11)
 
@@ -121,10 +121,10 @@ Notes de référence : `docs/test-valeurs/decision.csv`.
 ## 9. La suite
 
 1. Réessayer `p4`.
-2. Trancher à deux : longueur maximale d'un trajet, trajet si l'IA échoue, nombre de balades de la traînée, liste des repères, phrase du 3114.
-3. Valider la v1.1 (un membre par binôme) et envoyer nos trois réserves ; demander aux enseignants si les cas peuvent être calculés par script en S49.
+2. Trancher à deux, plus tard : longueur maximale d'un trajet, trajet si l'IA échoue, nombre de balades de la traînée, liste des repères. Refaire un moodboard.
+3. Spec v1.1 validée par les six et déposée sur Moodle (26/11). Réponse des enseignants sur le code en S49 (O6) attendue.
 4. Écrire et essayer `p5` (lots de 10).
-5. Fusionner la PR 21 après accord de withRen.
+5. Fusionner la PR 21 (choix validés par withRen le 26/11).
 6. Produire les PDF (dossier, charte, bible DA, backlog), dépôt vendredi 27/11 avant 17h, en visant midi.
 7. Dépôt privé commun (O1) avec les six, vendredi ; inviter l'équipe enseignante.
 

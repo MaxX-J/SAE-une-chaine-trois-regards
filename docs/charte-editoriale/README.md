@@ -8,7 +8,7 @@
 | S'appuie sur | Spec commune 1.0 (les numéros comme 8.1 y renvoient), et la v1.1 proposée le 26/11 pour l'IA (section 9 : chaîne réelle, quota) |
 | Valeurs | Huit, adaptées aux balades. Cinq reprises et notées, trois nouvelles essayées |
 
-**[À CONFIRMER]** : proposition à valider à deux. Le 26/11, MaxX-J a retiré `ambiance`, accepté les gros mots sans cible et validé la consigne et le modèle (à valider par withRen). L'œuvre est décrite dans la bible DA.
+**[À CONFIRMER]** : proposition à valider à deux. Le 26/11, MaxX-J a retiré `ambiance`, accepté les gros mots sans cible et validé la consigne et le modèle (validé par withRen). L'œuvre est décrite dans la bible DA.
 
 ## 1. La consigne d'écriture
 
@@ -273,7 +273,7 @@ Si une donnée personnelle ou un contenu grave est dans la chaîne, nous le masq
 
 ### Une personne qui semble en danger
 
-Si le filtre repère des mots liés au suicide ou à l'automutilation, l'application ne publie pas directement. Elle affiche d'abord que de l'aide existe : **le 3114**, gratuit, jour et nuit, ou le **15** et le **112** en urgence. L'envoi reste ensuite possible si le message n'incite personne au danger. Juste avant, l'application **rappelle que le message sera permanent, partagé et envoyé à un service d'IA externe**, et demande une seconde confirmation. **[À CONFIRMER]** Ce n'est pas un service d'aide : nous ne surveillons pas les messages en permanence.
+Si le filtre repère des mots liés au suicide ou à l'automutilation, l'application ne publie pas directement. Elle affiche d'abord que de l'aide existe : **le 3114**, gratuit, jour et nuit, ou le **15** et le **112** en urgence. L'envoi reste ensuite possible si le message n'incite personne au danger. Juste avant, l'application **rappelle que le message sera permanent, partagé et envoyé à un service d'IA externe**, et demande une seconde confirmation. Ce n'est pas un service d'aide (phrase gardée par le binôme le 26/11) : nous ne surveillons pas les messages en permanence.
 
 ### Ce que nous ne savons pas faire
 

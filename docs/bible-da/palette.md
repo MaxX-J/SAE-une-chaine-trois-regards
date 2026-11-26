@@ -1,6 +1,6 @@
 # Palette de Béziers
 
-**BROUILLON v3.1 du 26/11/2026.** Choix de MaxX-J le 26/11 marqués, à valider par withRen. Planche : [Figma v3](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=20-2), v1 et v2 gardées à côté (accès selon le partage du fichier).
+**BROUILLON v3.1 du 26/11/2026.** Choix de MaxX-J le 26/11 marqués, validés par withRen. Planche : [Figma v3](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=20-2), v1 et v2 gardées à côté (accès selon le partage du fichier).
 
 **L'idée :** la ville est la matière, calme ; l'émotion est la lumière posée dessus.
 

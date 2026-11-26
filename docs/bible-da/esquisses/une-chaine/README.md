@@ -1,6 +1,6 @@
 # Essai : une seule chaîne
 
-**Essai du 25/11/2026. Chaîne unique choisie par MaxX-J le 26/11, à valider par withRen.** Idée de MaxX-J : chaque balade part d'où la précédente s'est arrêtée, comme un bloc suit le précédent. © les contributeurs OpenStreetMap, ODbL. Messages et émotions inventés.
+**Essai du 25/11/2026. Chaîne unique choisie par MaxX-J le 26/11, validée par withRen.** Idée de MaxX-J : chaque balade part d'où la précédente s'est arrêtée, comme un bloc suit le précédent. © les contributeurs OpenStreetMap, ODbL. Messages et émotions inventés.
 
 ## De loin
 

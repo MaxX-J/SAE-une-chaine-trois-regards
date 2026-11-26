@@ -1,6 +1,6 @@
 # La ville vivante : quelle valeur fait quoi
 
-**Version du 26/11/2026.** Proposition du 25/11 (idée de MaxX-J et withRen : passants, décor, lumière), mise à jour avec les choix de MaxX-J du 26/11, **à valider par withRen**. Rien n'est codé.
+**Version du 26/11/2026.** Proposition du 25/11 (idée de MaxX-J et withRen : passants, décor, lumière), mise à jour avec les choix de MaxX-J du 26/11, **validés par withRen**. Rien n'est codé.
 
 **Une seule chaîne** : chaque balade part de la dernière étape de la précédente. La ville change aussi **par quartier** : un quartier regarde les 20 derniers messages passés chez lui, et chaque nouveau texte modifie ce que les précédents avaient fait.
 

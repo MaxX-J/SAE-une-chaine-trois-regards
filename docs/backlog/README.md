@@ -2,7 +2,7 @@
 
 Binôme 2 (noeud-b) : Maxens Sevilla (M) et Rahim Tamhaev (R).
 
-**Version 2.2 du 26/11/2026.** v2 validée par M le 26/11 ; choix de l'œuvre du 26/11 et spec v1.1 proposée (relecture des enseignants) reportés, à valider par R. Tant que la v1.1 n'est pas validée par un membre de chaque binôme, la v1.0 fait foi. Rendu : vendredi 27/11, 17h, PDF ou lien.
+**Version 2.2 du 26/11/2026.** v2 validée par M le 26/11 ; choix de l'œuvre du 26/11 validés par R ; spec v1.1 validée par les six le 26/11. Rendu : vendredi 27/11, 17h, PDF ou lien.
 
 ## Hypothèses
 
@@ -104,7 +104,7 @@ Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. Validé par
 | S50 (du 07 au 11/12) | 30 h | 30 h |
 | S2 (du 11 au 14/01) | 24 h | 24 h |
 
-La répartition validée (M le nœud, R l'IA et l'œuvre) est ajustée sur deux points (accord de M le 26/11, à valider par R) : R prend une partie du nœud avant le 10/12, car c'est le plus urgent et chacun doit savoir l'expliquer ; M prend une partie de l'œuvre ensuite. L'autre relit toujours avant fusion.
+La répartition validée (M le nœud, R l'IA et l'œuvre) est ajustée sur deux points (accord de M et R le 26/11) : R prend une partie du nœud avant le 10/12, car c'est le plus urgent et chacun doit savoir l'expliquer ; M prend une partie de l'œuvre ensuite. L'autre relit toujours avant fusion.
 
 ## 3. Le plan
 
@@ -170,10 +170,10 @@ Soit 5 h chacun. Le dépôt privé commun (O1) se fait à six avant le vendredi 
 | --- | --- | --- |
 | Montrer le rendu C aux enseignants, question de la carte commune et de la balade individuelle | les deux | À faire |
 | Dépôt privé commun (O1) | les six | À faire |
-| Valider la liste des valeurs : huit, dont 10 familles de lieux | les deux | Fait par M le 26/11, à valider par R |
+| Valider la liste des valeurs : huit, dont 10 familles de lieux | les deux | Fait, validé par M et R le 26/11 |
 | Prompt `p4` (`p3` sans `ambiance`) à réessayer sur quelques messages | M | À faire |
 | Écrire et essayer `p5` (lots de 10), dont un ordre caché glissé dans un lot | M | À faire |
-| Valider la v1.1 de la spec (un membre par binôme), avec nos trois réserves | les deux | À faire |
+| Valider la v1.1 de la spec (un membre par binôme), avec nos trois réserves | les deux | Fait le 26/11, déposée sur Moodle |
 | Dossier : œuvre, dessin, données de carte, risques | M | À faire |
 | Bible DA, huit éléments | R | À faire |
 | Relire ce backlog, produire les PDF, déposer | les deux | À faire |
