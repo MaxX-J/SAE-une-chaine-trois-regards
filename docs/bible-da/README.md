@@ -178,7 +178,13 @@ Vraies rues et vrais bâtiments, palette v3. Les blocs sont provisoires : de pr�
 | --- | --- |
 | ![Béziers sans balade, de jour](esquisses/rendu-c/01-vide.jpg) | ![Trois cents balades séparées](esquisses/rendu-c/05-trois-cents.jpg) |
 
-**[À FOURNIR]** Vue au zoom sur une vraie rue, avec la chaîne, des bâtiments à étages, un objet incongru, jour et nuit, par withRen. Les trois quartiers voisins de son test.
+**Trois quartiers voisins, au zoom** (withRen, 26/11). **Esquisse de test**, faite pour vérifier les règles avant le code : le rendu final sera plus travaillé (vraies rues d'OpenStreetMap, assets affinés, lumières réglées). Joie de jour : toits dorés, platanes en fleurs, le commerce a pris 3 étages. Tristesse de nuit : toits bleutés, arbres nus, la résidence visitée a toutes ses fenêtres allumées. Colère au crépuscule : toits rouges, feuillage d'automne, le chai a pris 2 étages, un piano près de la dernière étape. La chaîne traverse les trois : chaque balade part de la fin de la précédente, et la traînée s'efface avec l'âge.
+
+![Esquisse de test : trois quartiers voisins (joie de jour, tristesse de nuit, colère au crépuscule) traversés par la chaîne](esquisses/rahim/trois-quartiers.jpg)
+
+**Les étages** (withRen, 26/11, esquisse de test). Chaque bâtiment générique existe en quatre hauteurs : c'est ainsi qu'un bâtiment visité grandit, sans étirer l'image. Maison de faubourg, maisons de ville R+2 et R+3, maison étroite, maison d'angle, immeuble à commerces, immeuble bourgeois, maison de maître, résidence, chai.
+
+![Esquisse de test : dix bâtiments génériques, chacun en quatre hauteurs](esquisses/rahim/etages.jpg)
 
 ## 8. Design system
 
@@ -188,7 +194,7 @@ Interface calme, sur papier clair, pour laisser parler la ville. Principes : con
 | --- | --- |
 | Bouton | Principal et secondaire ; repos, focus, inactif |
 | Champ message | Vide, focus, erreur ; compteur de points de code |
-| Statut | En attente, dans un bloc, lue par l'IA, stable, masquée : un signe et un mot |
+| Statut | En attente, dans un bloc, lue par l'IA, confirmée, masquée : un signe et un mot |
 | Carte balade | Titre, émotion écrite et motif, message, étapes, distance, empreinte |
 | Avertissement et aide | Non effaçable, partagé, IA ; 3114, 15, 112 |
 | Légende, quartier | Couleur, motif et mot ; l'humeur et la lumière du quartier sont toujours écrites |
@@ -204,7 +210,6 @@ L'interrupteur « toujours voir de jour » est retiré (MaxX-J, 26/11) : la lumi
 
 | Quoi | Qui |
 | --- | --- |
-| Moodboard illustré et sourcé | withRen |
-| Vue au zoom sur une vraie rue, étages des bâtiments | withRen |
+| Moodboard : deux planches dans Figma (withRen, MaxX-J), à garder côte à côte ou fusionner, puis exporter | les deux |
 | Valider les choix du 26/11 | withRen |
 | PDF, relecture | les deux |
