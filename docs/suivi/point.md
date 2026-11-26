@@ -59,6 +59,8 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 - Un message valide est toujours accepté et ne s'efface jamais. Modération avant signature, ou masquage chez soi.
 - Ouverts : dépôt privé commun (O1, vendredi 27/11), noms Tailscale (O2) et clés publiques réelles (O3) avant ou le 07/12.
 
+**v1.1 proposée le 26/11** par le binôme 3, après la relecture des enseignants (horloge qui peut figer la chaîne, bloc invalide produit). Changements : borne de 5 s dans le futur pour tout bloc, arrêt de la production au-delà de 2 s d'écart avec les deux pairs, vérification de son propre bloc, bloc « confirmé » (3 blocs ou 60 s), chaîne d'essai et chaîne réelle, pair reconnu par son IP, cas 27 à 36, dépôt des cas le 04/12, quota de l'IA à chiffrer, socle du 10/12. À valider par un membre de chaque binôme (O5). Nos documents la suivent déjà ; nos réserves sont dans le journal du 26/11.
+
 ## 5. Décisions du binôme
 
 | Sujet | Décision | Statut |
@@ -120,9 +122,11 @@ Notes de référence : `docs/test-valeurs/decision.csv`.
 
 1. Réessayer `p4`.
 2. Trancher à deux : longueur maximale d'un trajet, trajet si l'IA échoue, nombre de balades de la traînée, liste des repères, phrase du 3114.
-3. Fusionner la PR 21 après accord de withRen.
-4. Produire les PDF (dossier, charte, bible DA, backlog), dépôt vendredi 27/11 avant 17h, en visant midi.
-5. Dépôt privé commun (O1) avec les six, vendredi ; inviter l'équipe enseignante.
+3. Valider la v1.1 (un membre par binôme) et envoyer nos trois réserves ; demander aux enseignants si les cas peuvent être calculés par script en S49.
+4. Écrire et essayer `p5` (lots de 10).
+5. Fusionner la PR 21 après accord de withRen.
+6. Produire les PDF (dossier, charte, bible DA, backlog), dépôt vendredi 27/11 avant 17h, en visant midi.
+7. Dépôt privé commun (O1) avec les six, vendredi ; inviter l'équipe enseignante.
 
 ## 10. Où sont les documents
 

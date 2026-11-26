@@ -5,7 +5,7 @@
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Version | 0.8, brouillon du 26/11/2026 |
 | Rendu | Vendredi 27/11/2026 à 17h, PDF sur Moodle |
-| S'appuie sur | Spec commune 1.0 (les numéros comme 8.1 y renvoient) |
+| S'appuie sur | Spec commune 1.0 (les numéros comme 8.1 y renvoient), et la v1.1 proposée le 26/11 pour l'IA (section 9 : chaîne réelle, quota) |
 | Valeurs | Huit, adaptées aux balades. Cinq reprises et notées, trois nouvelles essayées |
 
 **[À CONFIRMER]** : proposition à valider à deux. Le 26/11, MaxX-J a retiré `ambiance`, accepté les gros mots sans cible et validé la consigne et le modèle (à valider par withRen). L'œuvre est décrite dans la bible DA.
@@ -40,7 +40,7 @@ Ils suivent d'autres consignes et arrivent aussi dans notre chaîne. Notre lectu
 
 ## 2. La lecture par l'IA
 
-L'IA lit **un message à la fois**, quand son bloc est dans notre chaîne. Elle reçoit seulement `content` : ni le nœud, ni la date, ni l'id. Elle décrit le message, jamais le dessin. Elle ne juge pas la personne.
+L'IA lit les messages quand leur bloc est dans notre chaîne **réelle**, jamais ceux de la chaîne d'essai (spec v1.1, 2.3.1). Elle reçoit seulement `content` : ni le nœud, ni la date, ni l'id. Les messages peuvent être envoyés **par lots** pour tenir le quota (partie 3), mais chacun est jugé seul. Elle décrit le message, jamais le dessin. Elle ne juge pas la personne.
 
 ### Les huit valeurs
 
@@ -99,7 +99,7 @@ Les vrais lieux et le chemin, avec l'`id` comme graine ; le nœud d'origine ; la
 
 ### Quand il n'y a pas de valeurs
 
-Trois appels au plus par message (dossier de binôme, section 5). Ensuite : tous les nombres à 0, `neutre`, `repere`, `aucun`, avec le `status` enregistré. La balade apparaît donc, en version neutre. Ces valeurs par défaut servent à l'affichage : elles ne sont pas enregistrées comme une réponse de l'IA.
+Trois appels au plus par lot (dossier de binôme, section 5). Ensuite : tous les nombres à 0, `neutre`, `repere`, `aucun`, avec le `status` enregistré. La balade apparaît donc, en version neutre. Ces valeurs par défaut servent à l'affichage : elles ne sont pas enregistrées comme une réponse de l'IA.
 
 ## 3. Le prompt
 
@@ -209,6 +209,28 @@ Ces essais portaient sur six valeurs, et le quota gratuit les a arrêtés : ils 
 Des balises de code autour du JSON sont retirées avant le contrôle : cela ne change aucune valeur. Une réponse est acceptée si elle contient exactement les huit clés, chacune avec une valeur de sa liste. Sinon, une nouvelle demande rappelle le format. **Trois appels au plus en tout**, quelle que soit la cause des échecs. Aucune valeur n'est corrigée en silence.
 
 **Ce qui reste à tester.** Les cinq valeurs reprises notées à deux, et le quota exact. Un nombre est bon à un cran près, un mot s'il est identique. Objectif (gardé le 26/11) : 80 % de bonnes réponses par valeur et 100 % de JSON valides au bout des trois appels.
+
+### La lecture par lots et le quota (proposé le 26/11)
+
+**Le problème.** Les modèles gratuits d'OpenRouter sont limités à 20 requêtes par minute et **50 par jour** pour un compte qui n'a pas acheté de crédits (page des limites d'OpenRouter, relevée par l'équipe enseignante le 26/11). Avec `p4`, un message par requête et jusqu'à trois appels, notre IA lirait entre 16 et 50 messages par jour. Une heure d'usage réel le 10/12 dépasse déjà ce chiffre. La spec v1.1 (section 9) demande à chaque binôme de chiffrer ce que son IA lit par jour.
+
+**La proposition : `p5`, par lots.** Le même message système, mais le message utilisateur contient jusqu'à **10 messages**, chacun avec un numéro :
+
+```json
+{"messages": [{"n": 1, "message": "texte du premier"}, {"n": 2, "message": "texte du second"}]}
+```
+
+La réponse est un objet `{"resultats": [...]}`, avec un objet par message : `n` et les huit clés. Le contrôle est le même pour chaque objet. Un lot dont un objet est hors format est redemandé en entier, trois appels au plus.
+
+| | Par message (`p4`) | Par lots de 10 (`p5`) |
+| --- | --- | --- |
+| Messages lus par jour, au mieux | 50 | 500 |
+| Au pire (trois appels par lot) | 16 | 160 |
+| Réserve pour l'oral | | 15 requêtes par jour, gardées dès le 10/12 |
+
+**Ce qu'il faut vérifier avant de l'adopter.** Qu'un message du lot ne déteint pas sur les autres, surtout un ordre caché (« Ignore tes consignes ») placé au milieu d'un lot de messages normaux. Le système le dit déjà : chaque message est une donnée à décrire seul. Il faudra aussi refaire les huit messages notés et comparer avec `p3`. **Tant que `p5` n'est pas essayé, `p4` reste le prompt de référence.**
+
+**Les messages sans valeurs.** Si le quota du jour est épuisé, les messages attendent. Leur balade est tracée **en attente** : trait fin gris, sans couleur ni effet sur la ville. Elle prend ses couleurs quand l'IA a répondu, le lendemain au plus tard. Les valeurs par défaut de la charte restent pour les échecs (statut différent de `ok`), pas pour l'attente.
 
 ## 4. Les limites
 
