@@ -31,18 +31,18 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 
 | Sujet | État |
 | --- | --- |
-| Spec commune 1.0 | Validée par les six. Déposée sur Moodle d'après MaxX-J (23/11) |
+| Spec commune 1.0 | Validée par les six, déposée sur Moodle (confirmé par MaxX-J le 26/11) |
 | GitHub | Spec sur `main`, documents du binôme dans `docs/` |
 | Six valeurs et règles de notation | Validées le 23/11. Nouvelle liste proposée pour Béziers, à valider (journal du 24/11) |
 | Grilles des dix messages | Remplies par les deux ; grille commune remplie |
-| Dossier de binôme | Brouillon v0.6 (balades), à valider par withRen |
-| Charte éditoriale | Brouillon v0.7 (neuf valeurs, `p3` essayé), à valider par withRen |
+| Dossier de binôme | Brouillon v0.7 (une seule chaîne), à valider par withRen |
+| Charte éditoriale | Brouillon v0.8 (huit valeurs, `p4` à réessayer), à valider par withRen |
 | Prompt | `p3` essayé avec Nemotron : 65 valeurs justes sur 68 (17 réponses, 8 messages), ordre caché résisté |
-| Œuvre | Balades dans Béziers, **rendu C** (toute la ville en 2,5D), jour et nuit. Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Idée approuvée par les enseignants (25/11) |
-| Backlog et plan | v2 du 25/11, retours de withRen appliqués, à valider par les deux |
-| Bible DA | **Texte v0.1** (`docs/bible-da/README.md`), images de withRen attendues le 26/11. Assets de bâtiments, passants et mobilier en brouillon (25/11) ; style des bâtiments et jour / nuit validés par MaxX-J, passants à valider. Le README des assets renvoie désormais à `ville-vivante.md`, validée par withRen le 25/11 ; fenêtres comptables, teinte des toits et des lumières prêtes dans les SVG. Liste des repères (`docs/bible-da/reperes.md`) et ville vivante (`docs/bible-da/ville-vivante.md`) proposées |
-| Symbole, typographie, design system | Brouillon v1 (`docs/bible-da/identite.md`, Figma), à choisir à deux |
-| Palette | Brouillon v3 (`docs/bible-da/palette.md`, Figma) après la review de withRen ; à tester sur les assets |
+| Œuvre | Balades dans Béziers, **rendu C** (toute la ville en 2,5D), jour et nuit, **une seule chaîne de balades** (26/11, voir section 5). Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Idée approuvée par les enseignants (25/11) |
+| Backlog et plan | v2.1 du 26/11, v2 validée par MaxX-J, à valider par withRen |
+| Bible DA | **Texte v0.2** du 26/11 (`docs/bible-da/README.md`), moodboard et vue au zoom de withRen attendus. Assets de bâtiments, passants et mobilier en brouillon (25/11) ; style des bâtiments et jour / nuit validés par MaxX-J, passants à valider. Le README des assets renvoie désormais à `ville-vivante.md`, validée par withRen le 25/11 ; fenêtres comptables, teinte des toits et des lumières prêtes dans les SVG. Liste des repères (`docs/bible-da/reperes.md`) et ville vivante (`docs/bible-da/ville-vivante.md`) proposées |
+| Symbole, typographie, design system | v1.1 (`docs/bible-da/identite.md`, Figma) : emblème, nom et polices choisis par MaxX-J, à valider par withRen |
+| Palette | v3.1 (`docs/bible-da/palette.md`, Figma), points ouverts tranchés par MaxX-J le 26/11 ; lumières à tester sur les assets |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
 
 
@@ -81,7 +81,9 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 
 **Encore à décider (26/11) :** longueur maximale d'un trajet et trajet si l'IA échoue, nombre de balades de la traînée, liste des repères, phrase du 3114. `p4` (`p3` sans `ambiance`) à réessayer.
 
-## 6. Les six valeurs
+## 6. Les six valeurs (règles du 23/11)
+
+Historique : la liste actuelle compte huit valeurs, voir la charte. Les règles ci-dessous restent valables pour `valence`, `energie`, `tension`, `absurdite` et `emotion`.
 
 | Valeur | Forme |
 | --- | --- |
@@ -104,20 +106,23 @@ Notes de référence : `docs/test-valeurs/decision.csv`.
 
 ## 7. Le prompt
 
-`p2` et les résultats sont dans la charte, partie 3. À finir quand le quota revient : permis, assiettes, pigeons, ras le bol, porte et lundi. Relever aussi la limite gratuite exacte.
+`p3` essayé le 25/11 avec Nemotron (65 valeurs justes sur 68). **`p4`** = `p3` sans `ambiance` (26/11), **à réessayer** sur quelques messages avant d'être figé. Tout est dans la charte, partie 3. Relever aussi la limite gratuite exacte.
 
-## 8. Ce que withRen doit faire
+## 8. Ce que withRen doit faire (avant le 27/11 midi)
 
-1. Finir les essais de `p2`, avec sa propre clé.
-2. Relire le dossier v0.4 et la charte v0.4, répondre aux points de la section 5.
-3. Connecter Tailscale.
+1. Lire la PR 21 et le journal de MaxX-J du 26/11, puis valider ou contester les choix (commentaire sur la PR ou son journal).
+2. Moodboard illustré et sourcé (auteur, date, adresse) pour la bible DA.
+3. Vue au zoom sur une vraie rue : la chaîne, des bâtiments à étages, un objet incongru, jour et nuit.
+4. Prévoir des étages dans les assets des bâtiments.
+5. Connecter Tailscale.
 
 ## 9. La suite
 
-1. Mardi : œuvre avec le prof, puis bible DA.
-2. Finir les essais de `p2`, puis messages nouveaux notés avant l'IA.
-3. Backlog et plan jour par jour.
-4. Finir dossier et charte, produire les PDF, dépôt vendredi avant 17h.
+1. Réessayer `p4`.
+2. Trancher à deux : longueur maximale d'un trajet, trajet si l'IA échoue, nombre de balades de la traînée, liste des repères, phrase du 3114.
+3. Fusionner la PR 21 après accord de withRen.
+4. Produire les PDF (dossier, charte, bible DA, backlog), dépôt vendredi 27/11 avant 17h, en visant midi.
+5. Dépôt privé commun (O1) avec les six, vendredi ; inviter l'équipe enseignante.
 
 ## 10. Où sont les documents
 
