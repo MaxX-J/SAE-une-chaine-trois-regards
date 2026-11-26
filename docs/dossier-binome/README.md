@@ -1,24 +1,24 @@
 # Dossier de binôme 2 (noeud-b)
 
-25/11/2026
+26/11/2026
 
-Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17h). Ce dossier s'appuie sur la spec commune v1.0 sans la recopier : les numéros comme 4.2 ou 6.3 renvoient à ses sections. Un repère marque ce qui n'est pas figé : **\[À CONFIRMER\]**, proposition que le binôme doit valider. L'œuvre est décrite dans la bible DA, les valeurs et le prompt dans la charte éditoriale.
+Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17h). Ce dossier s'appuie sur la spec commune sans la recopier : les numéros comme 4.2 ou 6.3 renvoient à ses sections. Il suit déjà la **v1.1**, proposée le 26/11 après la relecture des enseignants et encore à valider par un membre de chaque binôme ; tant qu'elle ne l'est pas, la v1.0 fait foi. Un repère marque ce qui n'est pas figé : **\[À CONFIRMER\]**, proposition que le binôme doit valider. L'œuvre est décrite dans la bible DA, les valeurs et le prompt dans la charte éditoriale.
 
 | Champ | Valeur |
 | --- | --- |
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Nœud | noeud-b (producteur d'un créneau de 20 s sur trois, ordre a, b, c) |
-| Spec commune | version 1.0 du 23/11/2026 |
-| Version du dossier | 0.6, brouillon adapté aux balades |
+| Spec commune | version 1.0 du 23/11/2026 ; v1.1 proposée le 26/11, suivie ici |
+| Version du dossier | 0.7, une seule chaîne de balades |
 | Langage | TypeScript, pour le nœud et pour l'application |
 
 ## 1. Le projet en bref
 
-**Notre regard.** Une blockchain garde des paroles qu'on ne peut plus effacer ; une ville garde les pas de ceux qui la traversent. Nous faisons se rencontrer les deux : **chaque message devient une balade dans Béziers, et toutes les balades, ensemble, dessinent le Béziers que les gens ressentent.** Les enseignants ont approuvé cette idée : une balade individuelle, puis toutes regroupées.
+**Notre regard.** Une blockchain garde des paroles qu'on ne peut plus effacer ; une ville garde les pas de ceux qui la traversent. Nous faisons se rencontrer les deux : **chaque message devient une balade dans Béziers, qui repart d'où la précédente s'est arrêtée ; ensemble, elles dessinent le Béziers que les gens ressentent.** Les enseignants ont approuvé cette idée : une balade individuelle, puis toutes regroupées.
 
 **Ce que permet l'application.** Le visiteur lit la consigne, écrit un message de 280 caractères au plus, puis reçoit sa balade : un titre, des étapes, une distance. Elle est d'abord en attente, puis tracée quand le message est entré dans un bloc et que l'IA l'a lu. Il peut explorer la carte commune, zoomer, et retrouver sa balade par un lien contenant l'id de son message. Avant d'écrire, il est prévenu que son message ne s'effacera pas, sera partagé avec les deux autres binômes et envoyé à une IA, et ne doit contenir aucune donnée personnelle (spec 8.1).
 
-**Ce que montre l'œuvre.** Béziers en 2,5D (faux relief, sans modèle 3D). L'IA tire neuf valeurs de chaque message : elles choisissent les lieux, la longueur, la couleur et la forme de la balade. En passant, chaque balade change la ville : les lieux traversés s'éveillent, les fenêtres s'allument, et l'humeur d'un quartier décide de sa lumière (jour, crépuscule ou nuit). Les messages des trois binômes suivent tous les mêmes règles ; seule la forme des étapes rappelle leur nœud d'origine.
+**Ce que montre l'œuvre.** Béziers en 2,5D (faux relief, sans modèle 3D). L'IA tire huit valeurs de chaque message : elles choisissent les lieux, la longueur, la couleur et la forme de la balade. Toutes les balades forment **une seule ligne** à travers la ville, comme les blocs de la chaîne. En passant, chaque balade change la ville : les rues empruntées prennent sa couleur, les bâtiments où elle s'arrête gagnent des étages, et chaque quartier prend l'émotion qui domine chez lui (sol, toits, arbres) et une lumière selon son humeur (jour, crépuscule ou nuit). Les messages des trois binômes suivent tous les mêmes règles ; seule la forme des étapes rappelle leur nœud d'origine.
 
 **Ce qui est indispensable.**
 
@@ -27,7 +27,7 @@ Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17
 - Un nœud complet, qui passe les cas de test de la spec (section 10).
 - Garder la trace du modèle d'IA qui a réellement répondu.
 
-**Ce qui est en plus, si le temps le permet.** Passants et mobilier, repères supplémentaires, panneau sur l'état de la chaîne, carte-souvenir à télécharger, animation d'apparition. Le détail est dans le backlog, rendu à part.
+**Ce qui est en plus, si le temps le permet.** Passants et mobilier, objets incongrus, repères supplémentaires, panneau sur l'état de la chaîne, carte-souvenir à télécharger, animation d'apparition. Le détail est dans le backlog, rendu à part.
 
 ## 2. L'architecture
 
@@ -75,17 +75,17 @@ Un message passe par neuf étapes, de la saisie à sa balade dans la ville. Les 
 | 2 | API de l'application (dans le nœud) | Mise en forme NFC, contrôle de la longueur (1 à 280 points de code) et des caractères interdits, filtre de la charte éditoriale, limite de 5 messages par visiteur et par 10 s (spec 2.1, 8.1, 8.2). | Refus avant signature : le message n'a ni id ni trace. |
 | 3 | Nœud, module chaîne | Horodatage strictement croissant, texte canonique, id (SHA-256), signature Ed25519, écriture dans la file d'attente en base (spec 2.1, 3.1). | Erreur interne : le message n'est pas créé, le visiteur peut réessayer. |
 | 4 | Nœud, module réseau | Envoi immédiat aux deux pairs par POST /messages, délai de 3 s, pas de nouvelle tentative (spec 6.4.1). | Le sondage de 10 s des pairs rattrape l'envoi raté (spec 6.4.3). |
-| 5 | Nœud, producteur | À notre créneau, si la file n'est pas vide : appel de GET /status sur les pairs. Il faut qu'au moins un pair réponde, qu'aucun n'annonce une chaîne strictement meilleure (hors têtes ignorées, spec 7), ne pas être en SYNCING, ne pas avoir produit le dernier bloc et ne pas avoir déjà signé dans ce créneau ou un plus récent. Prise de 50 messages au plus, bloc signé entre la 2e et la 15e seconde, ajouté à la chaîne, envoyé aux pairs (spec 4.2). | Pas de bloc, les messages attendent le créneau suivant. |
+| 5 | Nœud, producteur | À notre créneau, si la file n'est pas vide : appel de GET /status sur les pairs. Il faut qu'au moins un pair réponde, qu'aucun n'annonce une chaîne strictement meilleure (hors têtes ignorées, spec 7), ne pas être en SYNCING, ne pas avoir produit le dernier bloc, ne pas avoir déjà signé dans ce créneau ou un plus récent, être dans un créneau plus récent que celui de la tête, et avoir une horloge à 2 s au plus d'au moins un pair. Prise de 50 messages au plus, bloc signé entre la 2e et la 15e seconde, **vérifié par nous avec les règles d'un bloc reçu**, puis ajouté à la chaîne et envoyé aux pairs (spec 4.2). | Pas de bloc, les messages attendent le créneau suivant. |
 | 6 | Nœud, module chaîne | Un bloc reçu d'un pair est validé (spec 3.2), ajouté, et ses messages sortent de la file. Une fourche déclenche le rattrapage (spec 5, 7). | 409 ou 422 selon la spec, journalisé. |
-| 7 | Nœud, worker IA | Pour chaque message de la chaîne sans résultat en base, appel à OpenRouter, contrôle du format, enregistrement de message\_id, block\_index, modèle demandé, modèle utilisé, valeurs, status et processed\_at (spec 9). | Statut timeout, invalid\_format ou refused, valeurs par défaut pour le dessin. |
+| 7 | Nœud, worker IA | Pour les messages de la chaîne réelle sans résultat en base, par lots de 10 au plus, appel à OpenRouter, contrôle du format, enregistrement de message\_id, block\_index, modèle demandé, modèle utilisé, valeurs, status et processed\_at (spec 9). | Statut timeout, invalid\_format ou refused, valeurs par défaut pour le dessin. Quota du jour épuisé : balade en attente. |
 | 8 | Nœud, module œuvre | Les messages sont ordonnés par index de bloc puis position dans le bloc, jamais par timestamp (spec 5.3). La balade est calculée depuis les valeurs et l'id, sur les vraies rues ; l'état des quartiers traversés est mis à jour. | Balade neutre, avec les valeurs par défaut. |
-| 9 | Application | Le nœud prévient l'application par un flux d'événements. La balade apparaît avec son titre, les quartiers changent de lumière, puis la balade est marquée stable. | Si le flux se coupe, l'application se reconnecte et relit l'état. |
+| 9 | Application | Le nœud prévient l'application par un flux d'événements. La balade apparaît avec son titre, les quartiers changent de lumière, puis la balade est marquée confirmée. | Si le flux se coupe, l'application se reconnecte et relit l'état. |
 
-**Stabilité.** Une balade est marquée stable quand 3 blocs ont suivi le sien.
+**Confirmation.** Une balade est marquée confirmée quand son bloc l'est (spec v1.1, 5.3) : 3 blocs au-dessus de lui, ou 60 s sans changement alors que tous les pairs joignables annoncent la même tête. Sans la seconde règle, le dernier message de la journée ne serait jamais confirmé. Avant, le visiteur voit « en attente », puis « dans un bloc ».
 
 **Visiteur.** Pour la limite de 5 messages par 10 s, un visiteur est reconnu par un cookie de session anonyme. L'effacer contourne la limite : c'est accepté.
 
-**Cas d'une fourche.** Si une autre chaîne est adoptée, les messages de nos blocs abandonnés retournent dans la file (spec 5.2). Leurs résultats IA restent en base, car la clé est l'id du message (spec 9) : l'IA ne les relit pas. Les quartiers sont recalculés à partir de la nouvelle chaîne. La forme d'une balade ne change pas, car elle dépend seulement du message et de ses valeurs ; elle peut disparaître provisoirement, et la lumière d'un quartier peut changer. « Stable » est un repère d'affichage, pas une garantie : la spec n'a pas de finalité (5.3).
+**Cas d'une fourche.** Si une autre chaîne est adoptée, les messages de nos blocs abandonnés retournent dans la file (spec 5.2). Leurs résultats IA restent en base, car la clé est l'id du message (spec 9) : l'IA ne les relit pas. Les quartiers sont recalculés à partir de la nouvelle chaîne. La forme d'une balade ne change pas, car elle dépend seulement du message et de ses valeurs ; elle peut disparaître provisoirement, et la lumière d'un quartier peut changer. « Confirmé » est un repère d'affichage, pas une garantie : la spec n'a pas de finalité (5.3). La position d'un message se lit toujours dans la chaîne actuelle, et `block_index` est mis à jour après une fourche.
 
 ## 4. Les données
 
@@ -117,7 +117,7 @@ Chaque fichier porte un numéro de version, `map_version`. Les logements sont re
 
 **Ce qui est recalculé et non stocké.** Les balades et l'état des quartiers se calculent depuis les blocs, ai\_results, hidden\_messages et les données de ville ; ils sont seulement gardés en mémoire. Une fourche ne laisse aucun dessin à nettoyer. Si `map_version` change, les balades peuvent changer : nous la figeons avant la jonction.
 
-**Hors base.** Les secrets sont dans un fichier .env non versionné (NODE\_ID, graine de la clé privée, clé OpenRouter, adresses des pairs, chemin de la base). Un .env.example versionné donne la liste des clés sans valeurs (référentiel, section 3.2). Les clés publiques des trois nœuds sont dans un fichier de configuration versionné.
+**Hors base.** Les secrets sont dans un fichier .env non versionné (NODE\_ID, graine de la clé privée, clé OpenRouter, adresses des pairs, chemin de la base, et le réglage `essai` ou `reelle` qui choisit ensemble le bloc zéro et les clés, spec v1.1 2.3.1). Les deux chaînes sont gardées dans deux bases séparées. Un .env.example versionné donne la liste des clés sans valeurs (référentiel, section 3.2). Les clés publiques des trois nœuds sont dans un fichier de configuration versionné.
 
 **Sauvegarde.** La chaîne se récupère chez les pairs par rattrapage. Les résultats IA, eux, n'existent que chez nous : un export JSON de ai\_results est fait chaque jour de travail.
 
@@ -125,11 +125,11 @@ Chaque fichier porte un numéro de version, `map_version`. Les logements sont re
 
 ## 5. L'IA
 
-**Quand.** L'IA lit un message seulement quand son bloc est dans notre chaîne (spec 9). Un worker en tâche de fond parcourt les messages de la chaîne qui n'ont pas encore de ligne dans ai\_results. Il n'y a aucun appel à l'IA à l'écriture : une panne d'IA ne bloque ni l'écriture ni la production de blocs.
+**Quand.** L'IA lit un message seulement quand son bloc est dans notre chaîne **réelle** (spec 9), jamais sur la chaîne d'essai, qui ne consomme donc aucun quota. Un worker en tâche de fond parcourt les messages de la chaîne qui n'ont pas encore de ligne dans ai\_results. Il n'y a aucun appel à l'IA à l'écriture : une panne d'IA ne bloque ni l'écriture ni la production de blocs.
 
 **Quel modèle.** Modèles gratuits uniquement, via OpenRouter, avec un compte et une clé par étudiant, la clé étant dans le .env. Modèle demandé : nvidia/nemotron-3.5-super-vl:free, fixe pour garder une lecture régulière. Si les deux premiers appels échouent, le troisième va à openrouter/free, accepté par le sujet. Écarté : openrouter/free seul, car il change de modèle et les réponses varient. On enregistre model\_requested (celui de l'appel retenu) et model\_used, lu dans le champ model de la réponse (sujet, section 2).
 
-**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les neuf champs, leurs bornes et le prompt (`p3`) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
+**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les huit champs, leurs bornes et le prompt (`p4`, à réessayer ; `p5` par lots, proposé) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
 
 **Quand l'IA ne répond pas bien.**
 
@@ -140,9 +140,16 @@ Chaque fichier porte un numéro de version, `map_version`. Les logements sont re
 | Le modèle refuse de traiter le message | Aucune nouvelle tentative. | refused |
 | Réponse correcte | Valeurs enregistrées telles quelles après validation. | ok |
 
-Un message a droit à **3 appels au plus**, toutes causes confondues, pour économiser le quota gratuit. Ensuite sa ligne reste telle quelle. Pour tout statut différent de ok, la balade est tracée avec les valeurs par défaut de la charte (repère, neutre, nombres à 0) ; les vrais lieux viennent de l'id du message.
+Un lot a droit à **3 appels au plus**, toutes causes confondues, pour économiser le quota gratuit. Ensuite sa ligne reste telle quelle. Pour tout statut différent de ok, la balade est tracée avec les valeurs par défaut de la charte (repère, neutre, nombres à 0) ; les vrais lieux viennent de l'id du message.
 
-**Limites à connaître.** Nos essais à la main ont atteint la limite gratuite en quelques messages : le chiffre exact reste à relever, et le secours openrouter/free peut être bloqué par la même limite. On garde du quota pour le 10/12 et l'oral, et on code avec un faux serveur d'IA. Les modèles gratuits ont un quota par minute et par jour, à vérifier sur OpenRouter avant S50. Le worker traite donc un message à la fois. Les blocs acceptent 150 messages par minute au plus, et les limites par nœud en laissent entrer 120 (spec 8.2) : en cas d'afflux, la file IA prend du retard sans rien casser, mais un quota journalier trop bas peut laisser des balades neutres longtemps.
+**Combien de messages par jour (spec v1.1, section 9).** Les modèles gratuits d'OpenRouter sont limités à 20 requêtes par minute et 50 par jour pour un compte sans crédits achetés ; le chiffre exact pour notre compte reste à relever. Le nœud tourne avec la clé de MaxX-J.
+
+| | Par message (`p4`) | Par lots de 10 (`p5`, proposé) |
+| --- | --- | --- |
+| Messages lus par jour, au mieux | 50 | 500 |
+| Au pire (trois appels par lot) | 16 | 160 |
+
+Nous gardons **15 requêtes par jour** pour l'oral et les démonstrations, à partir du 10/12. Un compteur en base arrête le worker quand la réserve est atteinte. Les messages non lus attendent le lendemain : leur balade est tracée **en attente**, trait fin gris sans effet sur la ville, puis prend ses couleurs quand l'IA a répondu. Le worker lit dans l'ordre de la chaîne. La chaîne accepte jusqu'à 150 messages par minute (spec 8.2) : en cas d'afflux, l'IA prend du retard sans rien casser. **Écarté :** acheter des crédits (le sujet demande des modèles gratuits) ; lire avec deux clés sur un même nœud (une clé par étudiant). **\[À CONFIRMER\]** `p5`, à essayer contre un ordre caché glissé dans un lot.
 
 **Contre les injections.** Une réponse est acceptée seulement si elle passe un schéma strict. Un message qui tente de donner des ordres à l'IA ne peut au pire que choisir des valeurs dans les bornes. Aucun texte libre de l'IA n'est affiché : seulement des nombres et des mots de listes fermées. Le titre d'une balade est composé par le code avec les vrais lieux.
 
@@ -152,25 +159,27 @@ Un message a droit à **3 appels au plus**, toutes causes confondues, pour écon
 
 **La balade.** Fonction pure : mêmes valeurs, même id et même `map_version` donnent toujours la même balade.
 
-1. `lieu` et `lieu_secondaire` donnent les familles ; `energie` donne le nombre d'étapes, de 2 à 6.
-2. La première étape est choisie par l'id dans la famille, les suivantes par l'id parmi les lieux proches.
-3. Un plus court chemin (A*) relie les étapes sur le réseau de rues.
-4. `absurdite` peut faire quitter les rues : un tronçon à partir de 0,5, tous à partir de 0,75.
+1. La balade part de la dernière étape du message précédent dans la chaîne. Le premier message part d'un repère fixe.
+2. `lieu` et `lieu_secondaire` donnent les familles ; `energie` donne le nombre d'étapes, de 2 à 6.
+3. Les étapes sont choisies par l'id dans la famille, parmi les lieux proches.
+4. Un plus court chemin (A*) relie les étapes sur le réseau de rues. Repasser au même endroit est permis. Longueur maximale d'un trajet, et trajet quand l'IA a échoué : **\[À CONFIRMER\]**.
 5. `tension` déforme le tracé, sans le faire sortir de la rue.
+6. `absurdite` à 0,5 ou plus pose un objet incongru (piano, baignoire, taureau, poisson volant) près d'une étape, choisi par l'id.
+
+Si la chaîne change (spec 5), les balades sont recalculées depuis le premier bloc qui diffère.
 
 **Le quartier.** Il regarde les 20 derniers messages de la chaîne passés chez lui. Chaque nouveau texte modifie donc l'effet des précédents, quel que soit le binôme qui l'a écrit.
 
 | Valeur | Dans la balade | Dans la ville |
 | --- | --- | --- |
-| `lieu`, `lieu_secondaire` | Étapes, symboles | Lieux éveillés |
-| `emotion` | Couleur et motif du tracé | Halo |
+| `lieu`, `lieu_secondaire` | Étapes, symboles | Bâtiments visités : étages en plus, teinte chaude |
+| `emotion` | Couleur et motif du tracé | Couleur des rues empruntées ; émotion dominante du quartier : sol, toits, saison des arbres |
 | `intensite` | Force de la couleur | |
-| `valence` | | Lumière du quartier : moyenne de 0,12 ou plus, jour ; de -0,12 ou moins, nuit ; sinon, crépuscule ; sans message, jour **\[À CONFIRMER\]** |
-| `energie` | Longueur | |
+| `valence` | | Lumière du quartier : moyenne de 0,12 ou plus, jour ; de -0,12 ou moins, nuit ; sinon, crépuscule ; sans message, jour |
+| `energie` | Nombre d'étapes | |
 | `tension` | Forme, souple à cassée | |
-| `absurdite` | Sortie des rues | |
-| `ambiance` | Voile autour du parcours | |
-| Sans IA | Forme des étapes selon le nœud, distance | Fenêtres allumées : une par message récent du quartier |
+| `absurdite` | Objet incongru | Il reste dans la ville |
+| Sans IA | Forme des étapes selon le nœud, distance | Fenêtres allumées : une par message récent du quartier ; lumière d'une rue selon le nombre de passages |
 
 Les plages exactes, les couleurs et les motifs sont dans la [palette](../bible-da/palette.md), les effets dans la [ville vivante](../bible-da/ville-vivante.md).
 
@@ -181,13 +190,13 @@ Les plages exactes, les couleurs et les motifs sont dans la [palette](../bible-d
 3. Les tracés en SVG, au sol puis répétés en transparence au-dessus, pour rester visibles.
 4. Les symboles des lieux, puis l'interface.
 
-**Beaucoup de balades.** 4 balades récentes nettes par quartier de loin, 12 au zoom **\[À CONFIRMER\]**. Les plus anciennes usent la rue : un chemin clair, d'une seule teinte, qui s'élargit avec les passages. Le visiteur retrouve toujours la sienne en entier.
+**Beaucoup de balades.** Une traînée suit la tête de la chaîne : les dernières balades sont nettes et s'estompent, la plus récente porte un point et un halo. Le nombre de balades de la traînée sera calibré sur l'œuvre. Les plus anciennes ne restent que dans la lumière des rues et la hauteur des bâtiments. Le visiteur retrouve toujours la sienne en entier.
 
-**Message masqué.** Sa balade et ses effets sur la ville disparaissent ; un volet fermé marque le quartier **\[À CONFIRMER\]**. Le message reste dans la chaîne (spec 8.1) et son texte n'est jamais envoyé à l'application.
+**Message masqué.** Sa balade et ses effets sur la ville disparaissent ; un volet fermé marque le quartier. La balade suivante part toujours du même point. Le message reste dans la chaîne (spec 8.1) et son texte n'est jamais envoyé à l'application.
 
-**Accessibilité.** Une liste des balades, lisible au clavier et au lecteur d'écran, double la carte : titre, émotion écrite, étapes, distance. La couleur est toujours doublée d'un symbole ou d'un motif. Le visiteur peut forcer le jour partout. Aucun clignotement rapide, animations coupées si l'utilisateur demande moins de mouvement.
+**Accessibilité.** Une liste des balades, lisible au clavier et au lecteur d'écran, double la carte : titre, émotion écrite, étapes, distance. La couleur est toujours doublée d'un symbole ou d'un motif. L'humeur et la lumière de chaque quartier sont écrites. Aucun clignotement rapide, animations coupées si l'utilisateur demande moins de mouvement.
 
-**Écarté.** Une moyenne des tracés (une balade qui n'est celle de personne) ; la vraie 3D (trop longue, texte moins accessible) ; un service de cartes en direct (dépendance au réseau et à un tiers) ; un rendu fait par l'IA, non reproductible.
+**Écarté.** Une moyenne des tracés (une balade qui n'est celle de personne) ; des balades séparées (illisibles à 300) ; un réglage pour forcer le jour (la lumière fait partie de l'œuvre) ; la vraie 3D (trop longue, texte moins accessible) ; un service de cartes en direct (dépendance au réseau et à un tiers) ; un rendu fait par l'IA, non reproductible.
 
 ## 7. Les choix techniques
 
@@ -209,7 +218,7 @@ Les plages exactes, les couleurs et les motifs sont dans la [palette](../bible-d
 | Exécution | Le nœud tourne directement sur l'ordinateur du binôme, hôte Tailscale nommé noeud-b. Trois instances locales, sur trois ports, servent aux essais. | Tailscale tourne déjà sur la machine, rien d'autre à installer. | Docker : une couche réseau et un outil de plus, sans bénéfice ici. |
 | Fonctionnement réseau | Tailscale, port 8080, adresse IP en secours (spec 6.1) | Imposé par le sujet et la spec. | Aucun. |
 
-**Machine du nœud.** L'ordinateur de MaxX-J héberge noeud-b le 10/12. S'il est éteint, notre créneau reste vide et les deux autres nœuds continuent (spec 7). Celui de withRen sert de secours **\[À CONFIRMER\]** : il faut alors y copier la base et la clé privée, sans jamais faire tourner les deux en même temps (double signature).
+**Machine du nœud.** L'ordinateur de MaxX-J héberge noeud-b le 10/12. S'il est éteint, notre créneau reste vide et les deux autres nœuds continuent (spec 7). Celui de withRen sert de secours : il faut alors y copier la base et la clé privée, sans jamais faire tourner les deux en même temps (double signature).
 
 **Pour reprendre le projet.** Le dépôt suit l'arborescence du référentiel : docs/, infra/, src/ (nœud, application, code commun), tests/ (dont tests/vectors/), .github/, .env.example, .gitignore, README.md. Le README donne l'installation (npm install), la copie de .env.example vers .env, le lancement du nœud et de l'application, et la commande des tests.
 
@@ -219,12 +228,16 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 
 | Niveau | Ce qu'on vérifie | Comment | Quand |
 | --- | --- | --- | --- |
-| Notre nœud seul | Les vecteurs de la spec : id b3bca9b7…, hash du bloc 1 7c8f7209…, bloc zéro 9af1db54…, signatures à l'identique. Les cas 1 à 14, 17 à 19 et 22, plus 23 et 24 simulés avec une horloge et de faux pairs (la spec les classe en essais sur le réseau : ils sont aussi rejoués à trois). Les règles de validité, l'ordre des messages, le choix entre deux chaînes. | Tests unitaires et tests d'API avec Vitest, sans réseau, clés de test de la spec (section 10.1). | Lundi 07 et mardi 08/12. En S49, préparation sans code du projet ; script de vecteurs seulement si les enseignants l'acceptent |
-| Notre nœud avec les deux autres | Les cas 15, 16, 20, 21 et 23 à 26 (fourche, rattrapage, redémarrage, isolement). Puis les étapes du jour J (spec 10.3). | D'abord trois instances de notre propre nœud sur un même ordinateur, avec les clés de test. Ensuite, deux nœuds réels sur Tailscale (mercredi 09/12), puis les trois (jeudi 10/12). | Local en S50, réel les 09 et 10/12 |
+| Notre nœud seul | Les vecteurs de la spec : id b3bca9b7…, hash du bloc 1 7c8f7209…, bloc zéro 9af1db54…, signatures à l'identique, bloc zéro réel calculé avec les clés de test (v1.1, 2.3.1). Les cas 1 à 14, 18, 19, 22, 23, 27 à 32 et 36, plus 24, 34 et 35 simulés avec une horloge et de faux pairs. Les règles de validité, l'ordre des messages, le choix entre deux chaînes. | Tests unitaires et tests d'API avec Vitest, sans réseau, sur la chaîne d'essai, clés de test de la spec (section 10.1). Chaque cas part du format commun de la v1.1 (10.2) : chaîne chargée et horloge injectée. | Lundi 07 et mardi 08/12. En S49, préparation sans code du projet ; script de vecteurs seulement si les enseignants l'acceptent |
+| Notre nœud avec les deux autres | Les cas 15, 16, 17, 20, 21, 24 à 26 et 33 (fourche, rattrapage, redémarrage, isolement, tête datée dans le futur). Puis les étapes du jour J (spec 10.3). | D'abord trois instances de notre propre nœud sur un même ordinateur, avec les clés de test. Ensuite, deux nœuds réels sur Tailscale (le mardi 08/12 si possible, le mercredi 09/12 au matin au plus tard), puis les trois (jeudi 10/12). | Local en S50, réel du 08 au 10/12 |
 | Balades et quartiers | Même message, même balade. Les bornes de chaque valeur. Une fourche et un message masqué recalculent les quartiers. Aucun lieu sans chemin. | Tests unitaires avec des messages fixes et une petite carte de test | S50 et S2 |
 | Application de bout en bout | Le parcours complet de la section 3 : écriture, bloc, IA, balade. Les pannes d'IA. L'accessibilité. | Playwright, avec un faux serveur OpenRouter qui simule réponses correctes, lentes, hors format, refus et 429. Contrôle axe et test clavier. Validation W3C du HTML. | De S50 à S2 |
 
-**Notre part des cas partagés.** La spec nous confie la production des entrées des cas 11 à 14 et 17 à 19, à déposer dans tests/vectors/ du dépôt commun avant le lundi 07/12 au soir (spec 10.2). Nous les utilisons aussi dans nos propres tests.
+**Notre part des cas partagés.** La v1.1 nous confie douze cas : les vecteurs 11 à 14, 17 à 19, 28, 29 et 31, et les scénarios 16 et 34. Elle avance leur dépôt dans tests/vectors/ au vendredi 04/12, en S49, ce qui suppose d'écrire un petit script avant la S50. **\[À CONFIRMER\]** Accord des enseignants ; sinon nous demandons aux six de garder le lundi 07/12. Nous les utilisons aussi dans nos propres tests.
+
+**Ce qui doit marcher le 10/12.** Nous suivons le socle de la v1.1 (10.0) : formats, validité complète et vérification de nos propres blocs, production par créneaux, cinq routes, sondage avec écart d'horloge, rattrapage simple, chaîne et file sur disque. Les limites de débit, le journal des doubles signatures et les têtes ignorées 5 minutes peuvent attendre la S2.
+
+**Notre avis sur la v1.1** (à envoyer aux six) : la reconnaissance d'un pair par son adresse IP ne marche pas pour trois nœuds sur un même PC (`127.0.0.1`), il faut un réglage pour le mode test ; un décalage de plus de 2 s entre chaque paire de PC arrête les trois nœuds, ce qui doit figurer dans les limites acceptées ; le dépôt du 04/12 demande du code en S49.
 
 **Critère de fin.** Un test qui échoue sur un vecteur de la spec est une erreur de notre code, sauf si deux binômes lisent la spec différemment : dans ce cas, on corrige la spec avant le code (spec 10.3).
 
@@ -234,9 +247,9 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 | --- | --- | --- |
 | Nos calculs d'empreinte ou de signature diffèrent de ceux des autres (NFC, points de code, espaces) | Technique | Vecteurs de la spec rejoués dès le lundi 07/12. Listes de caractères écrites en dur, jamais trim(). |
 | Les noms Tailscale ne se résolvent pas (point ouvert O2) | Technique | Adresses IP en configuration locale, test des noms le lundi 07/12. |
-| Horloge déréglée, blocs refusés (fenêtre de 5 s) | Technique | Synchronisation automatique du système, avertissement au-delà de 2 s (spec 6.4.3). |
+| Horloge déréglée, blocs refusés (fenêtre de 5 s), chaîne figée | Technique | Spec v1.1 : un bloc daté dans le futur n'est adopté par personne, et un nœud à plus de 2 s de ses deux pairs ne produit plus. La synchronisation automatique peut être bloquée sur eduroam (port UDP 123) : avant chaque séance, nous comparons l'heure du PC à l'en-tête `Date` d'une réponse HTTPS et corrigeons à la main au-delà d'1 s. |
 | Redémarrage au milieu d'un créneau, double signature | Technique | Créneau écrit en base avant de signer (table slot\_log, spec 4.2.3). |
-| Modèle gratuit en panne ou quota atteint | Technique | Section 5 : tentatives, statut enregistré, valeurs par défaut. L'IA ne bloque jamais la chaîne. |
+| Modèle gratuit en panne ou quota atteint (50 requêtes par jour) | Technique | Section 5 : lots de 10, réserve de 15 requêtes, balades en attente, statut enregistré. L'IA ne bloque jamais la chaîne. Essais sur la chaîne d'essai, sans IA. |
 | Fuite de la clé privée ou de la clé OpenRouter | Technique | .env hors de Git, .gitignore dès le premier commit, analyse des secrets sur le dépôt. En cas de fuite : on prévient les six (spec 8.4). |
 | Texte choquant produit par l'IA ou par un visiteur, affiché dans l'œuvre | Technique | Filtre avant signature, valeurs bornées, aucun texte libre de l'IA, balade retirée pour un message masqué. |
 | Ville lente à afficher | Technique | Fond en images, SVG seulement dans la zone visible et allégés, nombre de tracés limité. Essai à 300 messages avant la fin de S2. |
@@ -244,12 +257,10 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 | Trop de balades au même endroit (un seul cimetière dans le centre) | Technique | Plusieurs lieux par famille, lieu de départ choisi par l'id, zone élargie si besoin. |
 | Une balade blesse (lieu de culte, deuil, domicile) | Humain | Aucun détail moqueur dans ces lieux, religions non distinguées, aucune adresse. |
 | Peu de temps de production : 3 jours de S50 (7 au 9/12) avant la jonction du 10/12 | Temps | Backlog classé en indispensable et en plus. Nous préparons chez nous en S49 : environnement, tri des lieux, essais du prompt à la main. |
-| La direction artistique prend plus de temps que prévu | Temps | Les bâtiments sont déjà dessinés en brouillon. Ordre de coupe : passants et mobilier, ambiances, bâtiments au zoom, nuit. Il reste des blocs simples et les balades. |
+| La direction artistique prend plus de temps que prévu | Temps | Les bâtiments sont déjà dessinés en brouillon. Ordre de coupe : passants et mobilier, objets incongrus, étages des bâtiments, bâtiments au zoom, nuit. Il reste des blocs simples et les balades. |
 | Un des deux est absent ou chargé par d'autres cours | Binôme | Les deux relisent tout le code. Journal d'avancement dans docs/suivi/. Chacun doit pouvoir expliquer l'ensemble à l'oral. |
 | Charge déséquilibrée entre les deux, note individualisée | Binôme | Répartition visible dans le backlog, point d'équilibre chaque semaine. |
 | Code écrit avec l'IA et mal compris | Binôme | Section 10 : relecture et explication obligatoires avant fusion. |
-
-**\[À CONFIRMER\]** Ajouter les contraintes personnelles connues (autres projets, examens, déplacements) pendant S49 et S50.
 
 ## 10. L'organisation
 
@@ -263,9 +274,9 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 | IA, carte commune, styles, zoom | Worker, quartiers, dessin | withRen | MaxX-J |
 | Balade calculée, vue d'un parcours, accessibilité | Chemins, titre, liste | MaxX-J | withRen |
 | Tests et jonction | Vecteurs, cas partagés, bout en bout | les deux | les deux |
-| Documents de rendu | MaxX-J : charte et dossier ; withRen : bible DA **\[À CONFIRMER\]** | voir contenu | les deux |
+| Documents de rendu | Rédigés et relus à deux : MaxX-J surtout la charte et le dossier, withRen surtout les dessins de la bible DA | voir contenu | les deux |
 
-**Travailler à deux.** Un daily chaque matin, dix minutes, avec l'enseignant (le premier mardi 24/11), puis un court point entre nous en fin de journée pour ce qui est fait et ce qui bloque. Pendant S49, un message par jour suffit. Les six se parlent sur Discord (spec 11). **\[À CONFIRMER\]** Canal propre au binôme.
+**Travailler à deux.** Un daily chaque matin, dix minutes, avec l'enseignant (le premier mardi 24/11), puis un court point entre nous en fin de journée pour ce qui est fait et ce qui bloque. Pendant S49, un message par jour suffit. Les six se parlent sur Discord (spec 11), et nous deux sur un canal propre au binôme.
 
 **Git.**
 
@@ -279,7 +290,7 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 
 **L'IA pour concevoir.** Nous arrivons avec nos idées, nous les soumettons à Claude, et nous gardons, changeons ou refusons ses retours. Quelques exemples :
 
-- **Nos idées :** la ville (withRen), les balades dans Béziers (piste de l'enseignante d'art, choisie à deux), les bâtiments, les passants et le jour et la nuit (withRen), la lumière selon la `valence` (MaxX-J).
+- **Nos idées :** la ville (withRen), les balades dans Béziers (piste de l'enseignante d'art, choisie à deux), les bâtiments, les passants et le jour et la nuit (withRen), la lumière selon la `valence`, la chaîne unique de balades et les bâtiments qui grandissent (MaxX-J).
 - **Retours gardés :** l'IA hors de la chaîne, le jour et la nuit par quartier, le liseré et le contraste de la palette.
 - **Retours refusés ou corrigés par nous :** la valeur `sociabilite`, le `mot` libre, le ruban de couleurs au sol (jugé laid à l'essai), l'ordre des tâches du backlog et la palette de nuit (retours de withRen).
 - **Ce que nous vérifions :** les choix sont décidés par nous, le journal `docs/suivi/` dit qui a décidé quoi.
@@ -291,4 +302,4 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 - Les vecteurs de la spec font foi : si le code de l'IA et un vecteur divergent, c'est le code qui a tort.
 - Nous gardons un journal court des usages (quoi, pour quelle tâche, ce qui a été corrigé) dans docs/suivi/.
 
-**Calendrier.** S48 : conception et rendus. S49 : chacun prépare son environnement (Node, Tailscale, OpenRouter) et les données de ville, sans code du projet. S50 : production ; nœud prêt aux vecteurs le lundi 07/12, essai à deux le mercredi 09/12, jonction à trois le jeudi 10/12. S2 : finalisation et oral. Le plan jour par jour est dans le backlog.
+**Calendrier.** S48 : conception et rendus. S49 : chacun prépare son environnement (Node, Tailscale, OpenRouter) et les données de ville, sans code du projet. S50 : production ; nœud prêt aux vecteurs le lundi 07/12, essai à deux le mardi 08/12 si possible et le mercredi 09/12 au matin au plus tard, jonction à trois le jeudi 10/12, d'abord sur la chaîne d'essai, puis ouverture de la chaîne réelle. S2 : finalisation et oral. Le plan jour par jour est dans le backlog.

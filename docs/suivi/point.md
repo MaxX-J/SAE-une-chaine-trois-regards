@@ -1,4 +1,4 @@
-# Point du binôme 2 (noeud-b), mis à jour le 25/11/2026
+# Point du binôme 2 (noeud-b), mis à jour le 26/11/2026
 
 Historique détaillé : `docs/suivi/journal/`. Règles pour Claude : `CLAUDE.md`.
 
@@ -31,18 +31,18 @@ SAÉ 5D.01 « Une chaîne, trois regards », BUT MMI 3, IUT de Béziers. Trois b
 
 | Sujet | État |
 | --- | --- |
-| Spec commune 1.0 | Validée par les six. Déposée sur Moodle d'après MaxX-J (23/11) |
+| Spec commune 1.0 | Validée par les six, déposée sur Moodle (confirmé par MaxX-J le 26/11) |
 | GitHub | Spec sur `main`, documents du binôme dans `docs/` |
 | Six valeurs et règles de notation | Validées le 23/11. Nouvelle liste proposée pour Béziers, à valider (journal du 24/11) |
 | Grilles des dix messages | Remplies par les deux ; grille commune remplie |
-| Dossier de binôme | Brouillon v0.6 (balades), à valider par withRen |
-| Charte éditoriale | Brouillon v0.7 (neuf valeurs, `p3` essayé), à valider par withRen |
+| Dossier de binôme | Brouillon v0.7 (une seule chaîne), choix validés à deux ; relecture finale avant le PDF |
+| Charte éditoriale | Brouillon v0.8 (huit valeurs, `p4` à réessayer), choix validés à deux ; `p5` et la balade en attente restent des propositions |
 | Prompt | `p3` essayé avec Nemotron : 65 valeurs justes sur 68 (17 réponses, 8 messages), ordre caché résisté |
-| Œuvre | Balades dans Béziers, **rendu C** (toute la ville en 2,5D), jour et nuit. Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Idée approuvée par les enseignants (25/11) |
-| Backlog et plan | v2 du 25/11, retours de withRen appliqués, à valider par les deux |
-| Bible DA | Texte pas commencé. Assets de bâtiments, passants et mobilier en brouillon (25/11) ; style des bâtiments et jour / nuit validés par MaxX-J, passants à valider. Le README des assets renvoie désormais à `ville-vivante.md`, validée par withRen le 25/11 ; fenêtres comptables, teinte des toits et des lumières prêtes dans les SVG. Liste des repères (`docs/bible-da/reperes.md`) et ville vivante (`docs/bible-da/ville-vivante.md`) proposées |
-| Symbole, typographie, design system | Brouillon v1 (`docs/bible-da/identite.md`, Figma), à choisir à deux |
-| Palette | Brouillon v3 (`docs/bible-da/palette.md`, Figma) après la review de withRen ; à tester sur les assets |
+| Œuvre | Balades dans Béziers, **rendu C** (toute la ville en 2,5D), jour et nuit, **une seule chaîne de balades** (26/11, voir section 5). Esquisses dans `docs/bible-da/esquisses/`, assets de bâtiments (brouillon) dans `docs/bible-da/assets/batiments/`. Idée approuvée par les enseignants (25/11) |
+| Backlog et plan | v2.2 du 26/11, validé à deux |
+| Bible DA | **Texte v0.2** du 26/11 (`docs/bible-da/README.md`), moodboard et vue au zoom de withRen attendus. Assets de bâtiments, passants et mobilier en brouillon (25/11) ; style des bâtiments et jour / nuit validés par MaxX-J, passants à valider. Le README des assets renvoie désormais à `ville-vivante.md`, validée par withRen le 25/11 ; fenêtres comptables, teinte des toits et des lumières prêtes dans les SVG. Liste des repères (`docs/bible-da/reperes.md`) et ville vivante (`docs/bible-da/ville-vivante.md`) proposées |
+| Symbole, typographie, design system | v1.1 (`docs/bible-da/identite.md`, Figma) : emblème, nom et polices choisis par MaxX-J, validés par withRen |
+| Palette | v3.1 (`docs/bible-da/palette.md`, Figma), points ouverts tranchés par MaxX-J le 26/11 ; lumières à tester sur les assets |
 | Tailscale | Pas encore connecté chez MaxX-J ; chez withRen, à préciser |
 
 
@@ -59,6 +59,8 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 - Un message valide est toujours accepté et ne s'efface jamais. Modération avant signature, ou masquage chez soi.
 - Ouverts : dépôt privé commun (O1, vendredi 27/11), noms Tailscale (O2) et clés publiques réelles (O3) avant ou le 07/12.
 
+**v1.1 proposée le 26/11** par le binôme 3, après la relecture des enseignants (horloge qui peut figer la chaîne, bloc invalide produit). Changements : borne de 5 s dans le futur pour tout bloc, arrêt de la production au-delà de 2 s d'écart avec les deux pairs, vérification de son propre bloc, bloc « confirmé » (3 blocs ou 60 s), chaîne d'essai et chaîne réelle, pair reconnu par son IP, cas 27 à 36, dépôt des cas le 04/12, quota de l'IA à chiffrer, socle du 10/12. À valider par un membre de chaque binôme (O5). Nos documents la suivent déjà ; nos réserves sont dans le journal du 26/11.
+
 ## 5. Décisions du binôme
 
 | Sujet | Décision | Statut |
@@ -68,19 +70,22 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 | Valeurs | Décrivent le message, pas le dessin | Validé à deux |
 | Dépôt | Public | Choix de MaxX-J |
 | Répartition (indicative) | MaxX-J : nœud et chaîne. withRen : IA et œuvre. Application à deux | Validée |
-| Machine le 10/12 | PC de MaxX-J | **À valider par withRen** |
+| Œuvre, 26/11 | Une seule chaîne de balades ; jour, crépuscule, nuit gardés ; émotion du quartier au sol et sur les toits ; bâtiments visités : étages et teinte chaude ; masqué = volet fermé ; traînée à calibrer ; `ambiance` retirée (huit valeurs) ; zigzag dans la rue ; `absurdite` = objet incongru ; pas d'interrupteur « toujours de jour » | Choix de MaxX-J, validés par withRen le 26/11 (journal du 26/11) |
+| Machine le 10/12 | PC de MaxX-J, secours PC de withRen | Choix de MaxX-J le 26/11, validé par withRen |
 | Accès à l'application | Par Tailscale, port séparé du 8080 | Choix de MaxX-J |
-| Modèle | `nvidia/nemotron-3.5-super-vl:free`, secours `openrouter/free` au 3e appel | Choix de MaxX-J, **à valider par withRen** |
+| Modèle | `nvidia/nemotron-3.5-super-vl:free`, secours `openrouter/free` au 3e appel | Choix de MaxX-J, validé par withRen le 26/11 |
 | Docker | Non | Choix de MaxX-J |
 | Stable | Après 3 blocs suivants (repère d'affichage) | Choix de MaxX-J |
 | Limite visiteur | Cookie anonyme, 5 messages par 10 s | Choix de MaxX-J |
 | Sauvegarde | Export JSON quotidien des résultats IA | Choix de MaxX-J |
 | Échec de l'IA | Élément neutre, avec son `status` | Proposé, **à valider** |
-| Consigne | « Raconte un moment, une pensée ou une idée folle. » | Choix de MaxX-J, **à valider par withRen** |
+| Consigne | « Raconte un moment, une pensée ou une idée folle. » | Choix de MaxX-J, validé par withRen le 26/11 |
 
-**Encore à décider :** PC de secours, qui rédige charte, bible DA et backlog, canal du binôme, contraintes de dates en S49 et S50. Dans la charte : message d'aide 3114, gros mots sans cible acceptés, objectif de 80 % au test.
+**Encore à décider (26/11) :** longueur maximale d'un trajet et trajet si l'IA échoue, nombre de balades de la traînée, liste des repères. Phrase du 3114 gardée (26/11). Moodboard : pas validé, un nouveau est à faire. `p4` (`p3` sans `ambiance`) à réessayer.
 
-## 6. Les six valeurs
+## 6. Les six valeurs (règles du 23/11)
+
+Historique : la liste actuelle compte huit valeurs, voir la charte. Les règles ci-dessous restent valables pour `valence`, `energie`, `tension`, `absurdite` et `emotion`.
 
 | Valeur | Forme |
 | --- | --- |
@@ -103,20 +108,25 @@ Notes de référence : `docs/test-valeurs/decision.csv`.
 
 ## 7. Le prompt
 
-`p2` et les résultats sont dans la charte, partie 3. À finir quand le quota revient : permis, assiettes, pigeons, ras le bol, porte et lundi. Relever aussi la limite gratuite exacte.
+`p3` essayé le 25/11 avec Nemotron (65 valeurs justes sur 68). **`p4`** = `p3` sans `ambiance` (26/11), **à réessayer** sur quelques messages avant d'être figé. Tout est dans la charte, partie 3. Relever aussi la limite gratuite exacte.
 
-## 8. Ce que withRen doit faire
+## 8. Ce que withRen doit faire (avant le 27/11 midi)
 
-1. Finir les essais de `p2`, avec sa propre clé.
-2. Relire le dossier v0.4 et la charte v0.4, répondre aux points de la section 5.
-3. Connecter Tailscale.
+1. Lire la PR 21 et le journal de MaxX-J du 26/11, puis valider ou contester les choix (commentaire sur la PR ou son journal).
+2. Moodboard illustré et sourcé (auteur, date, adresse) pour la bible DA.
+3. Vue au zoom sur une vraie rue : la chaîne, des bâtiments à étages, un objet incongru, jour et nuit.
+4. Prévoir des étages dans les assets des bâtiments.
+5. Connecter Tailscale.
 
 ## 9. La suite
 
-1. Mardi : œuvre avec le prof, puis bible DA.
-2. Finir les essais de `p2`, puis messages nouveaux notés avant l'IA.
-3. Backlog et plan jour par jour.
-4. Finir dossier et charte, produire les PDF, dépôt vendredi avant 17h.
+1. Réessayer `p4`.
+2. Trancher à deux, plus tard : longueur maximale d'un trajet, trajet si l'IA échoue, nombre de balades de la traînée, liste des repères. Refaire un moodboard.
+3. Spec v1.1 validée par les six et déposée sur Moodle (26/11). Réponse des enseignants sur le code en S49 (O6) attendue.
+4. Écrire et essayer `p5` (lots de 10).
+5. Fusionner la PR 21 (choix validés par withRen le 26/11).
+6. Produire les PDF (dossier, charte, bible DA, backlog), dépôt vendredi 27/11 avant 17h, en visant midi.
+7. Dépôt privé commun (O1) avec les six, vendredi ; inviter l'équipe enseignante.
 
 ## 10. Où sont les documents
 
