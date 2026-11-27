@@ -51,6 +51,7 @@ Binôme 2 (noeud-b) : Maxens Sevilla (M) et Rahim Tamhaev (R).
 | A06 | Accessibilité : clavier, liste des balades, contraste, mouvement réduit | Contrôle axe sans erreur, parcours complet au clavier | 3 | M | 13/01 |
 | C04 | ★ Zoom à trois niveaux | Les détails apparaissent sans ralentir | 3 | R | 13/01 |
 | C08 | ★ Jour, crépuscule et nuit par quartier selon `valence` | Un message change la lumière de son quartier ; l'humeur est écrite | 3 | R | 13/01 |
+| D02 | README à jour avec les vraies commandes (dossier, partie 11) | Un autre binôme lance le projet en le suivant, sans nous poser de question | 1 | M | 14/01 |
 | T02 | Test de bout en bout avec faux serveur IA | Écriture, bloc, IA et balade passent automatiquement | 3 | M | 14/01 |
 | T03 | Performance à 300 messages | Affichage fluide sur la machine de démonstration | 3 | R | 14/01 |
 | O01 | Répétition de l'oral, scénario de secours | Deux passages complets, questions échangées | 6 | M, R | 14/01 |
@@ -99,7 +100,7 @@ Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. `ambiance`,
 | | M | R |
 | --- | --- | --- |
 | S50 (du 07 au 11/12) | 31 h | 32 h |
-| S2 (du 11 au 14/01) | 24 h | 24 h |
+| S2 (du 11 au 14/01) | 25 h | 24 h |
 
 S50 dépasse un peu 30 h (5 jours de 6 h) : T01 passe en S49 si les enseignants acceptent un script cette semaine-là (point O6 de la spec).
 
@@ -119,6 +120,10 @@ La répartition validée (M le nœud, R l'IA et l'œuvre) est ajustée sur deux 
 
 T01 a besoin de N02 : M commence par N01 et N02, R par A01. N07a commence dès le mardi pour laisser une marge au mercredi. Si le mercredi déborde, A02 passe au jeudi matin, jamais J01.
 
+- **Si la jonction du jeudi échoue :** le vendredi matin lui est réservé, à deux. B01, C01 et I03 glissent au lundi 11/01. La chaîne passe avant tout le reste.
+- **Si elle réussit :** le vendredi se déroule comme prévu, et la marge sert à brancher la vraie IA (I01) sur la chaîne réelle.
+- **Si l'un de nous prend du retard :** l'autre reprend sa tâche la plus proche du jalon ; les tâches ★ attendent la S2.
+
 ### S2
 
 | Soir | Ce qui fonctionne | M | R |
@@ -126,7 +131,7 @@ T01 a besoin de N02 : M commence par N01 et N02, R par A01. N07a commence dès l
 | Lundi 11/01 | Carte commune, repères, vue d'un parcours, message masqué | A04, N09, A05 | C02, C07, I02 |
 | Mardi 12/01 | Effets des valeurs, étages des bâtiments visités, bâtiments au zoom, palette | B02, B03 | C03, C05 |
 | Mercredi 13/01 | Zoom, jour et nuit, changement de chaîne, accessibilité | C06, A06 | C04, C08 |
-| Jeudi 14/01 | Tout est gelé, testé et répété | T02, O01 | T03, O01 |
+| Jeudi 14/01 | Tout est gelé, testé et répété, README à jour | T02, D02, O01 | T03, O01 |
 | Vendredi 15/01 | Réserve et oral (date à préciser par les enseignants) | réserve | réserve |
 
 Pas de nouvelle fonctionnalité après le mercredi 13/01 au soir.
@@ -135,15 +140,15 @@ Pas de nouvelle fonctionnalité après le mercredi 13/01 au soir.
 
 Pas de SAÉ cette semaine-là, et **le code du projet commence en S50**. Nous préparons seulement :
 
-| Qui | Préparation | Temps |
-| --- | --- | --- |
-| Les deux | Node, Git, Tailscale et OpenRouter prêts ; `node:sqlite` et `better-sqlite3` essayés | 1 h chacun |
-| Les deux | Relire la spec, sections 2 à 7, et se l'expliquer | 1 h chacun |
-| Les deux | Essayer `p5` sur un lot de dix messages plus variés, notés avant l'IA | 1 h chacun |
-| M | Vrai couple de clés du nœud, clé publique envoyée aux six (O3, avant le 07/12) | 1 h |
-| M | PC du nœud : écart d'horloge sur eduroam (O4), pare-feu, nom Tailscale (O2), quota OpenRouter vérifié ; ★ carte du centre récupérée une fois pour toutes | 1 h |
-| R | Décrire nos douze cas sur papier, au format commun de la v1.1 (suite : T01) | 1 h |
-| R | ★ Trier environ 80 lieux, leur famille et leurs coordonnées | 1 h |
+| Qui | Préparation | Temps | Fait quand |
+| --- | --- | --- | --- |
+| Les deux | Node, Git, Tailscale et OpenRouter prêts ; `node:sqlite` et `better-sqlite3` essayés | 1 h chacun | `tailscale status` liste les autres machines, un modèle gratuit répond |
+| Les deux | Relire la spec, sections 2 à 7, et se l'expliquer | 1 h chacun | Chacun explique B1 et B2 à l'autre |
+| Les deux | Essayer `p5` sur un lot de dix messages plus variés, notés avant l'IA | 1 h chacun | Résultats écrits dans la charte |
+| M | Vrai couple de clés du nœud, clé publique envoyée aux six (O3, avant le 07/12) | 1 h | Clé publique dans le dépôt commun |
+| M | PC du nœud : écart d'horloge sur eduroam (O4), pare-feu, nom Tailscale (O2), quota OpenRouter vérifié ; veille et mises à jour Windows coupées pour la semaine du 07/12 ; ★ carte du centre récupérée une fois pour toutes | 1 h | Écart d'horloge noté, carte dans le dépôt |
+| R | Décrire nos douze cas sur papier, au format commun de la v1.1 (suite : T01) | 1 h | Douze fiches relues par M |
+| R | ★ Trier environ 80 lieux, leur famille et leurs coordonnées | 1 h | Fichier des lieux relu à deux |
 
 Soit 5 h chacun. Le dépôt privé commun (O1) se fait à six avant le lundi 07/12. Pendant les vacances, du travail sur l'œuvre est possible mais n'est pas compté.
 
@@ -151,14 +156,18 @@ Soit 5 h chacun. Le dépôt privé commun (O1) se fait à six avant le lundi 07/
 
 ## 5. L'oral
 
-| Étape | Ce que nous montrons | Qui |
-| --- | --- | --- |
-| 1 | La carte vide, puis les balades déjà là | R |
-| 2 | Un message écrit en direct, son bloc, sa balade | M |
-| 3 | Le même message chez les deux autres nœuds | M |
-| 4 | La carte qui change après plusieurs messages, puis un zoom | R |
-| 5 | Un nœud coupé puis rallumé, son rattrapage | M |
-| 6 | Un message masqué : la chaîne le garde, l'œuvre non | R |
-| 7 | Le modèle d'IA qui a répondu, et une réponse refusée | R |
+| Étape | Ce que nous montrons | Ce que ça prouve | Qui |
+| --- | --- | --- | --- |
+| 1 | La carte vide, puis les balades déjà là | L'œuvre tient du vide au plein | R |
+| 2 | Un message écrit en direct, son bloc, sa balade | Le parcours complet d'un message | M |
+| 3 | Le même message chez les deux autres nœuds | Une chaîne, trois nœuds | M |
+| 4 | La carte qui change après plusieurs messages, puis un zoom | Chaque texte déplace la ville | R |
+| 5 | Un nœud coupé puis rallumé, son rattrapage | Le rattrapage, la même balade recalculée | M |
+| 6 | Un message masqué : la chaîne le garde, l'œuvre non | La charte : refuser avant, masquer après | R |
+| 7 | Le modèle d'IA qui a répondu, et une réponse refusée | La trace exigée par le sujet | R |
 
-**Secours :** une chaîne de démonstration enregistrée, des résultats d'IA déjà en base et une vidéo du parcours. Garder du quota OpenRouter pour le 10/12 et l'oral. Chacun doit pouvoir expliquer les parties de l'autre.
+**Quota.** 15 requêtes gardées chaque jour pour l'oral : de vraies valeurs de l'IA en direct.
+
+**Plan B.** Si le réseau ou l'IA tombe : la chaîne commune et les résultats d'IA enregistrés la veille, rejoués en local (la ville se recalcule à l'identique), et une vidéo de 2 minutes de la jonction.
+
+Chacun présente aussi la partie de l'autre.
