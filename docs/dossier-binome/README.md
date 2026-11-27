@@ -112,7 +112,7 @@ Chaque fichier porte un numéro de version, `map_version`. Les logements sont re
 
 **Quel modèle.** Modèles gratuits uniquement, via OpenRouter, avec un compte et une clé par étudiant, la clé étant dans le .env. Modèle demandé : nvidia/nemotron-3.5-super-vl:free, fixe pour garder une lecture régulière. Si les deux premiers appels échouent, le troisième va à openrouter/free, accepté par le sujet. Écarté : openrouter/free seul, car il change de modèle et les réponses varient. On enregistre model\_requested (celui de l'appel retenu) et model\_used, lu dans le champ model de la réponse (sujet, section 2).
 
-**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"message": "…"}, et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les huit champs, leurs bornes et le prompt (`p4`, à réessayer ; `p5` par lots, proposé) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
+**Le prompt.** Le message est encodé en JSON par le code, sous la forme {"messages": [{"n": 1, "message": "…"}, …]} (lots de 10 au plus), et placé dans le rôle user ; la consigne est dans le rôle system et demande d'ignorer tout ordre contenu dans le message. La réponse attendue est un objet JSON aux champs fixés. Les huit champs, leurs bornes et le prompt (`p5`, par lots de 10, et `p4` en secours, tous deux essayés le 27/11) sont dans la charte éditoriale, partie 3 ; ce dossier ne les répète pas.
 
 **Quand l'IA ne répond pas bien.**
 
@@ -127,12 +127,12 @@ Un lot a droit à **3 appels au plus**, toutes causes confondues, pour économis
 
 **Combien de messages par jour (spec v1.1, section 9).** Les modèles gratuits d'OpenRouter sont limités à 20 requêtes par minute et 50 par jour pour un compte sans crédits achetés ; le chiffre exact pour notre compte reste à relever. Le nœud tourne avec la clé de MaxX-J.
 
-| | Par message (`p4`) | Par lots de 10 (`p5`, proposé) |
+| | Par message (`p4`) | Par lots de 10 (`p5`) |
 | --- | --- | --- |
 | Messages lus par jour, au mieux | 50 | 500 |
 | Au pire (trois appels par lot) | 16 | 160 |
 
-Nous gardons **15 requêtes par jour** pour l'oral et les démonstrations, à partir du 10/12. Un compteur en base arrête le worker quand la réserve est atteinte. Les messages non lus attendent le lendemain : leur balade est tracée **en attente**, trait fin gris sans effet sur la ville, puis prend ses couleurs quand l'IA a répondu. Le worker lit dans l'ordre de la chaîne. La chaîne accepte jusqu'à 150 messages par minute (spec 8.2) : en cas d'afflux, l'IA prend du retard sans rien casser. **Écarté :** acheter des crédits (le sujet demande des modèles gratuits) ; lire avec deux clés sur un même nœud (une clé par étudiant). **Choix du 27/11 :** nous partons sur `p5`, par lots de 10. S'il échoue à l'essai de S49 (un ordre caché glissé au milieu d'un lot), nous gardons `p4`, un message par requête, et acceptons de lire 16 à 50 messages par jour.
+Nous gardons **15 requêtes par jour** pour l'oral et les démonstrations, à partir du 10/12. Un compteur en base arrête le worker quand la réserve est atteinte. Les messages non lus attendent le lendemain : leur balade est tracée **en attente**, trait fin gris sans effet sur la ville, puis prend ses couleurs quand l'IA a répondu. Le worker lit dans l'ordre de la chaîne. La chaîne accepte jusqu'à 150 messages par minute (spec 8.2) : en cas d'afflux, l'IA prend du retard sans rien casser. **Écarté :** acheter des crédits (le sujet demande des modèles gratuits) ; lire avec deux clés sur un même nœud (une clé par étudiant). **Choix du 27/11 :** `p5`, par lots de 10, essayé le même jour : format respecté, et un ordre caché glissé dans le lot ne change ni sa réponse ni celles des autres messages (charte, partie 3). `p4`, un message par requête, reste le secours.
 
 **Contre les injections.** Une réponse est acceptée seulement si elle passe un schéma strict. Un message qui tente de donner des ordres à l'IA ne peut au pire que choisir des valeurs dans les bornes. Aucun texte libre de l'IA n'est affiché : seulement des nombres et des mots de listes fermées. Le titre d'une balade est composé par le code avec les vrais lieux.
 
