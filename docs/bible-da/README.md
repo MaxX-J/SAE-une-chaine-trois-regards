@@ -30,9 +30,9 @@ Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
 
 ### La planche
 
-Huit images choisies à deux, une planche validée le 27/11. Elle est dans le PDF de rendu ; elle n'est pas publiée ici, car plusieurs images sont protégées (affiche, jeu, photos).
+Huit images choisies à deux, une planche validée le 27/11.
 
-<!-- planche-moodboard -->
+![La planche, validée le 27/11 : huit images, huit couleurs, trois polices](moodboard/planche.png)
 
 | N° | Image | Ce que nous en prenons |
 | --- | --- | --- |
