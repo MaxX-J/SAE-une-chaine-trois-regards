@@ -2,13 +2,13 @@
 
 26/11/2026
 
-Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17h). Ce dossier s'appuie sur la spec commune sans la recopier : les numéros comme 4.2 ou 6.3 renvoient à ses sections. Il suit déjà la **v1.1**, proposée le 26/11 après la relecture des enseignants et encore à valider par un membre de chaque binôme ; tant qu'elle ne l'est pas, la v1.0 fait foi. Un repère marque ce qui n'est pas figé : **\[À CONFIRMER\]**, proposition que le binôme doit valider. L'œuvre est décrite dans la bible DA, les valeurs et le prompt dans la charte éditoriale.
+Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17h). Ce dossier s'appuie sur la spec commune sans la recopier : les numéros comme 4.2 ou 6.3 renvoient à ses sections. Il suit la **v1.1**, écrite après la relecture des enseignants et validée par les trois binômes le 26/11. Un repère marque ce qui n'est pas figé : **\[À CONFIRMER\]**, proposition que le binôme doit valider. L'œuvre est décrite dans la bible DA, les valeurs et le prompt dans la charte éditoriale.
 
 | Champ | Valeur |
 | --- | --- |
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Nœud | noeud-b (producteur d'un créneau de 20 s sur trois, ordre a, b, c) |
-| Spec commune | version 1.0 du 23/11/2026 ; v1.1 proposée le 26/11, suivie ici |
+| Spec commune | version 1.1 du 26/11/2026, validée par les six (remplace la v1.0 du 23/11) |
 | Version du dossier | 0.7, une seule chaîne de balades |
 | Langage | TypeScript, pour le nœud et pour l'application |
 
@@ -31,24 +31,7 @@ Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17
 
 ## 2. L'architecture
 
-```mermaid
-flowchart TB
-    V[Application web<br/>navigateur] -->|HTTP| A
-    A -.->|SSE| V
-    subgraph P[Processus noeud-b]
-        A[API application] --> C[Module chaîne]
-        A --> O[Module œuvre]
-        N[API entre nœuds<br/>port 8080] --> C
-        W[Worker IA]
-        O --> M[Données de ville<br/>fichiers locaux]
-    end
-    C --> B[(Base SQLite)]
-    O --> B
-    W --> B
-    C -->|HTTP, Tailscale| X[noeud-a et noeud-c]
-    X -->|HTTP, Tailscale| N
-    W -->|HTTPS| R[OpenRouter]
-```
+![Schéma d'architecture de noeud-b : l'application web parle à l'API application ; dans le processus noeud-b, le module chaîne reçoit l'API application et l'API entre nœuds, le worker IA appelle OpenRouter, le module œuvre lit les données de ville ; tous écrivent dans la base SQLite ; noeud-a et noeud-c échangent avec l'API entre nœuds par HTTP sur Tailscale.](architecture.svg)
 
 Les flèches montrent qui appelle qui. Tout ce qui est dans le cadre tourne dans un seul processus Node.js sur l'ordinateur du binôme. Le module chaîne est le centre : rien n'entre dans la chaîne sans passer par lui.
 
@@ -233,11 +216,11 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 | Balades et quartiers | Même message, même balade. Les bornes de chaque valeur. Une fourche et un message masqué recalculent les quartiers. Aucun lieu sans chemin. | Tests unitaires avec des messages fixes et une petite carte de test | S50 et S2 |
 | Application de bout en bout | Le parcours complet de la section 3 : écriture, bloc, IA, balade. Les pannes d'IA. L'accessibilité. | Playwright, avec un faux serveur OpenRouter qui simule réponses correctes, lentes, hors format, refus et 429. Contrôle axe et test clavier. Validation W3C du HTML. | De S50 à S2 |
 
-**Notre part des cas partagés.** La v1.1 nous confie douze cas : les vecteurs 11 à 14, 17 à 19, 28, 29 et 31, et les scénarios 16 et 34. Elle avance leur dépôt dans tests/vectors/ au vendredi 04/12, en S49, ce qui suppose d'écrire un petit script avant la S50. **\[À CONFIRMER\]** Accord des enseignants ; sinon nous demandons aux six de garder le lundi 07/12. Nous les utilisons aussi dans nos propres tests.
+**Notre part des cas partagés.** La v1.1 nous confie douze cas : les vecteurs 11 à 14, 17 à 19, 28, 29 et 31, et les scénarios 16 et 34. Dépôt dans tests/vectors/ le lundi 07/12. Calculer un vecteur demande un petit script : si l'équipe enseignante accepte ce code en S49 (point ouvert O6 de la spec), le dépôt est avancé au vendredi 04/12 et le lundi sert aux corrections. Nous les utilisons aussi dans nos propres tests.
 
 **Ce qui doit marcher le 10/12.** Nous suivons le socle de la v1.1 (10.0) : formats, validité complète et vérification de nos propres blocs, production par créneaux, cinq routes, sondage avec écart d'horloge, rattrapage simple, chaîne et file sur disque. Les limites de débit, le journal des doubles signatures et les têtes ignorées 5 minutes peuvent attendre la S2.
 
-**Notre avis sur la v1.1** (à envoyer aux six) : la reconnaissance d'un pair par son adresse IP ne marche pas pour trois nœuds sur un même PC (`127.0.0.1`), il faut un réglage pour le mode test ; un décalage de plus de 2 s entre chaque paire de PC arrête les trois nœuds, ce qui doit figurer dans les limites acceptées ; le dépôt du 04/12 demande du code en S49.
+**Notre part dans la v1.1.** Nous avons relevé trois points, intégrés avant la validation : une table de test pour faire tourner trois nœuds sur un même PC (une adresse `127.0.0.x` par nœud), l'arrêt de la chaîne quand trois horloges sont décalées deux à deux (accepté, avec un réglage des horloges à chaque séance), et la date de dépôt des cas de test.
 
 **Critère de fin.** Un test qui échoue sur un vecteur de la spec est une erreur de notre code, sauf si deux binômes lisent la spec différemment : dans ce cas, on corrige la spec avant le code (spec 10.3).
 
