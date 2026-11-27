@@ -3,12 +3,12 @@
 | Champ | Valeur |
 | --- | --- |
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
-| Version | 0.8, brouillon du 26/11/2026 |
+| Version | 1.0 du 27/11/2026, validée à deux |
 | Rendu | Vendredi 27/11/2026 à 17h, PDF sur Moodle |
-| S'appuie sur | Spec commune 1.0 (les numéros comme 8.1 y renvoient), et la v1.1 proposée le 26/11 pour l'IA (section 9 : chaîne réelle, quota) |
+| S'appuie sur | Spec commune v1.1 du 26/11/2026 (les numéros comme 8.1 y renvoient) |
 | Valeurs | Huit, adaptées aux balades. Cinq reprises et notées, trois nouvelles essayées |
 
-**[À CONFIRMER]** : proposition à valider à deux. Le 26/11, MaxX-J a retiré `ambiance`, accepté les gros mots sans cible et validé la consigne et le modèle (validé par withRen). L'œuvre est décrite dans la bible DA.
+L'œuvre est décrite dans la bible DA, l'architecture dans le dossier de binôme.
 
 ## 1. La consigne d'écriture
 
@@ -151,7 +151,7 @@ Le texte est encodé en JSON par le code, jamais collé entre de simples guillem
 
 ### Trois exemples et les valeurs attendues
 
-Ils ne sont **pas** dans le prompt : ils servent à le tester. Les cinq valeurs reprises viennent de la grille décidée par le binôme. **Les nouvelles sont des propositions à valider à deux.**
+Ils ne sont **pas** dans le prompt : ils servent à le tester. Les cinq valeurs reprises viennent de la grille décidée par le binôme. Les nouvelles ont été notées à deux.
 
 | | Permis | Pigeons | Consigne cachée |
 | --- | --- | --- | --- |

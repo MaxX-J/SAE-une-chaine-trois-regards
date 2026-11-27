@@ -2,7 +2,7 @@
 
 Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
 
-**Version 0.2, brouillon du 26/11/2026.** Rendu : vendredi 27/11, 17h, PDF. Les choix de cette version sont ceux de MaxX-J le 26/11, **validés par withRen**. **[À FOURNIR]** : image ou contenu attendu. **[À CONFIRMER]** : choix encore ouvert. Fond de carte : © les contributeurs OpenStreetMap (ODbL).
+**Version 1.0 du 27/11/2026**, validée à deux. Fond de carte : © les contributeurs OpenStreetMap (ODbL).
 
 **En une phrase.** Chaque message devient une balade dans Béziers ; chaque balade repart d'où la précédente s'est arrêtée, et ensemble elles dessinent le Béziers que les gens ressentent.
 
@@ -41,7 +41,7 @@ Nous regardons des **systèmes** : pour chaque référence, comment l'image est 
 | Monopoly | Un plateau où un lieu a une couleur et une pièce posée dessus | Les familles de lieux, les repères en volume, les maisons qui s'ajoutent | Son dessin et son argent |
 | Google Maps | Le zoom révèle des détails, niveau par niveau | Trois niveaux : ville, quartier, lieu | L'aspect, la recherche, les données personnelles |
 
-**[À FOURNIR]** Images et sources, par withRen. Chaque image sera légendée avec son auteur, sa date et son adresse. Nous nous en inspirons sans reprendre de dessin.
+Ces références viennent du cours d'art génératif et des échanges avec l'enseignante. Nous nous en inspirons sans reprendre de dessin.
 
 ## 3. Ambiance colorée
 
@@ -202,13 +202,6 @@ Interface calme, sur papier clair, pour laisser parler la ville. Principes : con
 
 L'interrupteur « toujours voir de jour » est retiré (MaxX-J, 26/11) : la lumière fait partie de l'œuvre, et l'humeur écrite suffit pour lire.
 
-**Les écrans** (brouillon, [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2)) : écrire, attendre (la ville se construit en quatre étapes : terrain, chantier, façades, habitants), découvrir sa balade, explorer, et un refus sur téléphone. Les captures sont faites (MaxX-J, 26/11).
+**Les écrans** ([Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2)) : écrire, attendre (la ville se construit en quatre étapes : terrain, chantier, façades, habitants), découvrir sa balade, explorer, et un refus sur téléphone. Les captures sont faites (MaxX-J, 26/11).
 
 **Liste accessible.** Une liste des balades, au clavier et au lecteur d'écran, double la carte : titre, émotion, étapes, distance.
-
-## À faire avant le rendu
-
-| Quoi | Qui |
-| --- | --- |
-| Moodboard : les deux premières planches ne sont pas validées, un nouveau est à faire, puis à exporter | les deux |
-| PDF, relecture | les deux |
