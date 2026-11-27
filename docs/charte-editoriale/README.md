@@ -107,7 +107,7 @@ Trois appels au plus par lot (dossier de binôme, section 5). Ensuite : tous les
 
 **Pourquoi pas un routeur seul.** `openrouter/free` change de modèle, et les réponses ne sont pas comparables. **Limite :** un modèle gratuit peut disparaître ou tomber en panne, d'où le secours.
 
-**Ce qui a changé depuis `p2`.** `theme` devient `lieu` et `lieu_secondaire` ; `intensite` et `ambiance` sont ajoutées. Les règles des cinq autres valeurs ne changent pas. `p3` a été essayé le 25/11, résultats plus bas. **`p4`** est `p3` sans `ambiance` (26/11) : rien d'autre ne change, mais il reste **à réessayer** sur quelques messages avant d'être figé.
+**Ce qui a changé depuis `p2`.** `theme` devient `lieu` et `lieu_secondaire` ; `intensite` et `ambiance` sont ajoutées. Les règles des cinq autres valeurs ne changent pas. `p3` a été essayé le 25/11, résultats plus bas. **`p4`** est `p3` sans `ambiance` (26/11) : rien d'autre ne change. Essayé le 27/11, résultats plus bas.
 
 ### Message système
 
@@ -190,6 +190,25 @@ Le 25/11, à la main avec `nvidia/nemotron-3.5-super-vl:free` (modèle choisi pa
 - Les cinq valeurs reprises n'avaient pas de note humaine sur ces messages : elles semblent justes, sans être mesurées.
 
 Réponses et grilles : [`docs/test-valeurs`](../test-valeurs). **Limite :** peu de messages, et l'ordre caché n'a été essayé qu'une fois avec `p3`.
+
+### Essai de `p4`
+
+Le 27/11, par MaxX-J, avec `nvidia/nemotron-3.5-super-vl:free`, sur les huit messages de `p3`, une réponse par message. Réponses : [`reponses-p4.csv`](../test-valeurs/reponses-p4.csv).
+
+| Vérification | Résultat |
+| --- | --- |
+| JSON valide, exactement les huit clés, sans `ambiance` | 8 sur 8 |
+| Mêmes valeurs que `p3` (un nombre à un cran près) | 61 sur 64 |
+| `lieu` juste par rapport à nos notes | 7 sur 8 |
+| `lieu_secondaire` juste | 6 sur 8 |
+| `intensite` juste, à un cran près | 8 sur 8 |
+
+- Retirer `ambiance` n'a rien cassé : le format est toujours respecté, et les valeurs restent celles de `p3`.
+- Mieux qu'avec `p3` : la statue qui fait ses courses donne `art`, comme nos notes.
+- Toujours la même erreur : le bar qui chante donne `commerce` au lieu de `fete`. Elle se défend (un bar est un commerce).
+- `lieu_secondaire` à 6 sur 8, sous l'objectif de 80 % : la statue oublie `repere`, et le canal donne `nature` puis `eau`, dans l'ordre inverse de nos notes. Huit messages, c'est peu pour conclure ; à revoir avec `p5` sur plus de messages.
+
+`p4` est figé : c'est le secours si `p5` échoue.
 
 ### Essais précédents
 
