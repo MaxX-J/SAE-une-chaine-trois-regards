@@ -2,15 +2,14 @@
 
 Binôme 2 (noeud-b) : Maxens Sevilla (M) et Rahim Tamhaev (R).
 
-**Version 2.2 du 26/11/2026.** v2 validée par M le 26/11 ; choix de l'œuvre du 26/11 validés par R ; spec v1.1 validée par les six le 26/11. Rendu : vendredi 27/11, 17h, PDF ou lien.
+**Version 2.3 du 27/11/2026**, validée à deux. Elle suit la spec commune v1.1 (validée par les six le 26/11).
 
 ## Hypothèses
 
 - 6 heures utiles par personne et par jour. Les estimations sont les nôtres, aucune n'a été vérifiée.
-- L'œuvre : **balades dans Béziers, rendu C** (toute la ville en 2,5D), jour et nuit, **une seule chaîne de balades** (M, 26/11). Choix du binôme d'après M, avis des enseignants à demander. Les tâches concernées portent un **★** : si l'œuvre change, elles changent, le reste tient.
+- L'œuvre : **balades dans Béziers, rendu C** (toute la ville en 2,5D), jour et nuit, **une seule chaîne de balades** (M, 26/11). Idée approuvée par les enseignants. Les tâches concernées portent un **★** : si l'œuvre change, elles changent, le reste tient.
 - De loin, la ville est une image préparée à l'avance ; au zoom, les bâtiments génériques de R remplacent les blocs de la zone visible ; les repères restent détaillés. Les balades passent par-dessus en transparence.
-- Les numéros de section renvoient à la spec commune 1.0. La spec impose que le nœud et l'application soient prêts pour la jonction : la chaîne passe donc **avant** l'œuvre.
-- **[À CONFIRMER]** : à trancher à deux.
+- Les numéros de section renvoient à la spec commune v1.1. La spec impose que le nœud et l'application soient prêts pour la jonction : la chaîne passe donc **avant** l'œuvre.
 
 ## 1. Le backlog
 
@@ -76,7 +75,7 @@ Si nous prenons du retard, nous coupons dans cet ordre : tout ce qui est en plus
 
 ### Les valeurs de l'IA et leur effet
 
-Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. Validé par M le 26/11, `ambiance` retirée :
+Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. `ambiance`, qui ne dessinait rien, est retirée (26/11) :
 
 | Valeur | Effet | Tâche |
 | --- | --- | --- |
@@ -85,8 +84,6 @@ Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. Validé par
 | `energie`, `tension` | Nombre d'étapes, forme du tracé dans la rue | B02 |
 | `absurdite` | Objet incongru (en plus : sans P09, elle ne dessine rien) | P09 |
 | `valence` | Jour, crépuscule ou nuit du quartier | C08 |
-
-`moment` est remplacée par `valence`, qui décide de la lumière du quartier (`docs/bible-da/ville-vivante.md`). `direction` et `temps`, restées en option, sont retirées.
 
 ## 2. La répartition
 
@@ -101,8 +98,10 @@ Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. Validé par
 
 | | M | R |
 | --- | --- | --- |
-| S50 (du 07 au 11/12) | 30 h | 30 h |
+| S50 (du 07 au 11/12) | 31 h | 32 h |
 | S2 (du 11 au 14/01) | 24 h | 24 h |
+
+S50 dépasse un peu 30 h (5 jours de 6 h) : T01 passe en S49 si les enseignants acceptent un script cette semaine-là (point O6 de la spec).
 
 La répartition validée (M le nœud, R l'IA et l'œuvre) est ajustée sur deux points (accord de M et R le 26/11) : R prend une partie du nœud avant le 10/12, car c'est le plus urgent et chacun doit savoir l'expliquer ; M prend une partie de l'œuvre ensuite. L'autre relit toujours avant fusion.
 
@@ -140,15 +139,15 @@ Pas de SAÉ cette semaine-là, et **le code du projet commence en S50**. Nous pr
 | --- | --- | --- |
 | Les deux | Node, Git, Tailscale et OpenRouter prêts ; `node:sqlite` et `better-sqlite3` essayés | 1 h chacun |
 | Les deux | Relire la spec, sections 2 à 7, et se l'expliquer | 1 h chacun |
-| Les deux | Noter huit messages nouveaux chacun, puis essayer `p4` à la main dans le chat OpenRouter | 1 h chacun |
+| Les deux | Essayer `p5` sur un lot de dix messages plus variés, notés avant l'IA | 1 h chacun |
 | M | Vrai couple de clés du nœud, clé publique envoyée aux six (O3, avant le 07/12) | 1 h |
-| M | PC du nœud : heure automatique, pare-feu, nom Tailscale (O2) ; ★ carte du centre récupérée une fois pour toutes | 1 h |
+| M | PC du nœud : écart d'horloge sur eduroam (O4), pare-feu, nom Tailscale (O2), quota OpenRouter vérifié ; ★ carte du centre récupérée une fois pour toutes | 1 h |
 | R | Décrire nos douze cas sur papier, au format commun de la v1.1 (suite : T01) | 1 h |
 | R | ★ Trier environ 80 lieux, leur famille et leurs coordonnées | 1 h |
 
-Soit 5 h chacun. Le dépôt privé commun (O1) se fait à six avant le vendredi 27/11. Pendant les vacances, du travail sur l'œuvre est possible mais n'est pas compté.
+Soit 5 h chacun. Le dépôt privé commun (O1) se fait à six avant le lundi 07/12. Pendant les vacances, du travail sur l'œuvre est possible mais n'est pas compté.
 
-**[À CONFIRMER]** La v1.1 demande de déposer les cas le vendredi 04/12, donc de les calculer avec un script en S49, alors que le sujet place le code en S50. Demander aux enseignants si c'est accepté. Sans accord, nous demandons aux six de garder le lundi 07/12 pour nos cas.
+**Nos cas de test** sont déposés le lundi 07/12. Si les enseignants acceptent un petit script de calcul en S49 (point O6 de la spec), ils sont déposés dès le vendredi 04/12.
 
 ## 5. L'oral
 
@@ -163,17 +162,3 @@ Soit 5 h chacun. Le dépôt privé commun (O1) se fait à six avant le vendredi 
 | 7 | Le modèle d'IA qui a répondu, et une réponse refusée | R |
 
 **Secours :** une chaîne de démonstration enregistrée, des résultats d'IA déjà en base et une vidéo du parcours. Garder du quota OpenRouter pour le 10/12 et l'oral. Chacun doit pouvoir expliquer les parties de l'autre.
-
-## Avant vendredi 27/11
-
-| Tâche | Qui propose | État |
-| --- | --- | --- |
-| Montrer le rendu C aux enseignants, question de la carte commune et de la balade individuelle | les deux | À faire |
-| Dépôt privé commun (O1) | les six | À faire |
-| Valider la liste des valeurs : huit, dont 10 familles de lieux | les deux | Fait, validé par M et R le 26/11 |
-| Prompt `p4` (`p3` sans `ambiance`) à réessayer sur quelques messages | M | À faire |
-| Écrire et essayer `p5` (lots de 10), dont un ordre caché glissé dans un lot | M | À faire |
-| Valider la v1.1 de la spec (un membre par binôme), avec nos trois réserves | les deux | Fait le 26/11, déposée sur Moodle |
-| Dossier : œuvre, dessin, données de carte, risques | M | À faire |
-| Bible DA, huit éléments | R | À faire |
-| Relire ce backlog, produire les PDF, déposer | les deux | À faire |
