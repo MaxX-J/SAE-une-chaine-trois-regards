@@ -330,6 +330,31 @@ La tristesse, la colère, la critique et les gros mots sans cible **sont accept�
 
 Si un message a déjà été envoyé à l'IA, nous ne pouvons pas le rappeler.
 
+### Ce que voit le visiteur
+
+Des phrases courtes, qui disent la raison et laissent le texte dans le champ pour qu'il le corrige *(proposé)*.
+
+| Cas | Message affiché |
+| --- | --- |
+| Lien ou adresse web | « Les liens ne passent pas. Raconte-le avec tes mots. » |
+| Email ou téléphone | « On dirait une coordonnée. Retire-la : ton message sera public et permanent. » |
+| Mot de la liste (haine, menace, sexuel) | « Ce message ne peut pas devenir une balade. Reformule-le sans viser personne. » |
+| Message vide ou trop long | « Entre 1 et 280 caractères. Il t'en reste N. » |
+| Mots liés au suicide ou à l'automutilation | « Si ça ne va pas, tu peux appeler le 3114, gratuit, jour et nuit. En urgence : 15 ou 112. » Puis : « Envoyer quand même » ou « Revenir au message » |
+| Réseau ou nœud indisponible | « Ton message n'est pas parti. Il est gardé ici, réessaie dans un instant. » |
+| Quota de l'IA épuisé | « Ton message est dans la chaîne. Sa balade prendra ses couleurs demain au plus tard. » |
+| Message masqué, à sa place | « Un message a été masqué ici. » (le volet fermé) |
+
+Le refus ne cite jamais le mot qui a bloqué, pour ne pas apprendre à contourner le filtre.
+
+### Ce que devient le texte envoyé à l'IA
+
+- **Ce qui part.** Le texte seul, dans un lot numéroté. Jamais l'auteur, l'heure, l'id ni l'adresse IP du visiteur.
+- **Qui le reçoit.** OpenRouter, puis le fournisseur du modèle. Un modèle gratuit peut garder les textes et s'en servir pour s'entraîner : c'est pourquoi l'avertissement le dit avant l'écriture.
+- **Ce que nous réglons.** Dans le compte OpenRouter, la journalisation des requêtes reste coupée. Le réglage qui refuse les fournisseurs qui conservent les données (`"data_collection": "deny"`) peut écarter le modèle gratuit : **à essayer en S49** ; s'il l'écarte, nous le disons dans l'avertissement plutôt que de promettre.
+- **Ce que nous gardons.** La réponse de l'IA, le modèle qui a répondu et le statut, dans notre base. La clé reste dans `.env`, jamais dans le dépôt.
+- **Ce qui n'est jamais envoyé.** Un message refusé avant la signature, et un message d'un autre binôme masqué par notre filtre.
+
 **Ce que « masqué » veut dire.** Le texte n'apparaît plus ni dans l'œuvre, ni dans les titres accessibles, ni dans les données envoyées au navigateur. Sa balade et ses effets sur la ville disparaissent. Un volet fermé, dans le quartier où elle passait, montre qu'il y a eu un message, sans le répéter (choix de MaxX-J, 26/11). Ses anciennes valeurs d'IA ne sont plus utilisées.
 
 ### Les lieux et les personnes de Béziers

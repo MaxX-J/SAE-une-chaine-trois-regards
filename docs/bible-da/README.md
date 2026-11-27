@@ -144,6 +144,21 @@ Un quartier regarde ses **20 derniers messages**, quel que soit le binôme.
 
 **La lumière dit par où on passe, la hauteur dit où on s'arrête.**
 
+### La ville, de 1 à 300 messages
+
+Ce que l'on doit voir en ouvrant l'œuvre, selon le nombre de messages de la chaîne. Ordres de grandeur, à vérifier sur la vraie chaîne *(proposé)*.
+
+| Messages | Ce que montre la ville |
+| --- | --- |
+| 0 | Béziers de jour, rues neutres, aucun étage ajouté. La consigne invite à écrire le premier message |
+| 1 | Une balade de 2 à 6 étapes, avec point et halo. Un ou deux quartiers prennent son émotion au sol et sur les toits ; leur lumière suit sa seule `valence` |
+| 10 | Une chaîne lisible d'un bout à l'autre. Quelques quartiers ont une humeur, la plupart restent de jour. Les premiers bâtiments ont un étage de plus |
+| 30 | Le centre est traversé. Des quartiers passent au crépuscule ou à la nuit. Les rues les plus empruntées brillent. Les anciennes balades s'estompent dans la traînée |
+| 100 | Les humeurs sont stables : un quartier change sur plusieurs messages, plus sur un seul. Les repères souvent visités atteignent leur plafond d'étages |
+| 300 | La ville se lit par la lumière et la hauteur, plus par les tracés. Seules la traînée et la balade choisie sont nettes. Un seul message peut encore faire basculer un quartier peu visité |
+
+Si un palier ne ressemble pas à cette ligne, on règle d'abord le nombre de balades de la traînée, la brillance des rues et le plafond d'étages, puis les seuils de lumière.
+
 **Trois niveaux de zoom.** Ville : blocs simples. Quartier : bâtiments génériques et repères. Lieu : fenêtres, arbres, passants, mobilier, objets incongrus.
 
 ### Garde-fous
@@ -199,6 +214,30 @@ Interface calme, sur papier clair, pour laisser parler la ville. Principes : con
 | Avertissement et aide | Non effaçable, partagé, IA ; 3114, 15, 112 |
 | Légende, quartier | Couleur, motif et mot ; l'humeur et la lumière du quartier sont toujours écrites |
 | Zoom | Trois boutons de 48 px |
+
+### La grille d'écran
+
+La carte prend toujours tout l'écran ; l'interface se pose dessus.
+
+| Largeur | Colonnes, marges | Disposition |
+| --- | --- | --- |
+| Moins de 600 px (téléphone) | 4 colonnes, marges de 16 px, gouttière de 16 px | Champ message en bas, plein large. La carte balade monte en tiroir depuis le bas, sur la moitié de l'écran |
+| 600 à 1 023 px (tablette) | 8 colonnes, marges de 24 px | Champ message en bas, 6 colonnes centrées. Carte balade en tiroir |
+| 1 024 px et plus (ordinateur) | 12 colonnes, marges de 32 px, gouttière de 24 px | Panneau à gauche sur 4 colonnes (champ, statut, carte balade). Légende en bas à droite, zoom au-dessus |
+
+Espacements par pas de 8 px. Texte jamais sous 15 px, lignes de 70 caractères au plus.
+
+### Les états
+
+| Composant | Vide | Chargement | Erreur | Masqué |
+| --- | --- | --- | --- | --- |
+| Carte de la ville | Béziers de jour, la consigne en surimpression | La ville se construit en quatre étapes (terrain, chantier, façades, habitants) | « La ville n'a pas pu se charger. » et un bouton Réessayer | Sans objet |
+| Champ message | Consigne en gris, compteur à 280 | Bouton inactif, « Envoi… » | Bord et texte d'erreur sous le champ, avec un signe ; le texte reste | Sans objet |
+| Statut | Rien avant l'envoi | En attente, dans un bloc, lue par l'IA, confirmée : un signe et un mot à chaque étape | « Pas parti, gardé ici » | « Masqué » |
+| Carte balade | « Choisis une balade sur la carte » | Squelette gris | Balade en attente : trait fin gris, « couleurs demain au plus tard » | Volet fermé, sans texte ni étapes |
+| Liste accessible | « Aucune balade pour l'instant » | « Chargement des balades » annoncé au lecteur d'écran | Même message que la carte | « Message masqué », sans le texte |
+
+Les messages d'erreur et de refus sont ceux de la charte éditoriale, partie 4.
 
 L'interrupteur « toujours voir de jour » est retiré (MaxX-J, 26/11) : la lumière fait partie de l'œuvre, et l'humeur écrite suffit pour lire.
 
