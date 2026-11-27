@@ -43,7 +43,7 @@ Binôme 2 (noeud-b) : Maxens Sevilla (M) et Rahim Tamhaev (R).
 | C02 | ★ Carte commune : rues colorées par les passages, traînée, sol et toits selon l'émotion du quartier | 0, 10, 60 et 300 messages sont lisibles et fluides | 4 | R | 11/01 |
 | C07 | ★ Les repères posés sur la vraie carte | Les 10 repères sont à leur place et dans le bon ordre | 1 | R | 11/01 |
 | I02 | Derniers essais du prompt sur messages notés avant l'IA | Résultats et modèle écrits dans la charte | 1 | R | 11/01 |
-| B02 | ★ Effets des valeurs sur le tracé | Deux messages opposés donnent deux balades visiblement différentes | 4 | M | 12/01 |
+| B02 | ★ Effets des valeurs sur le tracé, et l'objet incongru selon `absurdite` | Deux messages opposés donnent deux balades visiblement différentes ; à 0,5 et plus, un objet apparaît | 5 | M | 12/01 |
 | B03 | ★ Bâtiments visités : étages en plus, teinte chaude | Un bâtiment souvent visité se voit de loin, sans dépasser son plafond | 2 | M | 12/01 |
 | C03 | ★ Bâtiments génériques au zoom, allégés, colorés par les messages | Moins de 60 Ko par image, la couleur du message reste visible | 4 | R | 12/01 |
 | C05 | ★ Palette fermée et légende | Conforme à la bible DA, lisible sans la couleur seule | 2 | R | 12/01 |
@@ -70,7 +70,6 @@ Les heures d'une tâche à deux sont le total des deux personnes.
 | P06 | ★ Passage par un lieu cité dans le message | 3 | 6 |
 | P07 | ★ Arbres (saison selon l'émotion du quartier), mobilier et densité du décor | 4 | 7 |
 | P08 | ★ Passants : nombre, allure et posture | 5 | 8 |
-| P09 | ★ Objets incongrus selon `absurdite` (piano, baignoire, taureau, poisson volant) | 2 | 9 |
 
 Si nous prenons du retard, nous coupons dans cet ordre : tout ce qui est en plus, puis les étages des bâtiments visités, puis les bâtiments génériques au zoom, puis la nuit. Le rendu retombe alors sur des blocs simples et les repères. **Jamais** la chaîne, les messages masqués ni l'accessibilité de base.
 
@@ -83,7 +82,7 @@ Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. `ambiance`,
 | `lieu`, `lieu_secondaire` | Lieux traversés | B01 |
 | `emotion`, `intensite` | Couleur du tracé et des rues, sol et toits du quartier, force de la couleur | C02, C05 |
 | `energie`, `tension` | Nombre d'étapes, forme du tracé dans la rue | B02 |
-| `absurdite` | Objet incongru (en plus : sans P09, elle ne dessine rien) | P09 |
+| `absurdite` | Objet incongru près d'une étape (piano, baignoire, taureau, poisson volant) | B02 |
 | `valence` | Jour, crépuscule ou nuit du quartier | C08 |
 
 ## 2. La répartition
@@ -100,7 +99,7 @@ Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. `ambiance`,
 | | M | R |
 | --- | --- | --- |
 | S50 (du 07 au 11/12) | 31 h | 32 h |
-| S2 (du 11 au 14/01) | 25 h | 24 h |
+| S2 (du 11 au 14/01) | 26 h | 24 h |
 
 S50 dépasse un peu 30 h (5 jours de 6 h) : T01 passe en S49 si les enseignants acceptent un script cette semaine-là (point O6 de la spec).
 

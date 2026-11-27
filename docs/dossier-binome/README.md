@@ -7,7 +7,7 @@
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Nœud | noeud-b : un créneau de 20 s sur trois (ordre a, b, c) |
 | Spec commune | v1.1 du 26/11/2026, validée par les six |
-| Version du dossier | 0.9, rendu du 27/11/2026 |
+| Version du dossier | 1.0, rendu du 27/11/2026 |
 | Langage | TypeScript, pour le nœud et l'application |
 
 Ce dossier ne recopie pas la spec : « spec 4.2 » renvoie à sa section 4.2. L'œuvre est détaillée dans la bible DA, les valeurs et le prompt dans la charte éditoriale.
@@ -25,13 +25,13 @@ Ce dossier ne recopie pas la spec : « spec 4.2 » renvoie à sa section 4.2. L'
 **L'œuvre.** Béziers en 2,5D (faux relief, sans 3D). L'IA tire huit valeurs de chaque message : elles choisissent les lieux, la longueur, la couleur et la forme de la balade. Toutes les balades forment **une seule ligne** à travers la ville, comme les blocs de la chaîne. Chaque balade change la ville :
 - les rues empruntées prennent sa couleur ;
 - les bâtiments où elle s'arrête gagnent des étages ;
-- chaque quartier prend l'émotion qui domine chez lui (sol, toits, arbres) et une lumière selon son humeur (jour, crépuscule, nuit).
+- chaque quartier prend l'émotion qui domine chez lui (sol et toits) et une lumière selon son humeur (jour, crépuscule, nuit).
 
-Les messages des trois binômes suivent les mêmes règles. Seule la forme des étapes rappelle leur nœud.
+Les messages des trois binômes suivent les mêmes règles.
 
 **Indispensable :** écrire un message et le voir entrer dans la chaîne ; recevoir sa balade et voir la carte changer ; un nœud qui passe les cas de test de la spec ; la trace du modèle d'IA qui a répondu.
 
-**En plus, si le temps le permet :** passants, mobilier, objets incongrus, repères en plus, panneau d'état de la chaîne, carte-souvenir, animation d'apparition (détail dans le backlog).
+**En plus, si le temps le permet :** passants, mobilier, saison des arbres, repères en plus, panneau d'état de la chaîne, carte-souvenir, animation d'apparition (détail dans le backlog).
 
 ## 2. L'architecture
 
@@ -124,7 +124,7 @@ Les noms suivent la spec. Deux mots sont réservés en SQL : `index` devient `bl
 
 | | Par message (`p4`) | Par lots de 10 (`p5`) |
 | --- | --- | --- |
-| Messages lus par jour, au mieux | 50 | 500 |
+| Messages lus par jour, au mieux | 50 | 500 avant le 10/12, environ 350 ensuite |
 | Au pire (3 appels par lot) | 16 | 160 |
 
 **Quand un lot part.** Dès que 10 messages attendent, ou 2 minutes après l'arrivée du plus ancien. Jamais plus d'une requête par minute. Sans cette règle, chaque bloc enverrait un lot d'un seul message et le quota partirait en une heure.
@@ -151,7 +151,7 @@ Après un échec, la balade est tracée avec les valeurs par défaut de la chart
 Le module œuvre prend les valeurs et l'ordre de la chaîne, et calcule deux choses : **la balade de chaque message** et **l'état de chaque quartier**.
 
 **La balade** (mêmes valeurs, même id, même carte = même balade) :
-1. Elle part de la dernière étape du message précédent. Le premier part d'un repère fixe.
+1. Elle part de la dernière étape du message précédent. Le premier part de la cathédrale Saint-Nazaire.
 2. `lieu` et `lieu_secondaire` donnent les familles, `energie` le nombre d'étapes (2 à 6).
 3. Les étapes sont choisies par l'id, parmi les lieux proches : 600 m au plus entre deux étapes, 2,5 km au plus en tout.
 4. Un plus court chemin (A*) suit les vraies rues. Repasser au même endroit est permis.
@@ -165,13 +165,13 @@ Si l'IA a échoué : deux étapes vers des repères proches, trait gris, sans ef
 | Valeur | Balade | Ville |
 | --- | --- | --- |
 | `lieu`, `lieu_secondaire` | Étapes | Bâtiments visités : étages, teinte chaude |
-| `emotion` | Couleur et motif | Rues ; sol, toits et arbres du quartier |
+| `emotion` | Couleur et motif | Rues ; sol et toits du quartier (saison des arbres en plus) |
 | `intensite` | Force de la couleur | |
 | `valence` | | Jour (0,12 et plus), crépuscule, nuit (-0,12 et moins) ; jour sans message |
 | `energie` | Nombre d'étapes | |
 | `tension` | Tracé souple à cassé | |
 | `absurdite` | Objet incongru | L'objet reste |
-| Sans IA | Forme des étapes selon le nœud | Fenêtres allumées, rues plus claires selon les passages |
+| Sans IA | | Fenêtres allumées, rues plus claires selon les passages |
 
 Plages, couleurs et motifs : [palette](../bible-da/palette.md) et [ville vivante](../bible-da/ville-vivante.md).
 
@@ -294,7 +294,7 @@ Répartition indicative, détaillée dans le backlog.
 
 ```powershell
 npm install
-copy .env.example .env
+copy .env.example .env   # Windows ; sur Mac et Linux : cp .env.example .env
 npm run keygen   # crée la clé du nœud et affiche la clé publique à envoyer aux six (O3)
 npm run dev      # lance le nœud et l'application
 npm test         # rejoue les cas de la spec

@@ -103,7 +103,7 @@ Trois appels au plus par lot (dossier de binôme, section 5). Ensuite : tous les
 
 ## 3. Le prompt
 
-**Version : `p4`**, enregistrée avec chaque résultat. Modèle demandé : `nvidia/nemotron-3.5-super-vl:free`, fixe pour garder une lecture régulière. Si ses deux premiers appels échouent, le troisième va à `openrouter/free`, qui choisit lui-même un modèle. Température 0 quand le modèle l'accepte. Même ainsi, le résultat **n'est pas garanti identique** d'un appel à l'autre : un message n'est lu qu'une fois et le modèle qui a répondu est enregistré.
+**Version : `p5`** (lecture par lots), `p4` en secours ; la version est enregistrée avec chaque résultat. Modèle demandé : `nvidia/nemotron-3.5-super-vl:free`, fixe pour garder une lecture régulière. Si ses deux premiers appels échouent, le troisième va à `openrouter/free`, qui choisit lui-même un modèle. Température 0 quand le modèle l'accepte. Même ainsi, le résultat **n'est pas garanti identique** d'un appel à l'autre : un message n'est lu qu'une fois et le modèle qui a répondu est enregistré.
 
 **Pourquoi pas un routeur seul.** `openrouter/free` change de modèle, et les réponses ne sont pas comparables. **Limite :** un modèle gratuit peut disparaître ou tomber en panne, d'où le secours.
 
@@ -186,7 +186,7 @@ Le 25/11, à la main avec `nvidia/nemotron-3.5-super-vl:free`. Nous avons d'abor
 - Les dix-sept réponses ont les neuf clés et des valeurs dans les listes.
 - Deux erreurs de lieu : la statue qui fait ses courses (`repere` au lieu d'`art`, et `aucun` au lieu de `repere`), et le bar qui chante (`commerce` au lieu de `fete`). Les deux se défendent.
 - L'ordre caché (« Ignore tes consignes ») : neuf valeurs attendues sur neuf, un essai.
-- Ironie (le parking) et absurde (la statue, `absurdite` à 1) bien lus. Répétés, les messages donnent toujours le même lieu, la même émotion et la même ambiance ; seuls des nombres bougent, d'un cran (0,25, ou 0,5 pour `valence`).
+- Ironie (le parking) et absurde (la statue, `absurdite` à 1) bien lus. Répétés, les messages donnent toujours le même lieu et la même émotion ; seuls des nombres bougent, d'un cran (0,25, ou 0,5 pour `valence`).
 - Les cinq valeurs reprises n'avaient pas de note humaine sur ces messages : elles semblent justes, sans être mesurées.
 
 Réponses et grilles : [`docs/test-valeurs`](../test-valeurs). **Limite :** peu de messages, et l'ordre caché n'a été essayé qu'une fois avec `p3`.
@@ -277,11 +277,11 @@ Sinon :
 - absurdite : note ce qui est imaginé, même après « et si » ou dans une blague. Une chose impossible vaut 1. Un symbole ou un texte illisible vaut 0.
 ```
 
-La réponse est un objet `{"resultats": [...]}`, avec un objet par message : `n` et les huit clés. Le contrôle est le même pour chaque objet. Un lot dont un objet est hors format est redemandé en entier, trois appels au plus. Le code vérifie aussi que chaque `n` envoyé revient une fois, et une seule.
+La réponse est un objet `{"resultats": [...]}`, avec un objet par message : `n` et les huit clés. Le contrôle est le même pour chaque objet. Si un objet est hors format ou hors bornes, les autres sont gardés et seul ce message est redemandé, trois appels au plus. Le code vérifie aussi que chaque `n` envoyé revient une fois, et une seule.
 
 | | Par message (`p4`) | Par lots de 10 (`p5`) |
 | --- | --- | --- |
-| Messages lus par jour, au mieux | 50 | 500 |
+| Messages lus par jour, au mieux | 50 | 500 avant le 10/12, environ 350 ensuite (réserve de 15 requêtes) |
 | Au pire (trois appels par lot) | 16 | 160 |
 | Réserve pour l'oral | | 15 requêtes par jour, gardées dès le 10/12 |
 

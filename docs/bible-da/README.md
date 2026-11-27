@@ -45,7 +45,7 @@ Huit images, huit couleurs, trois polices.
 | 07 | Un plateau de Monopoly | Une couleur par lieu, des maisons qui s'ajoutent |
 | 08 | Un carnet de voyage illustré | La carte et le souvenir d'une balade |
 
-**Les couleurs**, une fois chacune, classées en quatre familles : ciel (nuit #1C2140, crépuscule #8A5672), lumière (fenêtre #FFCF86, lampadaire #D69520), matière (toit #C46A43, façade #E2D2B2), nature (eau #7FB1BD, végétation #7F9F55). Toutes viennent de la palette v3.2.
+**Les couleurs**, une fois chacune, classées en quatre familles : ciel (nuit #1C2140, crépuscule #8A5672), lumière (halo #FFCF86, lampadaire #D69520), matière (toit #C46A43, façade #E2D2B2), nature (eau #7FB1BD, végétation #7F9F55). Toutes viennent de la palette v3.2.
 
 **Les polices** sont posées sur la planche, comme dans l'œuvre : le titre en Bricolage Grotesque, la consigne en Atkinson Hyperlegible Next, les codes en JetBrains Mono.
 
@@ -102,7 +102,7 @@ Ces références viennent du cours d'art génératif et des échanges avec l'ens
 | Atkinson Hyperlegible Next | Textes et interface (18, 15) | Dessinée pour les lecteurs malvoyants |
 | JetBrains Mono | Empreintes (15) | Chasse fixe : on compare caractère par caractère |
 
-**Lisible ou texture ?** Lisible, toujours. Le message se lit dans un panneau, en 18 px. Sur la carte, **aucun mot** : la ville, les symboles et les tracés parlent. Nous avons écarté le texte comme texture, car un message mérite d'être lu, et parce que notre esquisse de flèches avec des mots devenait illisible à 300.
+**Lisible ou texture ?** Lisible, toujours. Le message se lit dans un panneau, en 18 px. Sur la carte, **aucun mot** : la ville, les symboles et les tracés parlent. L'humeur de chaque quartier est écrite dans la légende, à côté de la carte. Nous avons écarté le texte comme texture, car un message mérite d'être lu, et parce que notre esquisse de flèches avec des mots devenait illisible à 300.
 
 Jamais moins de 15 px. Contraste AA au moins.
 
@@ -122,7 +122,7 @@ Jamais moins de 15 px. Contraste AA au moins.
 
 | Fixe | Change |
 | --- | --- |
-| Grille de 4 × 4, entrée à gauche, sortie à droite, maisons basses devant | Le nombre de virages (`tension`), la hauteur générale (`energie`), un objet incongru posé dans la grille (`absurdite`), la couleur de la rue (`emotion`), la lumière (`valence`) |
+| Grille de 4 × 4, entrée à gauche, sortie à droite, maisons basses devant | Le nombre de virages (`tension`), la hauteur générale (`energie`), une maison qui quitte le sol (`absurdite`), la couleur de la rue (`emotion`), la lumière (`valence`) |
 | | L'`id` : couleur des façades (matières de la palette), hauteur de chaque maison, place des maisons et de la rue, **toujours dans la grille** |
 
 Le même message redonne toujours le même signe. Détails : [identite.md](identite.md).
@@ -159,7 +159,7 @@ Un quartier regarde ses **20 derniers messages**, quel que soit le binôme.
 | | -0,12 ou moins | Nuit |
 | | Aucun message | Jour |
 | Émotion la plus fréquente du quartier | 7 | Lumière au sol et teinte des toits de **tout le quartier** ; à égalité, la plus récente. Force : moyenne des `intensite`. Colère : sol seulement, les toits gardent leur tuile |
-| Même émotion | 7 | Saison des arbres : joie et surprise en fleurs, neutre en été, colère et dégoût en automne, tristesse et peur en hiver |
+| Même émotion | 7 | En plus : saison des arbres, joie et surprise en fleurs, neutre en été, colère et dégoût en automne, tristesse et peur en hiver |
 | Nombre de messages du quartier | | Fenêtres allumées la nuit et au crépuscule |
 | Rue empruntée | | Couleur de l'émotion du dernier passage ; plus elle est empruntée, plus elle brille, en se tassant |
 | Étape sur un bâtiment | | Il gagne des **étages**, jusqu'à un plafond, prend une teinte chaude et allume ses fenêtres. Cimetières, nature et eau ne grandissent pas |
@@ -190,11 +190,11 @@ Si un palier ne ressemble pas à cette ligne, on règle d'abord le nombre de bal
 
 ### Garde-fous
 
-Aucun clignotement rapide ; mouvement coupé si on le demande ; l'humeur du quartier est toujours écrite, puisqu'on ne peut pas forcer le jour ; lieux de culte, cimetières et mémoires sans humour ni objet incongru ; religions non distinguées ; aucune adresse ; silhouettes sans visage. Détails : [ville-vivante.md](ville-vivante.md).
+Aucun clignotement rapide ; mouvement coupé si on le demande ; l'humeur du quartier est toujours écrite dans la légende, puisqu'on ne peut pas forcer le jour ; lieux de culte, cimetières et mémoires sans humour ni objet incongru ; religions non distinguées ; aucune adresse ; silhouettes sans visage. Détails : [ville-vivante.md](ville-vivante.md).
 
 ## 7. Esquisses
 
-Vraies rues et vrais bâtiments, palette v3. Les blocs sont provisoires : de près, les bâtiments de Rahim les remplacent. Messages inventés.
+Vraies rues et vrais bâtiments, palette v3 (avant les réglages de la v3.2). Les blocs sont provisoires : de près, les bâtiments de Rahim les remplacent. Messages inventés.
 
 **La chaîne unique**, de loin : vide, 10 messages, 10 dont le dernier masqué, 60 et 300. Dans cet essai, le masqué est encore gris et la ville au crépuscule partout : ces deux règles sont remplacées par le volet fermé et les trois lumières.
 
@@ -220,7 +220,7 @@ Vraies rues et vrais bâtiments, palette v3. Les blocs sont provisoires : de pr�
 | --- | --- |
 | ![Béziers sans balade, de jour](esquisses/rendu-c/01-vide.jpg) | ![Trois cents balades séparées](esquisses/rendu-c/05-trois-cents.jpg) |
 
-**Trois quartiers voisins, au zoom** (Rahim). **Esquisse de test**, faite pour vérifier les règles avant le code : le rendu final sera plus travaillé (vraies rues d'OpenStreetMap, assets affinés, lumières réglées). Joie de jour : toits dorés, platanes en fleurs, le commerce a pris 3 étages. Tristesse de nuit : toits bleutés, arbres nus, la résidence visitée a toutes ses fenêtres allumées. Colère au crépuscule : toits rouges, feuillage d'automne, le chai a pris 2 étages, un piano près de la dernière étape. La chaîne traverse les trois : chaque balade part de la fin de la précédente, et la traînée s'efface avec l'âge.
+**Trois quartiers voisins, au zoom** (Rahim). **Esquisse de test**, faite pour vérifier les règles avant le code : le rendu final sera plus travaillé (vraies rues d'OpenStreetMap, assets affinés, lumières réglées). Joie de jour : toits dorés, platanes en fleurs, le commerce a pris 3 étages. Tristesse de nuit : toits bleutés, arbres nus, la résidence visitée a toutes ses fenêtres allumées. Colère au crépuscule : feuillage d'automne (ici les toits sont rouges, car l'esquisse précède la règle : dans l'œuvre, ils gardent leur tuile, et ce sont le sol et les rues qui portent la colère), le chai a pris 2 étages, un piano près de la dernière étape. La chaîne traverse les trois : chaque balade part de la fin de la précédente, et la traînée s'efface avec l'âge.
 
 ![Esquisse de test : trois quartiers voisins (joie de jour, tristesse de nuit, colère au crépuscule) traversés par la chaîne](esquisses/rahim/trois-quartiers.jpg)
 
@@ -230,7 +230,7 @@ Vraies rues et vrais bâtiments, palette v3. Les blocs sont provisoires : de pr�
 
 ## 8. Design system
 
-Interface calme, sur papier clair, pour laisser parler la ville. Principes : contraste AA, cible de 48 px, focus bleu visible, **jamais la couleur seule**.
+Interface calme, sur papier clair, pour laisser parler la ville. Principes : contraste AA, cible de 48 px, focus visible (contour encre de 3 px), **jamais la couleur seule**.
 
 | Composant | Ce qu'il fait |
 | --- | --- |
