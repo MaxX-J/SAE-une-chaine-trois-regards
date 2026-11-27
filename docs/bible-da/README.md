@@ -114,10 +114,10 @@ Le même message redonne toujours le même signe. Planches : [emblème](https://
 | `emotion` | 7 | Couleur et motif du tracé, couleur des rues traversées |
 | `intensite` | 5 crans | Force de la couleur |
 | `tension` | 5 crans | Tracé souple à zigzag serré, **toujours dans la largeur de la rue** |
-| `absurdite` | 0 à 1 | À partir de 0,5, un objet incongru (piano, baignoire, taureau, poisson volant) apparaît près d'une étape ; à 1, près de chaque étape **[À CONFIRMER]** |
+| `absurdite` | 0 à 1 | À partir de 0,5, un objet incongru (piano, baignoire, taureau, poisson volant) apparaît près d'une étape ; à 1, près de chaque étape, trois au plus |
 | `id` | Empreinte SHA-256 | Choisit les lieux, l'objet incongru et les détails, toujours pareil |
 
-Les chemins suivent les vraies rues d'OpenStreetMap, du plus court chemin d'une étape à l'autre. Repasser au même endroit est permis. **[À CONFIRMER]** La longueur maximale d'un trajet, et le trajet quand l'IA a échoué (élément neutre). `ambiance` est retirée (MaxX-J, 26/11).
+Les chemins suivent les vraies rues d'OpenStreetMap, du plus court chemin d'une étape à l'autre. Repasser au même endroit est permis. Pour garder une balade lisible, une étape suit la précédente à 600 m au plus à vol d'oiseau, et le trajet entier fait 2,5 km au plus ; au-delà, le code prend le lieu suivant de la famille, toujours choisi par l'id. Quand l'IA a échoué, la balade est tracée avec les valeurs par défaut de la charte : deux étapes vers des repères proches, trait gris neutre, sans effet sur la ville. `ambiance` est retirée (MaxX-J, 26/11).
 
 **L'ordre** est celui de la chaîne : un message est tracé une fois dans un bloc, puis ne bouge plus tant que la chaîne ne change pas. Si la chaîne change, la balade est recalculée.
 
