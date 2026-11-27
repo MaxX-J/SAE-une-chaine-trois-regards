@@ -131,7 +131,7 @@ Un quartier regarde ses **20 derniers messages**, quel que soit le binôme.
 | | Entre -0,12 et 0,12 | Crépuscule (jour et nuit superposés) |
 | | -0,12 ou moins | Nuit |
 | | Aucun message | Jour |
-| Émotion la plus fréquente du quartier | 7 | Lumière au sol et teinte des toits de **tout le quartier** ; à égalité, la plus récente |
+| Émotion la plus fréquente du quartier | 7 | Lumière au sol et teinte des toits de **tout le quartier** ; à égalité, la plus récente. Force : moyenne des `intensite`. Colère : sol seulement, les toits gardent leur tuile |
 | Même émotion | 7 | Saison des arbres : joie et surprise en fleurs, neutre en été, colère et dégoût en automne, tristesse et peur en hiver *(proposé)* |
 | Nombre de messages du quartier | | Fenêtres allumées la nuit et au crépuscule |
 | Rue empruntée | | Couleur de l'émotion du dernier passage ; plus elle est empruntée, plus elle brille, en se tassant |
