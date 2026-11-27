@@ -81,7 +81,7 @@ Elle fait foi ; elle est dans `docs/spec-commune/README.md` sur `main`.
 | Échec de l'IA | Élément neutre, avec son `status` | Proposé, **à valider** |
 | Consigne | « Raconte un moment, une pensée ou une idée folle. » | Choix de MaxX-J, validé par withRen le 26/11 |
 
-**Encore à décider (26/11) :** longueur maximale d'un trajet et trajet si l'IA échoue, nombre de balades de la traînée, liste des repères. Phrase du 3114 gardée (26/11). Moodboard : pas validé, un nouveau est à faire. `p4` (`p3` sans `ambiance`) à réessayer.
+**Encore à décider (27/11) :** nombre de balades de la traînée, liste des repères. Trajet (600 m par étape, 2,5 km au plus, deux étapes si l'IA échoue) et `p5` tranchés le 27/11 (journal). Phrase du 3114 gardée (26/11). Moodboard : pas validé, un nouveau est à faire. `p4` (`p3` sans `ambiance`) à réessayer.
 
 ## 6. Les six valeurs (règles du 23/11)
 

@@ -1,15 +1,15 @@
 # Dossier de binôme 2 (noeud-b)
 
-26/11/2026
+27/11/2026
 
-Brouillon à relire par les deux avant le dépôt sur Moodle (vendredi 27/11, 17h). Ce dossier s'appuie sur la spec commune sans la recopier : les numéros comme 4.2 ou 6.3 renvoient à ses sections. Il suit la **v1.1**, écrite après la relecture des enseignants et validée par les trois binômes le 26/11. Un repère marque ce qui n'est pas figé : **\[À CONFIRMER\]**, proposition que le binôme doit valider. L'œuvre est décrite dans la bible DA, les valeurs et le prompt dans la charte éditoriale.
+Rendu du vendredi 27/11/2026. Ce dossier s'appuie sur la spec commune sans la recopier : les numéros comme 4.2 ou 6.3 renvoient à ses sections. Il suit la **v1.1**, écrite après la relecture des enseignants et validée par les trois binômes le 26/11. L'œuvre est décrite dans la bible DA, les valeurs et le prompt dans la charte éditoriale.
 
 | Champ | Valeur |
 | --- | --- |
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
 | Nœud | noeud-b (producteur d'un créneau de 20 s sur trois, ordre a, b, c) |
 | Spec commune | version 1.1 du 26/11/2026, validée par les six (remplace la v1.0 du 23/11) |
-| Version du dossier | 0.7, une seule chaîne de balades |
+| Version du dossier | 0.8, rendu du 27/11/2026 |
 | Langage | TypeScript, pour le nœud et pour l'application |
 
 ## 1. Le projet en bref
@@ -132,7 +132,7 @@ Un lot a droit à **3 appels au plus**, toutes causes confondues, pour économis
 | Messages lus par jour, au mieux | 50 | 500 |
 | Au pire (trois appels par lot) | 16 | 160 |
 
-Nous gardons **15 requêtes par jour** pour l'oral et les démonstrations, à partir du 10/12. Un compteur en base arrête le worker quand la réserve est atteinte. Les messages non lus attendent le lendemain : leur balade est tracée **en attente**, trait fin gris sans effet sur la ville, puis prend ses couleurs quand l'IA a répondu. Le worker lit dans l'ordre de la chaîne. La chaîne accepte jusqu'à 150 messages par minute (spec 8.2) : en cas d'afflux, l'IA prend du retard sans rien casser. **Écarté :** acheter des crédits (le sujet demande des modèles gratuits) ; lire avec deux clés sur un même nœud (une clé par étudiant). **\[À CONFIRMER\]** `p5`, à essayer contre un ordre caché glissé dans un lot.
+Nous gardons **15 requêtes par jour** pour l'oral et les démonstrations, à partir du 10/12. Un compteur en base arrête le worker quand la réserve est atteinte. Les messages non lus attendent le lendemain : leur balade est tracée **en attente**, trait fin gris sans effet sur la ville, puis prend ses couleurs quand l'IA a répondu. Le worker lit dans l'ordre de la chaîne. La chaîne accepte jusqu'à 150 messages par minute (spec 8.2) : en cas d'afflux, l'IA prend du retard sans rien casser. **Écarté :** acheter des crédits (le sujet demande des modèles gratuits) ; lire avec deux clés sur un même nœud (une clé par étudiant). **Choix du 27/11 :** nous partons sur `p5`, par lots de 10. S'il échoue à l'essai de S49 (un ordre caché glissé au milieu d'un lot), nous gardons `p4`, un message par requête, et acceptons de lire 16 à 50 messages par jour.
 
 **Contre les injections.** Une réponse est acceptée seulement si elle passe un schéma strict. Un message qui tente de donner des ordres à l'IA ne peut au pire que choisir des valeurs dans les bornes. Aucun texte libre de l'IA n'est affiché : seulement des nombres et des mots de listes fermées. Le titre d'une balade est composé par le code avec les vrais lieux.
 
@@ -145,7 +145,7 @@ Nous gardons **15 requêtes par jour** pour l'oral et les démonstrations, à pa
 1. La balade part de la dernière étape du message précédent dans la chaîne. Le premier message part d'un repère fixe.
 2. `lieu` et `lieu_secondaire` donnent les familles ; `energie` donne le nombre d'étapes, de 2 à 6.
 3. Les étapes sont choisies par l'id dans la famille, parmi les lieux proches.
-4. Un plus court chemin (A*) relie les étapes sur le réseau de rues. Repasser au même endroit est permis. Longueur maximale d'un trajet, et trajet quand l'IA a échoué : **\[À CONFIRMER\]**.
+4. Un plus court chemin (A*) relie les étapes sur le réseau de rues. Repasser au même endroit est permis. Pour garder une balade lisible, une étape suit la précédente à 600 m au plus à vol d'oiseau, et le trajet entier fait 2,5 km au plus ; au-delà, le code prend le lieu suivant de la famille, toujours choisi par l'id. Quand l'IA a échoué, la balade est tracée avec les valeurs par défaut de la charte : deux étapes vers des repères proches, trait gris neutre, sans effet sur la ville.
 5. `tension` déforme le tracé, sans le faire sortir de la rue.
 6. `absurdite` à 0,5 ou plus pose un objet incongru (piano, baignoire, taureau, poisson volant) près d'une étape, choisi par l'id.
 
@@ -263,7 +263,7 @@ Quatre niveaux, du plus simple au plus large. L'horloge du nœud est injectée d
 
 **Git.**
 
-- Dépôt GitHub public du binôme, avec nos deux noms et aucun nom des autres binômes, équipe enseignante invitée **\[À CONFIRMER\]**.
+- Dépôt GitHub public du binôme, avec nos deux noms et aucun nom des autres binômes, équipe enseignante invitée.
 - `CLAUDE.md` et `docs/suivi/journal/` partagent le contexte entre nous deux.
 - Branches feat/, fix/, hotfix/ et chore/, une branche par tâche. Rien n'est poussé directement sur main.
 - Commits courts et atomiques. Une pull request par tâche, relue par l'autre membre avant fusion.

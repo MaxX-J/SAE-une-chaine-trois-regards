@@ -210,11 +210,11 @@ Des balises de code autour du JSON sont retirées avant le contrôle : cela ne c
 
 **Ce qui reste à tester.** Les cinq valeurs reprises notées à deux, et le quota exact. Un nombre est bon à un cran près, un mot s'il est identique. Objectif (gardé le 26/11) : 80 % de bonnes réponses par valeur et 100 % de JSON valides au bout des trois appels.
 
-### La lecture par lots et le quota (proposé le 26/11)
+### La lecture par lots et le quota
 
 **Le problème.** Les modèles gratuits d'OpenRouter sont limités à 20 requêtes par minute et **50 par jour** pour un compte qui n'a pas acheté de crédits (page des limites d'OpenRouter, relevée par l'équipe enseignante le 26/11). Avec `p4`, un message par requête et jusqu'à trois appels, notre IA lirait entre 16 et 50 messages par jour. Une heure d'usage réel le 10/12 dépasse déjà ce chiffre. La spec v1.1 (section 9) demande à chaque binôme de chiffrer ce que son IA lit par jour.
 
-**La proposition : `p5`, par lots.** Le même message système, mais le message utilisateur contient jusqu'à **10 messages**, chacun avec un numéro :
+**Le choix du 27/11 : `p5`, par lots.** `p4` reste le secours si l'essai échoue. Le même message système, mais le message utilisateur contient jusqu'à **10 messages**, chacun avec un numéro :
 
 ```json
 {"messages": [{"n": 1, "message": "texte du premier"}, {"n": 2, "message": "texte du second"}]}
