@@ -7,7 +7,7 @@ Binôme 2 (noeud-b) : Maxens Sevilla (M) et Rahim Tamhaev (R).
 ## Hypothèses
 
 - 6 heures utiles par personne et par jour. Les estimations sont les nôtres, aucune n'a été vérifiée.
-- L'œuvre : **balades dans Béziers, rendu C** (toute la ville en 2,5D), jour et nuit, **une seule chaîne de balades** (M, 26/11). Idée approuvée par les enseignants. Les tâches concernées portent un **★** : si l'œuvre change, elles changent, le reste tient.
+- L'œuvre : **balades dans Béziers, rendu C** (toute la ville en 2,5D), jour et nuit, **une seule chaîne de balades**. Les tâches concernées portent un **★** : si l'œuvre change, elles changent, le reste tient.
 - De loin, la ville est une image préparée à l'avance ; au zoom, les bâtiments génériques de R remplacent les blocs de la zone visible ; les repères restent détaillés. Les balades passent par-dessus en transparence.
 - Les numéros de section renvoient à la spec commune v1.1. La spec impose que le nœud et l'application soient prêts pour la jonction : la chaîne passe donc **avant** l'œuvre.
 
@@ -76,7 +76,7 @@ Si nous prenons du retard, nous coupons dans cet ordre : tout ce qui est en plus
 
 ### Les valeurs de l'IA et leur effet
 
-Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. `ambiance`, qui ne dessinait rien, est retirée (26/11) :
+Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. `ambiance`, qui ne dessinait rien, est retirée :
 
 | Valeur | Effet | Tâche |
 | --- | --- | --- |
@@ -104,7 +104,7 @@ Chaque valeur demandée à l'IA doit avoir un effet dans une tâche. `ambiance`,
 
 S50 dépasse un peu 30 h (5 jours de 6 h) : T01 passe en S49 si les enseignants acceptent un script cette semaine-là (point O6 de la spec).
 
-La répartition validée (M le nœud, R l'IA et l'œuvre) est ajustée sur deux points (accord de M et R le 26/11) : R prend une partie du nœud avant le 10/12, car c'est le plus urgent et chacun doit savoir l'expliquer ; M prend une partie de l'œuvre ensuite. L'autre relit toujours avant fusion.
+La répartition validée (M le nœud, R l'IA et l'œuvre) est ajustée sur deux points : R prend une partie du nœud avant le 10/12, car c'est le plus urgent et chacun doit savoir l'expliquer ; M prend une partie de l'œuvre ensuite. L'autre relit toujours avant fusion.
 
 ## 3. Le plan
 

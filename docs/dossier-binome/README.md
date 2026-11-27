@@ -14,7 +14,7 @@ Ce dossier ne recopie pas la spec : « spec 4.2 » renvoie à sa section 4.2. L'
 
 ## 1. Le projet en bref
 
-**Notre regard.** Une blockchain garde des paroles qu'on ne peut plus effacer. Une ville garde les pas de ceux qui la traversent. **Chaque message devient une balade dans Béziers, qui repart d'où la précédente s'est arrêtée.** Ensemble, elles dessinent le Béziers que les gens ressentent. Les enseignants ont approuvé l'idée.
+**Notre regard.** Une blockchain garde des paroles qu'on ne peut plus effacer. Une ville garde les pas de ceux qui la traversent. **Chaque message devient une balade dans Béziers, qui repart d'où la précédente s'est arrêtée.** Ensemble, elles dessinent le Béziers que les gens ressentent.
 
 **L'application.**
 - Le visiteur est prévenu : son message ne s'effacera pas, il est partagé avec les deux autres binômes et lu par une IA, il ne doit contenir aucune donnée personnelle (spec 8.1).
@@ -120,7 +120,7 @@ Les noms suivent la spec. Deux mots sont réservés en SQL : `index` devient `bl
 
 **Le prompt.** Les messages partent par lots, encodés en JSON par le code : `{"messages": [{"n": 1, "message": "…"}, …]}`. La consigne demande d'ignorer tout ordre contenu dans un message. Le prompt `p5` et les valeurs sont dans la charte (partie 3). `p5` a été essayé le 27/11 : bon format, et un ordre caché glissé dans un lot ne change rien. `p4`, un message par requête, reste le secours.
 
-**Le quota.** 20 requêtes par minute et **50 par jour** sur un compte gratuit. À vérifier sur la clé de MaxX-J avant le 07/12 (`GET /api/v1/key` d'OpenRouter).
+**Le quota.** 20 requêtes par minute et **50 par jour** sur un compte gratuit.
 
 | | Par message (`p4`) | Par lots de 10 (`p5`) |
 | --- | --- | --- |
@@ -207,7 +207,7 @@ Plages, couleurs et motifs : [palette](../bible-da/palette.md) et [ville vivante
 | Qualité | ESLint, Prettier, pino, Vitest, Playwright | Erreurs et preuves trouvées tôt |
 | Exécution | Directement sur le PC, sans Docker | Une couche de moins |
 
-**Machine du nœud.** Le PC de MaxX-J le 10/12, celui de withRen en secours. On y copie alors la base et la clé privée, sans jamais faire tourner les deux en même temps (double signature).
+**Machine du nœud.** Le PC de Maxens le 10/12, celui de Rahim en secours. On y copie alors la base et la clé privée, sans jamais faire tourner les deux en même temps (double signature).
 
 ## 8. Les tests
 
@@ -254,11 +254,11 @@ L'horloge du nœud est injectée : les cas à heure simulée se rejouent sans at
 
 | Zone | Responsable | Relecteur |
 | --- | --- | --- |
-| Calculs, validation, production | MaxX-J | withRen |
-| Routes, rattrapage | withRen | MaxX-J |
-| Écriture : page, API, filtre | withRen | MaxX-J |
-| IA, carte commune, dessin | withRen | MaxX-J |
-| Balade calculée, accessibilité | MaxX-J | withRen |
+| Calculs, validation, production | Maxens | Rahim |
+| Routes, rattrapage | Rahim | Maxens |
+| Écriture : page, API, filtre | Rahim | Maxens |
+| IA, carte commune, dessin | Rahim | Maxens |
+| Balade calculée, accessibilité | Maxens | Rahim |
 | Tests et jonction | les deux | les deux |
 | Documents | les deux | les deux |
 
@@ -274,9 +274,9 @@ Répartition indicative, détaillée dans le backlog.
 - `CLAUDE.md` et `docs/suivi/` partagent le contexte entre nous.
 
 **L'IA pour concevoir.** Nous proposons, Claude commente, nous décidons. Le journal dit qui a décidé quoi.
-- Nos idées : la ville et les bâtiments (withRen), les balades dans Béziers (piste de l'enseignante d'art), la lumière selon la `valence`, la chaîne unique, les bâtiments qui grandissent (MaxX-J).
+- Nos idées : la ville et les bâtiments (Rahim), les balades dans Béziers (piste de l'enseignante d'art), la lumière selon la `valence`, la chaîne unique, les bâtiments qui grandissent (Maxens).
 - Gardé : l'IA hors de la chaîne, le jour et la nuit par quartier, le contraste de la palette.
-- Refusé : la valeur `sociabilite`, le `mot` libre, le ruban de couleurs au sol (jugé laid), l'ordre des tâches et la palette de nuit (corrigés par withRen).
+- Refusé : la valeur `sociabilite`, le `mot` libre, le ruban de couleurs au sol (jugé laid), l'ordre des tâches et la palette de nuit (corrigés par Rahim).
 
 **L'IA pour coder.** Autorisée par le sujet.
 - L'IA propose ; nous relisons, testons et comprenons chaque ligne avant de fusionner.
