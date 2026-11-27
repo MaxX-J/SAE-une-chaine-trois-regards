@@ -28,7 +28,30 @@ Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
 
 ## 2. Moodboard
 
-Nous regardons des **systèmes** : pour chaque référence, comment l'image est fabriquée, avant ce qu'elle montre.
+### La planche
+
+Huit images choisies à deux, une planche validée le 27/11. Elle est dans le PDF de rendu ; elle n'est pas publiée ici, car plusieurs images sont protégées (affiche, jeu, photos).
+
+<!-- planche-moodboard -->
+
+| N° | Image | Ce que nous en prenons |
+| --- | --- | --- |
+| 01 | Béziers de nuit, la cathédrale et le pont Vieux | La vraie ville, ses repères allumés, la nuit |
+| 02 | L'affiche de *The Truman Show* | Une ville construite, qu'on regarde vivre |
+| 03 | Rome en maquette isométrique | Une ville entière posée sur un socle : notre rendu 2,5D |
+| 04 | Des pavés mouillés | La rue qui garde la lumière de ceux qui passent |
+| 05 | Des tuiles canal | La matière et la couleur des toits |
+| 06 | Une marcheuse sur un pont | La balade, au pas, pas la course |
+| 07 | Un plateau de Monopoly | Une couleur par lieu, des maisons qui s'ajoutent |
+| 08 | Un carnet de voyage illustré | La carte et le souvenir d'une balade |
+
+**Les couleurs**, une fois chacune, classées en quatre familles : ciel (nuit #1C2140, crépuscule #8A5672), lumière (fenêtre #FFCF86, lampadaire #D69520), matière (toit #C46A43, façade #E2D2B2), nature (eau #7FB1BD, végétation #7F9F55). Toutes viennent de la palette v3.2.
+
+**Les polices** sont posées sur la planche, comme dans l'œuvre : le titre en Bricolage Grotesque, la consigne en Atkinson Hyperlegible Next, les codes en JetBrains Mono.
+
+### Les systèmes
+
+Nous regardons aussi des **systèmes** : pour chaque référence, comment l'image est fabriquée, avant ce qu'elle montre.
 
 | Référence | Comment l'image est fabriquée | Ce que nous retenons | Ce que nous ne prenons pas |
 | --- | --- | --- | --- |
