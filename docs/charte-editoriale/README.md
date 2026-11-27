@@ -3,12 +3,12 @@
 | Champ | Valeur |
 | --- | --- |
 | Binôme | 2 : Maxens Sevilla (`MaxX-J`) et Rahim Tamhaev (`withRen`) |
-| Version | 0.8, brouillon du 26/11/2026 |
+| Version | 1.0 du 27/11/2026, validée à deux |
 | Rendu | Vendredi 27/11/2026 à 17h, PDF sur Moodle |
-| S'appuie sur | Spec commune 1.0 (les numéros comme 8.1 y renvoient), et la v1.1 proposée le 26/11 pour l'IA (section 9 : chaîne réelle, quota) |
+| S'appuie sur | Spec commune v1.1 du 26/11/2026 (les numéros comme 8.1 y renvoient) |
 | Valeurs | Huit, adaptées aux balades. Cinq reprises et notées, trois nouvelles essayées |
 
-**[À CONFIRMER]** : proposition à valider à deux. Le 26/11, MaxX-J a retiré `ambiance`, accepté les gros mots sans cible et validé la consigne et le modèle (validé par withRen). L'œuvre est décrite dans la bible DA.
+L'œuvre est décrite dans la bible DA, l'architecture dans le dossier de binôme.
 
 ## 1. La consigne d'écriture
 
@@ -151,7 +151,7 @@ Le texte est encodé en JSON par le code, jamais collé entre de simples guillem
 
 ### Trois exemples et les valeurs attendues
 
-Ils ne sont **pas** dans le prompt : ils servent à le tester. Les cinq valeurs reprises viennent de la grille décidée par le binôme. **Les nouvelles sont des propositions à valider à deux.**
+Ils ne sont **pas** dans le prompt : ils servent à le tester. Les cinq valeurs reprises viennent de la grille décidée par le binôme. Les nouvelles ont été notées à deux.
 
 | | Permis | Pigeons | Consigne cachée |
 | --- | --- | --- | --- |
@@ -329,6 +329,31 @@ La tristesse, la colère, la critique et les gros mots sans cible **sont accept�
 | **Déjà dans la chaîne**, filtre insuffisant | Un membre du binôme le masque à la main et note la raison | Reste dans la chaîne, balade retirée de l'œuvre, texte retiré de l'affichage |
 
 Si un message a déjà été envoyé à l'IA, nous ne pouvons pas le rappeler.
+
+### Ce que voit le visiteur
+
+Des phrases courtes, qui disent la raison et laissent le texte dans le champ pour qu'il le corrige *(proposé)*.
+
+| Cas | Message affiché |
+| --- | --- |
+| Lien ou adresse web | « Les liens ne passent pas. Raconte-le avec tes mots. » |
+| Email ou téléphone | « On dirait une coordonnée. Retire-la : ton message sera public et permanent. » |
+| Mot de la liste (haine, menace, sexuel) | « Ce message ne peut pas devenir une balade. Reformule-le sans viser personne. » |
+| Message vide ou trop long | « Entre 1 et 280 caractères. Il t'en reste N. » |
+| Mots liés au suicide ou à l'automutilation | « Si ça ne va pas, tu peux appeler le 3114, gratuit, jour et nuit. En urgence : 15 ou 112. » Puis : « Envoyer quand même » ou « Revenir au message » |
+| Réseau ou nœud indisponible | « Ton message n'est pas parti. Il est gardé ici, réessaie dans un instant. » |
+| Quota de l'IA épuisé | « Ton message est dans la chaîne. Sa balade prendra ses couleurs demain au plus tard. » |
+| Message masqué, à sa place | « Un message a été masqué ici. » (le volet fermé) |
+
+Le refus ne cite jamais le mot qui a bloqué, pour ne pas apprendre à contourner le filtre.
+
+### Ce que devient le texte envoyé à l'IA
+
+- **Ce qui part.** Le texte seul, dans un lot numéroté. Jamais l'auteur, l'heure, l'id ni l'adresse IP du visiteur.
+- **Qui le reçoit.** OpenRouter, puis le fournisseur du modèle. Un modèle gratuit peut garder les textes et s'en servir pour s'entraîner : c'est pourquoi l'avertissement le dit avant l'écriture.
+- **Ce que nous réglons.** Dans le compte OpenRouter, la journalisation des requêtes reste coupée. Le réglage qui refuse les fournisseurs qui conservent les données (`"data_collection": "deny"`) peut écarter le modèle gratuit : **à essayer en S49** ; s'il l'écarte, nous le disons dans l'avertissement plutôt que de promettre.
+- **Ce que nous gardons.** La réponse de l'IA, le modèle qui a répondu et le statut, dans notre base. La clé reste dans `.env`, jamais dans le dépôt.
+- **Ce qui n'est jamais envoyé.** Un message refusé avant la signature, et un message d'un autre binôme masqué par notre filtre.
 
 **Ce que « masqué » veut dire.** Le texte n'apparaît plus ni dans l'œuvre, ni dans les titres accessibles, ni dans les données envoyées au navigateur. Sa balade et ses effets sur la ville disparaissent. Un volet fermé, dans le quartier où elle passait, montre qu'il y a eu un message, sans le répéter (choix de MaxX-J, 26/11). Ses anciennes valeurs d'IA ne sont plus utilisées.
 

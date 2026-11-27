@@ -37,7 +37,7 @@ Seuils venus de l'essai en rendu C : avec 0,25, presque tout restait au crépusc
 
 L'émotion la plus fréquente des 20 derniers messages du quartier (à égalité, la plus récente) :
 
-- **Sol et toits** de tout le quartier, en lumière (choix de MaxX-J le 26/11). Les bâtiments visités gardent leur teinte chaude, ce qui les détache.
+- **Sol et toits** de tout le quartier, en lumière (choix de MaxX-J le 26/11). Les bâtiments visités gardent leur teinte chaude, ce qui les détache. Force : la moyenne des `intensite` de ces 20 messages. Exception, la colère : la tuile de Béziers est déjà rouge, alors les toits gardent leur couleur et ce sont le sol et les rues qui portent la colère (MaxX-J, 27/11).
 - **Arbres** *(proposé)* : joie et surprise en fleurs, neutre en été, colère et dégoût en automne, tristesse et peur en hiver. Aucune vraie date : la saison vient de l'émotion (MaxX-J, 26/11).
 
 ## Les bâtiments visités

@@ -2,7 +2,7 @@
 
 Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
 
-**Version 0.2, brouillon du 26/11/2026.** Rendu : vendredi 27/11, 17h, PDF. Les choix de cette version sont ceux de MaxX-J le 26/11, **validés par withRen**. **[À FOURNIR]** : image ou contenu attendu. **[À CONFIRMER]** : choix encore ouvert. Fond de carte : © les contributeurs OpenStreetMap (ODbL).
+**Version 1.0 du 27/11/2026**, validée à deux. Fond de carte : © les contributeurs OpenStreetMap (ODbL).
 
 **En une phrase.** Chaque message devient une balade dans Béziers ; chaque balade repart d'où la précédente s'est arrêtée, et ensemble elles dessinent le Béziers que les gens ressentent.
 
@@ -28,7 +28,30 @@ Binôme 2 (noeud-b) : Maxens Sevilla et Rahim Tamhaev.
 
 ## 2. Moodboard
 
-Nous regardons des **systèmes** : pour chaque référence, comment l'image est fabriquée, avant ce qu'elle montre.
+### La planche
+
+Huit images choisies à deux, une planche validée le 27/11.
+
+![La planche, validée le 27/11 : huit images, huit couleurs, trois polices](moodboard/planche.png)
+
+| N° | Image | Ce que nous en prenons |
+| --- | --- | --- |
+| 01 | Béziers de nuit, la cathédrale et le pont Vieux | La vraie ville, ses repères allumés, la nuit |
+| 02 | L'affiche de *The Truman Show* | Une ville construite, qu'on regarde vivre |
+| 03 | Rome en maquette isométrique | Une ville entière posée sur un socle : notre rendu 2,5D |
+| 04 | Des pavés mouillés | La rue qui garde la lumière de ceux qui passent |
+| 05 | Des tuiles canal | La matière et la couleur des toits |
+| 06 | Une marcheuse sur un pont | La balade, au pas, pas la course |
+| 07 | Un plateau de Monopoly | Une couleur par lieu, des maisons qui s'ajoutent |
+| 08 | Un carnet de voyage illustré | La carte et le souvenir d'une balade |
+
+**Les couleurs**, une fois chacune, classées en quatre familles : ciel (nuit #1C2140, crépuscule #8A5672), lumière (fenêtre #FFCF86, lampadaire #D69520), matière (toit #C46A43, façade #E2D2B2), nature (eau #7FB1BD, végétation #7F9F55). Toutes viennent de la palette v3.2.
+
+**Les polices** sont posées sur la planche, comme dans l'œuvre : le titre en Bricolage Grotesque, la consigne en Atkinson Hyperlegible Next, les codes en JetBrains Mono.
+
+### Les systèmes
+
+Nous regardons aussi des **systèmes** : pour chaque référence, comment l'image est fabriquée, avant ce qu'elle montre.
 
 | Référence | Comment l'image est fabriquée | Ce que nous retenons | Ce que nous ne prenons pas |
 | --- | --- | --- | --- |
@@ -41,7 +64,7 @@ Nous regardons des **systèmes** : pour chaque référence, comment l'image est 
 | Monopoly | Un plateau où un lieu a une couleur et une pièce posée dessus | Les familles de lieux, les repères en volume, les maisons qui s'ajoutent | Son dessin et son argent |
 | Google Maps | Le zoom révèle des détails, niveau par niveau | Trois niveaux : ville, quartier, lieu | L'aspect, la recherche, les données personnelles |
 
-**[À FOURNIR]** Images et sources, par withRen. Chaque image sera légendée avec son auteur, sa date et son adresse. Nous nous en inspirons sans reprendre de dessin.
+Ces références viennent du cours d'art génératif et des échanges avec l'enseignante. Nous nous en inspirons sans reprendre de dessin.
 
 ## 3. Ambiance colorée
 
@@ -131,7 +154,7 @@ Un quartier regarde ses **20 derniers messages**, quel que soit le binôme.
 | | Entre -0,12 et 0,12 | Crépuscule (jour et nuit superposés) |
 | | -0,12 ou moins | Nuit |
 | | Aucun message | Jour |
-| Émotion la plus fréquente du quartier | 7 | Lumière au sol et teinte des toits de **tout le quartier** ; à égalité, la plus récente |
+| Émotion la plus fréquente du quartier | 7 | Lumière au sol et teinte des toits de **tout le quartier** ; à égalité, la plus récente. Force : moyenne des `intensite`. Colère : sol seulement, les toits gardent leur tuile |
 | Même émotion | 7 | Saison des arbres : joie et surprise en fleurs, neutre en été, colère et dégoût en automne, tristesse et peur en hiver *(proposé)* |
 | Nombre de messages du quartier | | Fenêtres allumées la nuit et au crépuscule |
 | Rue empruntée | | Couleur de l'émotion du dernier passage ; plus elle est empruntée, plus elle brille, en se tassant |
@@ -143,6 +166,21 @@ Un quartier regarde ses **20 derniers messages**, quel que soit le binôme.
 **Beaucoup de balades.** Une traînée suit la tête de la chaîne : les dernières balades sont nettes et s'estompent, la plus récente est la plus forte, avec un point et un halo. Le nombre de balades de la traînée sera calibré sur l'œuvre (12 est trop peu). Plus anciennes, elles ne restent que dans la lumière des rues et la hauteur des bâtiments. La balade qu'on choisit est seule épaisse, avec ses épingles.
 
 **La lumière dit par où on passe, la hauteur dit où on s'arrête.**
+
+### La ville, de 1 à 300 messages
+
+Ce que l'on doit voir en ouvrant l'œuvre, selon le nombre de messages de la chaîne. Ordres de grandeur, à vérifier sur la vraie chaîne *(proposé)*.
+
+| Messages | Ce que montre la ville |
+| --- | --- |
+| 0 | Béziers de jour, rues neutres, aucun étage ajouté. La consigne invite à écrire le premier message |
+| 1 | Une balade de 2 à 6 étapes, avec point et halo. Un ou deux quartiers prennent son émotion au sol et sur les toits ; leur lumière suit sa seule `valence` |
+| 10 | Une chaîne lisible d'un bout à l'autre. Quelques quartiers ont une humeur, la plupart restent de jour. Les premiers bâtiments ont un étage de plus |
+| 30 | Le centre est traversé. Des quartiers passent au crépuscule ou à la nuit. Les rues les plus empruntées brillent. Les anciennes balades s'estompent dans la traînée |
+| 100 | Les humeurs sont stables : un quartier change sur plusieurs messages, plus sur un seul. Les repères souvent visités atteignent leur plafond d'étages |
+| 300 | La ville se lit par la lumière et la hauteur, plus par les tracés. Seules la traînée et la balade choisie sont nettes. Un seul message peut encore faire basculer un quartier peu visité |
+
+Si un palier ne ressemble pas à cette ligne, on règle d'abord le nombre de balades de la traînée, la brillance des rues et le plafond d'étages, puis les seuils de lumière.
 
 **Trois niveaux de zoom.** Ville : blocs simples. Quartier : bâtiments génériques et repères. Lieu : fenêtres, arbres, passants, mobilier, objets incongrus.
 
@@ -200,15 +238,32 @@ Interface calme, sur papier clair, pour laisser parler la ville. Principes : con
 | Légende, quartier | Couleur, motif et mot ; l'humeur et la lumière du quartier sont toujours écrites |
 | Zoom | Trois boutons de 48 px |
 
+### La grille d'écran
+
+La carte prend toujours tout l'écran ; l'interface se pose dessus.
+
+| Largeur | Colonnes, marges | Disposition |
+| --- | --- | --- |
+| Moins de 600 px (téléphone) | 4 colonnes, marges de 16 px, gouttière de 16 px | Champ message en bas, plein large. La carte balade monte en tiroir depuis le bas, sur la moitié de l'écran |
+| 600 à 1 023 px (tablette) | 8 colonnes, marges de 24 px | Champ message en bas, 6 colonnes centrées. Carte balade en tiroir |
+| 1 024 px et plus (ordinateur) | 12 colonnes, marges de 32 px, gouttière de 24 px | Panneau à gauche sur 4 colonnes (champ, statut, carte balade). Légende en bas à droite, zoom au-dessus |
+
+Espacements par pas de 8 px. Texte jamais sous 15 px, lignes de 70 caractères au plus.
+
+### Les états
+
+| Composant | Vide | Chargement | Erreur | Masqué |
+| --- | --- | --- | --- | --- |
+| Carte de la ville | Béziers de jour, la consigne en surimpression | La ville se construit en quatre étapes (terrain, chantier, façades, habitants) | « La ville n'a pas pu se charger. » et un bouton Réessayer | Sans objet |
+| Champ message | Consigne en gris, compteur à 280 | Bouton inactif, « Envoi… » | Bord et texte d'erreur sous le champ, avec un signe ; le texte reste | Sans objet |
+| Statut | Rien avant l'envoi | En attente, dans un bloc, lue par l'IA, confirmée : un signe et un mot à chaque étape | « Pas parti, gardé ici » | « Masqué » |
+| Carte balade | « Choisis une balade sur la carte » | Squelette gris | Balade en attente : trait fin gris, « couleurs demain au plus tard » | Volet fermé, sans texte ni étapes |
+| Liste accessible | « Aucune balade pour l'instant » | « Chargement des balades » annoncé au lecteur d'écran | Même message que la carte | « Message masqué », sans le texte |
+
+Les messages d'erreur et de refus sont ceux de la charte éditoriale, partie 4.
+
 L'interrupteur « toujours voir de jour » est retiré (MaxX-J, 26/11) : la lumière fait partie de l'œuvre, et l'humeur écrite suffit pour lire.
 
-**Les écrans** (brouillon, [Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2)) : écrire, attendre (la ville se construit en quatre étapes : terrain, chantier, façades, habitants), découvrir sa balade, explorer, et un refus sur téléphone. Les captures sont faites (MaxX-J, 26/11).
+**Les écrans** ([Figma](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=44-2)) : écrire, attendre (la ville se construit en quatre étapes : terrain, chantier, façades, habitants), découvrir sa balade, explorer, et un refus sur téléphone. Les captures sont faites (MaxX-J, 26/11).
 
 **Liste accessible.** Une liste des balades, au clavier et au lecteur d'écran, double la carte : titre, émotion, étapes, distance.
-
-## À faire avant le rendu
-
-| Quoi | Qui |
-| --- | --- |
-| Moodboard : les deux premières planches ne sont pas validées, un nouveau est à faire, puis à exporter | les deux |
-| PDF, relecture | les deux |

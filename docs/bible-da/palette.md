@@ -1,6 +1,6 @@
 # Palette de Béziers
 
-**BROUILLON v3.1 du 26/11/2026.** Choix de MaxX-J le 26/11 marqués, validés par withRen. Planche : [Figma v3](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=20-2), v1 et v2 gardées à côté (accès selon le partage du fichier).
+**BROUILLON v3.2 du 27/11/2026.** Choix de MaxX-J le 26/11 marqués, validés par withRen. Planche : [Figma v3](https://www.figma.com/design/ryY2ksOgkdLQXyIwtDPPKw/Sans-titre?node-id=20-2), v1 et v2 gardées à côté (accès selon le partage du fichier).
 
 **L'idée :** la ville est la matière, calme ; l'émotion est la lumière posée dessus.
 
@@ -67,8 +67,8 @@ La couleur et le motif disent l'émotion, **la forme dit la tension** : plus ell
 - **Tracé** : chaque émotion est éclaircie à sa mesure. Écart d'au moins 10 entre toutes, dans les quatre visions simulées.
 - **Fenêtre** : 30 % d'émotion, 70 % de lumière chaude (#FFE7A8). Elles se ressemblent, car elles servent à compter les messages.
 - **Halo** : la nuit, couleur du tracé en transparence (remarque de withRen) ; de jour, émotion pleine. Décoratif.
-- **Sol et toits du quartier** (MaxX-J, 26/11) : l'émotion la plus fréquente des 20 derniers messages du quartier, large et floue au sol, en teinte sur les toits (`--toit`, `--toit-force` des assets), plus légère le jour. Une seule émotion par quartier, pour que 300 émotions ne se mélangent pas. Force à régler à l'œil.
-- **Bâtiments visités** : teinte chaude (fenêtre chaude #FFA957) sur la façade et fenêtres allumées. Entourés d'un quartier coloré, ils se lisent.
+- **Sol et toits du quartier** (MaxX-J, 26/11) : l'émotion la plus fréquente des 20 derniers messages du quartier, large et floue au sol, en teinte sur les toits (`--toit`, `--toit-force` des assets), plus légère le jour. Une seule émotion par quartier, pour que 300 émotions ne se mélangent pas. Force : la moyenne des `intensite` de ces 20 messages. Exception, la colère : la tuile de Béziers est déjà rouge, alors les toits gardent leur couleur et ce sont le sol et les rues qui portent la colère (MaxX-J, 27/11).
+- **Bâtiments visités** : teinte chaude (fenêtre chaude #FFA957) sur la façade et fenêtres allumées. Entourés d'un quartier coloré, ils se lisent. Dans un quartier de joie, la teinte chaude ressort moins : ce sont les étages qui les signalent (accepté le 27/11).
 - **Sol de nuit** : papier #404253, place #3D3E4D, rue #393B4B, pavé #353646. Le mur se détache de la rue de 1,2 à 1,9 selon l'enduit, contre 1,02 avant sur le mur sable.
 
 Calculé au cran 0,75, sur ces fonds. Seuil visé : 3 (WCAG 1.4.11).
