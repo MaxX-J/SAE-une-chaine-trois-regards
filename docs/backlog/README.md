@@ -70,6 +70,7 @@ Les heures d'une tâche à deux sont le total des deux personnes.
 | P06 | ★ Passage par un lieu cité dans le message | 3 | 6 |
 | P07 | ★ Arbres (saison selon l'émotion du quartier), mobilier et densité du décor | 4 | 7 |
 | P08 | ★ Passants : nombre, allure et posture | 5 | 8 |
+| P09 | ★ Signe du message : pâté de maisons de 4 × 4 (bible DA, partie 5), sur la carte de balade et dans la liste | 3 | 9 |
 
 Si nous prenons du retard, nous coupons dans cet ordre : tout ce qui est en plus, puis les étages des bâtiments visités, puis les bâtiments génériques au zoom, puis la nuit. Le rendu retombe alors sur des blocs simples et les repères. **Jamais** la chaîne, les messages masqués ni l'accessibilité de base.
 
